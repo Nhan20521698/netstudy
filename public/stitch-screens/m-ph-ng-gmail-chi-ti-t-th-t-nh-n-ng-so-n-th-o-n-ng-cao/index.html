@@ -1,0 +1,808 @@
+<!DOCTYPE html><html lang="en" style=""><head><link class="" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>WhatsApp Web Simulation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                "inverse-on-surface": "#eef1f3",
+                "primary-fixed": "#d6e3ff",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#001b3c",
+                "outline-variant": "#c4c6cf",
+                "on-tertiary-container": "#68a2e9",
+                "on-background": "#181c1e",
+                "surface-bright": "#f7fafc",
+                "surface-variant": "#e0e3e5",
+                "secondary": "#944b00",
+                "on-primary-fixed-variant": "#2d476f",
+                "surface-container-low": "#f1f4f6",
+                "surface-container": "#ebeef0",
+                "on-surface-variant": "#43474e",
+                "on-secondary-fixed": "#301400",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#003765",
+                "tertiary-fixed-dim": "#a2c9ff",
+                "tertiary": "#002141",
+                "inverse-primary": "#adc7f7",
+                "on-tertiary": "#ffffff",
+                "on-primary-container": "#86a0cd",
+                "error": "#ba1a1a",
+                "surface-container-highest": "#e0e3e5",
+                "surface-tint": "#455f88",
+                "outline": "#74777f",
+                "surface-dim": "#d7dadc",
+                "primary": "#002045",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#e5e9eb",
+                "primary-container": "#1a365d",
+                "secondary-fixed-dim": "#ffb783",
+                "surface": "#f7fafc",
+                "secondary-container": "#fe9743",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#001c38",
+                "on-secondary-container": "#6b3500",
+                "inverse-surface": "#2d3133",
+                "secondary-fixed": "#ffdcc5",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#703700",
+                "on-tertiary-fixed-variant": "#004881",
+                "background": "#f7fafc",
+                "tertiary-fixed": "#d3e4ff",
+                "primary-fixed-dim": "#adc7f7",
+                "on-secondary": "#ffffff",
+                "on-surface": "#181c1e",
+                "whatsapp": {
+                  "green": "#25D366",
+                  "dark": "#075E54",
+                  "teal": "#128C7E",
+                  "light": "#DCF8C6",
+                  "bg": "#E5DDD5",
+                  "header": "#F0F2F5",
+                  "border": "#E9EDEF"
+                },
+                "netstudy": {
+                  "sidebar": "#1a365d",
+                  "bg": "#f7fafc",
+                  "text": "#2d3748"
+                }
+          },
+          "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+          },
+          "spacing": {
+                "container-max": "1280px",
+                "unit-3": "12px",
+                "unit-1": "4px",
+                "unit-2": "8px",
+                "unit-4": "16px",
+                "base": "4px",
+                "unit-6": "24px",
+                "gutter": "24px",
+                "unit-12": "48px",
+                "unit-8": "32px"
+          },
+          "fontFamily": {
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Montserrat"
+                ],
+                "headline-xl": [
+                        "Montserrat"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "code-sm": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Montserrat"
+                ],
+                "headline-lg": [
+                        "Montserrat"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                sans: ['Montserrat', 'sans-serif']
+          },
+          "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "code-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ]
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">.whatsapp-bg {
+    background-color: #e5ddd5;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBEs3rugqTEOpOF-AohE9_OFR1IQw2CuXpVbV_KDi4YMjKYa50lA80LTvtDmxoUhmDRwwcD_crYHEYuC_MM9XAwthOI5lqdcxjBtTK8qp7md9sbErcfjw5vZKLWwp8UYfdxLaUE14l8XrqldLFsUjVHfnocmgNflIlgpkIt24NsHQAOEwpYqANZjqkPYMzkQbUoNKHQpShB2rgosuoi9itME9MTF747pFLxZIcM7zXCKE26nh4qEXf0);
+    background-repeat: repeat;
+    opacity: 0.9
+    }
+.chat-bubble-received::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #fff;
+    border-left: 10px solid transparent
+    }
+.chat-bubble-sent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #DCF8C6;
+    border-right: 10px solid transparent
+    }
+/* Scrollbar styling for chat area */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px
+    }
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent
+    }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px
+    }
+    
+    .sidebar-item {
+      cursor: pointer;
+    }
+    .sidebar-item.active {
+      background-color: #ffdad6; /* error-container */
+      color: #93000a; /* on-error-container */
+      font-weight: 600;
+    }
+    .sidebar-item:not(.active) {
+      color: #4b5563; /* gray-600 */
+    }
+    .sidebar-item:not(.active):hover {
+      background-color: #f3f4f6; /* gray-100 */
+    }
+    </style>
+</head>
+<body class="bg-netstudy-bg font-sans h-screen overflow-hidden flex flex-col">
+<!-- BEGIN: Top Navigation Bar -->
+<header class="h-14 bg-white border-b border-gray-200 flex items-center justify-between px-4 shrink-0 z-20"><div class="flex items-center gap-4 shrink-0"><a class="flex items-center gap-2 text-primary transition-colors hover:text-whatsapp-green" href="#"><span class="material-symbols-outlined text-xl">arrow_back</span><span class="font-semibold text-sm">Quay lại học tập</span></a></div><div class="flex-1 flex items-center justify-center gap-8"><div class="flex items-center bg-surface-container-highest px-4 py-1.5 rounded-md border border-outline-variant shadow-sm"><span class="material-symbols-outlined text-outline mr-2 text-sm">schedule</span><span class="font-mono text-sm font-semibold text-on-surface tracking-wider">14:30:05 | 24/05/2024</span></div><div class="flex items-center bg-surface-container-highest p-1 rounded-lg border border-outline-variant"><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md bg-whatsapp-green text-white shadow-sm transition-all" data-speed="1X">1X</button><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md text-outline hover:bg-surface-variant transition-all" data-speed="2X">2X</button><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md text-outline hover:bg-surface-variant transition-all" data-speed="3X">3X</button><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md text-outline hover:bg-surface-variant transition-all" data-speed="5X">5X</button></div></div><div class="flex items-center gap-4 text-outline shrink-0"><div class="relative"><button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors relative" id="notification-bell">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-0 right-0 w-3 h-3 bg-error border-2 border-white rounded-full z-10 hidden" id="notification-badge"></span>
+</button>
+<div class="absolute right-0 mt-2 w-72 bg-white border border-outline-variant rounded-lg shadow-xl z-50 overflow-hidden hidden" id="notification-dropdown">
+<div class="p-3 border-b border-surface-container bg-surface-container-low flex justify-between items-center">
+<span class="text-sm font-bold text-on-surface">Thông báo</span>
+<button class="text-[10px] text-primary hover:underline" id="mark-all-read">Đánh dấu tất cả đã đọc</button>
+</div>
+<div class="max-h-80 overflow-y-auto custom-scrollbar transition-all duration-300" id="notification-list-container"><div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer bg-primary-fixed/30" data-read="false"><div class="flex justify-between items-start"><p class="text-xs font-bold text-on-surface">Lô hàng mới đã cập nhật</p><span class="unread-dot w-2 h-2 bg-error rounded-full"></span></div><p class="text-[10px] text-on-surface-variant mt-1">Lịch trình tàu cho lô hàng Hamburg đã được cập nhật trong hệ thống.</p><p class="text-[9px] text-outline mt-1">10 phút trước</p></div><div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer bg-primary-fixed/30" data-read="false"><div class="flex justify-between items-start"><p class="text-xs font-bold text-on-surface">Bài tập thực hành 2 đã hoàn thành</p><span class="unread-dot w-2 h-2 bg-error rounded-full"></span></div><p class="text-[10px] text-on-surface-variant mt-1">Bạn đã hoàn thành xuất sắc phần mô phỏng kịch bản vận chuyển.</p><p class="text-[9px] text-outline mt-1">1 giờ trước</p></div><div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer" data-read="true"><div class="flex justify-between items-start"><p class="text-xs font-medium text-on-surface-variant">Thông báo từ giảng viên</p></div><p class="text-[10px] text-on-surface-variant mt-1">Chào Nam, hãy chú ý kiểm tra kỹ phần phí local charge nhé.</p><p class="text-[9px] text-outline mt-1">Hôm qua</p></div><div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer hidden extra-notification" data-read="true"><div class="flex justify-between items-start"><p class="text-xs font-medium text-on-surface-variant">Hạn nộp chứng từ Bill of Lading</p></div><p class="text-[10px] text-on-surface-variant mt-1">Thời hạn gửi bản nháp B/L cho chuyến tàu Hamburg kết thúc lúc 17:00 hôm nay.</p><p class="text-[9px] text-outline mt-1">2 ngày trước</p></div><div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer hidden extra-notification" data-read="true"><div class="flex justify-between items-start"><p class="text-xs font-medium text-on-surface-variant">Cập nhật hệ thống kho bãi</p></div><p class="text-[10px] text-on-surface-variant mt-1">Cảng Cát Lái thông báo bảo trì cổng điện tử e-Port vào cuối tuần.</p><p class="text-[9px] text-outline mt-1">3 ngày trước</p></div></div>
+<div class="p-2 text-center border-t border-surface-container"><button class="text-[10px] text-primary font-medium hover:underline inline-flex items-center justify-center gap-1" id="toggle-all-notifications" onclick="const container = document.getElementById('notification-list-container'); const extraItems = container.querySelectorAll('.extra-notification'); const isExpanded = container.classList.contains('max-h-none'); if (isExpanded) { container.classList.remove('max-h-none'); container.classList.add('max-h-80'); extraItems.forEach(el =&gt; el.classList.add('hidden')); this.textContent = 'Xem tất cả thông báo'; } else { container.classList.remove('max-h-80'); container.classList.add('max-h-none'); extraItems.forEach(el =&gt; el.classList.remove('hidden')); this.textContent = 'Thu gọn'; }">Xem tất cả thông báo</button></div>
+</div></div></div></header>
+<!-- END: Top Navigation Bar -->
+<div class="flex flex-1 h-[calc(100vh-3.5rem)]">
+<!-- BEGIN: Left Sidebar (NetStudy) -->
+<!-- END: Left Sidebar (NetStudy) -->
+<!-- BEGIN: Main Content Area -->
+<main class="flex-1 flex overflow-hidden relative">
+<!-- Background Green Accent -->
+<!-- WhatsApp App Container -->
+<div class="flex-1 flex bg-white shadow-lg rounded-sm overflow-hidden z-10"><div class="flex h-full w-full bg-white">
+<!-- Gmail Sidebar -->
+<aside class="w-64 flex flex-col border-r border-gray-200 shrink-0">
+<div class="p-4">
+<button class="flex items-center gap-3 px-6 py-4 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-gray-700 font-medium" onclick="document.getElementById('compose-window').classList.remove('hidden')">
+<span class="material-symbols-outlined text-2xl text-error">edit</span>
+<span class="">Soạn thư</span>
+</button>
+</div>
+<nav class="flex-1 overflow-y-auto py-2" id="gmail-sidebar">
+<div class="sidebar-item active flex items-center gap-4 px-6 py-2 rounded-r-full mr-2" data-filter="inbox">
+<span class="material-symbols-outlined">inbox</span>
+<span class="font-semibold flex-1">Hộp thư đến</span>
+<span class="text-xs font-bold">12</span>
+</div>
+<div class="sidebar-item flex items-center gap-4 px-6 py-2 rounded-r-full mr-2" data-filter="starred">
+<span class="material-symbols-outlined">star</span>
+<span class="">Có gắn dấu sao</span>
+</div>
+<div class="sidebar-item flex items-center gap-4 px-6 py-2 rounded-r-full mr-2" data-filter="snoozed">
+<span class="material-symbols-outlined">schedule</span>
+<span class="">Đã tạm ẩn</span>
+</div>
+<div class="sidebar-item flex items-center gap-4 px-6 py-2 rounded-r-full mr-2" data-filter="sent">
+<span class="material-symbols-outlined">send</span>
+<span class="">Đã gửi</span>
+</div>
+<div class="sidebar-item flex items-center gap-4 px-6 py-2 rounded-r-full mr-2" data-filter="drafts">
+<span class="material-symbols-outlined">description</span>
+<span class="">Thư nháp</span>
+</div>
+</nav>
+</aside>
+<!-- Gmail Inbox Area -->
+<div class="flex-1 flex flex-col overflow-hidden relative">
+<!-- Email List View -->
+<div class="flex flex-col h-full absolute inset-0 bg-white z-10 transition-opacity duration-300" id="email-list-view">
+<!-- Inbox Toolbar -->
+<div class="h-12 border-b border-gray-200 flex items-center px-4 justify-between shrink-0">
+<div class="flex items-center gap-4 text-gray-500">
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1 rounded-full">check_box_outline_blank</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1 rounded-full">refresh</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1 rounded-full">more_vert</span>
+</div>
+<div class="flex items-center gap-4 text-gray-500 text-xs">
+<span class="">1-50 trong 124</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1 rounded-full">chevron_left</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1 rounded-full">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Email List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- Email Item 1 -->
+<div class="email-row flex items-center px-4 py-2 border-b border-gray-100 hover:shadow-md cursor-pointer group bg-white" data-email-id="1">
+<div class="flex items-center gap-3 shrink-0 mr-4" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-gray-300 hover:text-gray-600">check_box_outline_blank</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-gray-600">star_border</span>
+</div>
+<div class="w-48 font-bold text-sm truncate text-gray-800">Hapag-Lloyd Logistics</div>
+<div class="flex-1 flex items-baseline gap-2 overflow-hidden">
+<span class="font-bold text-sm truncate text-gray-800">Xác nhận Đặt chỗ - HL12345678</span>
+<span class="text-sm text-gray-500 truncate">- Chào Nam, chúng tôi xác nhận việc đặt chỗ cho lô hàng Hamburg của bạn...</span>
+</div>
+<div class="text-xs font-bold text-gray-700 ml-4 shrink-0">10:45 AM</div>
+</div>
+<!-- Email Item 2 -->
+<div class="email-row flex items-center px-4 py-2 border-b border-gray-100 hover:shadow-md cursor-pointer group bg-white" data-email-id="2">
+<div class="flex items-center gap-3 shrink-0 mr-4" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-gray-300 hover:text-gray-600">check_box_outline_blank</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-gray-600">star_border</span>
+</div>
+<div class="w-48 font-bold text-sm truncate text-gray-800">Maersk Line</div>
+<div class="flex-1 flex items-baseline gap-2 overflow-hidden">
+<span class="font-bold text-sm truncate text-gray-800">Chứng từ Vận chuyển: Bill of Lading</span>
+<span class="text-sm text-gray-500 truncate">- Vui lòng kiểm tra bản nháp vận đơn đính kèm cho chuyến tàu tuần tới...</span>
+</div>
+<div class="text-xs font-bold text-gray-700 ml-4 shrink-0">09:12 AM</div>
+</div>
+<!-- Email Item 3 -->
+<div class="email-row flex items-center px-4 py-2 border-b border-gray-100 hover:shadow-md cursor-pointer group bg-gray-50" data-email-id="3">
+<div class="flex items-center gap-3 shrink-0 mr-4" onclick="event.stopPropagation()">
+<span class="material-symbols-outlined text-gray-300 hover:text-gray-600">check_box_outline_blank</span>
+<span class="material-symbols-outlined text-gray-300 hover:text-gray-600">star_border</span>
+</div>
+<div class="w-48 text-sm truncate text-gray-700">Cảng Cát Lái</div>
+<div class="flex-1 flex items-baseline gap-2 overflow-hidden">
+<span class="text-sm truncate text-gray-700">Thông báo phí Local Charge 2024</span>
+<span class="text-sm text-gray-500 truncate">- Cập nhật biểu phí dịch vụ tại cảng áp dụng từ tháng 6 năm 2024...</span>
+</div>
+<div class="text-xs text-gray-500 ml-4 shrink-0">Hôm qua</div>
+</div>
+</div>
+</div>
+<!-- Email Detail View -->
+<div class="flex flex-col h-full absolute inset-0 bg-white z-0 opacity-0 pointer-events-none transition-opacity duration-300" id="email-detail-view">
+<!-- Detail Toolbar -->
+<div class="h-12 border-b border-gray-200 flex items-center px-4 justify-between shrink-0">
+<div class="flex items-center gap-4 text-gray-500">
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full" id="back-to-inbox" title="Trở về hộp thư đến">arrow_back</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">archive</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">report</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">delete</span>
+<div class="w-px h-5 bg-gray-300 mx-1"></div>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">mark_email_unread</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">schedule</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">add_task</span>
+</div>
+<div class="flex items-center gap-2 text-gray-500">
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">print</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-gray-100 p-1.5 rounded-full">open_in_new</span>
+</div>
+</div>
+<!-- Detail Content -->
+<div class="flex-1 overflow-y-auto p-8 custom-scrollbar">
+<div class="max-w-4xl mx-auto">
+<div class="flex justify-between items-start mb-6">
+<h2 class="text-2xl font-normal text-gray-800" id="detail-subject">Xác nhận Đặt chỗ - HL12345678</h2>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 p-1 cursor-pointer hover:bg-gray-100 rounded">print</span>
+<span class="material-symbols-outlined text-gray-400 p-1 cursor-pointer hover:bg-gray-100 rounded">open_in_new</span>
+</div>
+</div>
+<div class="flex items-start justify-between mb-8">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg" id="detail-avatar">
+H
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-sm text-gray-800" id="detail-sender-name">Hapag-Lloyd Logistics</span>
+<span class="text-xs text-gray-500" id="detail-sender-email">&lt;booking@hapag-lloyd.com&gt;</span>
+</div>
+<div class="flex items-center gap-1 text-xs text-gray-500 mt-1 cursor-pointer hover:underline">
+<span class="">tới tôi</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-xs text-gray-500">
+<span id="detail-time" class="">10:45 AM (2 giờ trước)</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-gray-600">star_border</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-gray-600">reply</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-gray-600">more_vert</span>
+</div>
+</div>
+</div>
+<div class="text-gray-800 text-sm leading-relaxed" id="detail-body">
+<p class="mb-4">Kính gửi Quý Khách,</p>
+<p class="mb-4">Chúng tôi xin xác nhận việc đặt chỗ cho lô hàng của quý khách với các thông tin chi tiết như sau:</p>
+<ul class="list-disc pl-5 mb-4 space-y-2">
+<li class=""><strong>Số Booking:</strong> HL12345678</li>
+<li class=""><strong>Tàu/Chuyến:</strong> HAPAG LLOYD EXPRESS V.024E</li>
+<li class=""><strong>Cảng Xếp Hàng (POL):</strong> Cát Lái, Hồ Chí Minh</li>
+<li class=""><strong>Cảng Dỡ Hàng (POD):</strong> Hamburg, Germany</li>
+<li class=""><strong>Ngày Tàu Chạy Dự Kiến (ETD):</strong> 30/05/2024</li>
+<li class=""><strong>Loại Container:</strong> 1 x 40'HC</li>
+</ul>
+<p class="mb-4">Vui lòng kiểm tra kỹ các thông tin trên. Nếu có bất kỳ sai sót nào, xin vui lòng phản hồi lại email này trước 17:00 ngày 26/05/2024.</p>
+<p class="mb-4">Để lấy vỏ container, quý khách vui lòng xuất trình booking confirmation này tại bãi lấy rỗng (Depot) được chỉ định.</p>
+<p class="mb-2">Trân trọng,</p>
+<p class="font-bold">Đội ngũ Dịch vụ Khách hàng</p>
+<p class="text-gray-500 text-xs">Hapag-Lloyd Vietnam</p>
+</div>
+<!-- Attachment (Optional) -->
+<div class="mt-8 border border-gray-200 rounded-lg p-3 w-64 flex items-center gap-3 cursor-pointer hover:bg-gray-50" id="detail-attachment">
+<div class="bg-red-50 p-2 rounded text-red-500">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-medium text-gray-700 truncate">Booking_HL12345678.pdf</p>
+<p class="text-xs text-gray-500">142 KB</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-8 flex gap-3">
+<button class="flex items-center gap-2 px-6 py-2 border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-[18px]">reply</span>
+Trả lời
+</button>
+<button class="flex items-center gap-2 px-6 py-2 border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-[18px]">forward</span>
+Chuyển tiếp
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="absolute bottom-0 right-4 w-[500px] bg-white shadow-2xl rounded-t-xl border border-gray-200 z-50 flex flex-col hidden" id="compose-window">
+<div class="bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-t-xl flex justify-between items-center cursor-pointer">
+<span class="text-sm font-medium">Thư mới</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm cursor-pointer hover:bg-white/10 p-1 rounded">minimize</span>
+<span class="material-symbols-outlined text-sm cursor-pointer hover:bg-white/10 p-1 rounded">open_in_full</span>
+<span class="material-symbols-outlined text-sm cursor-pointer hover:bg-white/10 p-1 rounded" onclick="document.getElementById('compose-window').classList.add('hidden'); event.stopPropagation();">close</span>
+</div>
+</div>
+<div class="flex flex-col p-2">
+<div class="border-b border-gray-100 py-1 px-2 flex items-center">
+<div class="text-sm text-gray-500 w-10">Tới</div>
+<input class="flex-1 border-none focus:ring-0 text-sm py-1" type="text">
+<div class="flex gap-2 text-xs text-gray-600 ml-2">
+<span class="cursor-pointer hover:underline" id="toggle-cc">Cc</span>
+<span class="cursor-pointer hover:underline" id="toggle-bcc">Bcc</span>
+</div>
+</div>
+<div class="border-b border-gray-100 py-1 px-2 flex items-center hidden" id="cc-field">
+<div class="text-sm text-gray-500 w-10">Cc</div>
+<input class="flex-1 border-none focus:ring-0 text-sm py-1" type="text">
+</div>
+<div class="border-b border-gray-100 py-1 px-2 flex items-center hidden" id="bcc-field">
+<div class="text-sm text-gray-500 w-10">Bcc</div>
+<input class="flex-1 border-none focus:ring-0 text-sm py-1" type="text">
+</div>
+<div class="border-b border-gray-100 py-1 px-2">
+<input class="w-full border-none focus:ring-0 text-sm py-1" placeholder="Chủ đề" type="text">
+</div>
+<textarea class="w-full h-64 border-none focus:ring-0 text-sm p-2 resize-none" placeholder=""></textarea>
+</div>
+<div class="p-3 border-t border-gray-100 flex items-center justify-between bg-gray-50/50 rounded-b-xl">
+<div class="flex items-center gap-4">
+<button class="bg-blue-600 text-white px-6 py-1.5 rounded-full text-sm font-medium hover:bg-blue-700 hover:shadow-md transition-all flex items-center gap-2" onclick="document.getElementById('compose-window').classList.add('hidden')">
+Gửi
+<span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">format_color_text</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">attach_file</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">link</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">mood</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">add_to_drive</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">insert_photo</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded">more_vert</span>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer text-xl hover:bg-gray-100 p-1.5 rounded" onclick="document.getElementById('compose-window').classList.add('hidden')">delete</span>
+</div>
+</div>
+</div></main>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Right Communication Panel -->
+<aside class="bg-white border-l border-gray-200 flex flex-col shrink-0 z-10 transition-all duration-300 overflow-hidden w-48">
+<div class="p-4 border-b border-gray-100 flex items-center justify-center"><button class="text-gray-500 hover:text-gray-700 transition-all duration-300 flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100" id="sidebar-toggle" onclick="const aside = this.closest('aside'); const isExpanding = aside.classList.contains('w-16'); aside.classList.toggle('w-48', isExpanding); aside.classList.toggle('w-16', !isExpanding); const icon = this.querySelector('.material-symbols-outlined'); icon.textContent = isExpanding ? 'chevron_right' : 'chevron_left'; aside.querySelectorAll('button &gt; span:last-child').forEach(el =&gt; { el.classList.toggle('hidden', !isExpanding); });"><span class="material-symbols-outlined">chevron_right</span></button></div>
+<div class="flex-1 py-4 flex flex-col gap-2"><button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4"><div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0"><span class="material-symbols-outlined text-gray-500 text-xl">info</span></div><span class="text-gray-700 group-hover:text-gray-900">Thông tin</span></button>
+<button class="flex items-center px-4 py-3 rounded-l-full ml-2 shadow-sm gap-4 justify-center bg-whatsapp-green text-white"><div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0 relative"><img alt="Gmail" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhq2PipY3MzOMZU_K1RTJcZz6wl31Kog1esDE3uaW9W1wlCdqIK9gbTiQGTSxkaJ1WmnlMKNhAS3x9gRm0ppK0lsNUAyucWEkQd2OGNp3JZT3dzTShwlXoDd4BFD07AOBI81X4rMck9Jp47cnE1OnJQOsyW_VDtylEiW_sHMHJud_WE8NP2kxSrd_S3Ysx-k0Ow4sg43JwaJ4tObJOBYf2P5aFCMixMsYtWKEQeSY0-KGvjc7rn8HKph0UXXThPypnLSnYdCWFg93c9g"><span class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-[10px] font-bold flex items-center justify-center rounded-full border-2 border-white z-20">1</span></div><span class="font-medium">Gmail</span></button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0"><img alt="WeChat" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdt7x0r7SEVwiatws7lIi_9w918CHnvK6sL2t5n8htj4_8Kv4_FYUi5lShUKlq2skzCFD7woSR7E51UkDwIDyB-YkZwIO8tfgrwQ6kKycr8SWrwUfWcbHaKF9ULLrdA4-sgZaRj8wIDAFvTAp_39VB3oDRrlrqHGgt3XGUOdwA-kc501fBOleO7Oan1ELXbWecyuPAhZIacZCP_Zl4knq-IDcuEH9L_fm3HT2Kot6pinyBg65xCVrEAQJXXxpA-S0XZl141WYh5jzXbA"></div>
+<span class="text-gray-700 group-hover:text-gray-900">WeChat</span>
+</button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0"><img alt="WhatsApp" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmw_Zp2MDuXowHmlLTFLeuRil3SYfu3LkjtwUJm02ikkPksrzuR5vK7FxFPjaOrgBX79kRhdvS5R56InyfiJ7I3SB6a-t9qLR-Pa0t-iKF0CkrnAJuZatGZfrfAxk8fnH_1L2GR12zdeCe-m4pVy0x6AG4g5ZW7UV_rT5lQ-bPxXjF7SejDmZgp0kC36sUO5i8HJOgrZpNA0Wx6qDMdPHxTTJERdAjBoyc3LbSc8fpoV5QkG1wdDFVjxdYF0NmEp7lnw"></div>
+<span class="font-medium">WhatsApp</span>
+</button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4"><div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0"><img alt="Zalo" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiWWxwS0-FdytXhqSzyGOAq2h9rHsQ51HxJBJzGMrUNzLxS1TE9PbSeFQ3g99JEeq8Zwk0YDrxxZN1nl1HmUzVMcvUCaHE7YKW4HJLX5XhuKuJbt8gEYe7wm-zWLFj92524KOhQtYSf_L22llbluTzhFhDws1rhOf8ENkkoYn1-jxZ7C4rretXJ8WUfGD-5sEb2TBG8Q1CBL0bA3OsYUQnwTdwP20WTINie6sGBWLmYOcXDZaztfJ_KhosRdkTaB2yZw"></div><span class="text-gray-700 group-hover:text-gray-900">Zalo</span></button>
+</div>
+</aside>
+<!-- END: Right Communication Panel -->
+</div>
+<!-- Speed Confirmation Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center hidden" id="speed-modal">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+<div class="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative z-10 flex flex-col gap-4">
+<h3 class="text-lg font-bold text-gray-900 border-b pb-3">Xác nhận thay đổi tốc độ</h3>
+<p class="text-gray-600 text-sm leading-relaxed" id="modal-speed-text">Bạn đang chuẩn bị thay đổi tốc độ mô phỏng sang 2X. Thời gian trong kịch bản sẽ trôi nhanh hơn. Bạn có muốn tiếp tục?</p>
+<div class="flex justify-end gap-3 mt-2">
+<button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors" id="cancel-speed">Hủy</button>
+<button class="px-4 py-2 bg-whatsapp-green text-white rounded-md text-sm font-medium hover:bg-[#1da851] transition-colors shadow-sm" id="confirm-speed">Đồng ý</button>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const speedButtons = document.querySelectorAll('.speed-btn');
+        const modal = document.getElementById('speed-modal');
+        const confirmBtn = document.getElementById('confirm-speed');
+        const cancelBtn = document.getElementById('cancel-speed');
+        const modalText = document.getElementById('modal-speed-text');
+        let pendingSpeedButton = null;
+
+        speedButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                pendingSpeedButton = e.target;
+                const speed = pendingSpeedButton.dataset.speed;
+                modalText.textContent = `Bạn đang chuẩn bị thay đổi tốc độ mô phỏng sang ${speed}. Thời gian trong kịch bản sẽ trôi nhanh hơn. Bạn có muốn tiếp tục?`;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            pendingSpeedButton = null;
+        });
+
+        confirmBtn.addEventListener('click', () => {
+            if (pendingSpeedButton) {
+                // Reset all buttons
+                speedButtons.forEach(btn => {
+                    btn.classList.remove('bg-whatsapp-green', 'text-white', 'shadow-sm');
+                    btn.classList.add('text-outline', 'hover:bg-surface-variant');
+                });
+                // Set active button
+                pendingSpeedButton.classList.remove('text-outline', 'hover:bg-surface-variant');
+                pendingSpeedButton.classList.add('bg-whatsapp-green', 'text-white', 'shadow-sm');
+            }
+            modal.classList.add('hidden');
+            pendingSpeedButton = null;
+        });
+    });
+</script>
+<script>
+  (function() {
+    const bell = document.getElementById('notification-bell');
+    const dropdown = document.getElementById('notification-dropdown');
+    const badge = document.getElementById('notification-badge');
+
+    if (bell && dropdown) {
+      bell.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        if (badge) badge.classList.add('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && !bell.contains(e.target)) {
+          dropdown.classList.add('hidden');
+        }
+      });
+    }
+  })();
+</script><script>
+(function() {
+  const bell = document.getElementById('notification-bell');
+  const dropdown = document.getElementById('notification-dropdown');
+  const badge = document.getElementById('notification-badge');
+  const items = document.querySelectorAll('.notification-item');
+
+  const updateBellBadge = () => {
+    const unreadCount = document.querySelectorAll('.notification-item[data-read="false"]').length;
+    if (unreadCount === 0 && badge) {
+      badge.classList.add('hidden');
+    } else if (badge) {
+      badge.classList.remove('hidden');
+    }
+  };
+
+  const markAsRead = (item) => {
+    if (item.getAttribute('data-read') === 'false') {
+      item.setAttribute('data-read', 'true');
+      item.classList.remove('bg-primary-fixed/30');
+      const title = item.querySelector('p.font-bold');
+      if (title) {
+        title.classList.remove('font-bold', 'text-on-surface');
+        title.classList.add('font-medium', 'text-on-surface-variant');
+      }
+      const dot = item.querySelector('.unread-dot');
+      if (dot) dot.remove();
+      updateBellBadge();
+    }
+  };
+
+  if (bell && dropdown) {
+    items.forEach(item => {
+      item.addEventListener('click', () => markAsRead(item));
+    });
+
+    document.getElementById('mark-all-read')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      items.forEach(item => markAsRead(item));
+    });
+  }
+})();
+</script>
+<script>
+    // Compose Window Logic
+    document.getElementById('toggle-cc')?.addEventListener('click', () => {
+        const ccField = document.getElementById('cc-field');
+        ccField.classList.toggle('hidden');
+    });
+    
+    document.getElementById('toggle-bcc')?.addEventListener('click', () => {
+        const bccField = document.getElementById('bcc-field');
+        bccField.classList.toggle('hidden');
+    });
+
+    // Gmail Sidebar Active States
+    const sidebarItems = document.querySelectorAll('.sidebar-item');
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', function() {
+            sidebarItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Email Data
+    const emailData = {
+        1: {
+            subject: 'Xác nhận Đặt chỗ - HL12345678',
+            senderName: 'Hapag-Lloyd Logistics',
+            senderEmail: '<booking@hapag-lloyd.com>',
+            time: '10:45 AM (2 giờ trước)',
+            avatar: 'H',
+            avatarBg: 'bg-blue-100',
+            avatarColor: 'text-blue-600',
+            body: `
+                <p class="mb-4">Kính gửi Quý Khách,</p>
+                <p class="mb-4">Chúng tôi xin xác nhận việc đặt chỗ cho lô hàng của quý khách với các thông tin chi tiết như sau:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li><strong>Số Booking:</strong> HL12345678</li>
+                    <li><strong>Tàu/Chuyến:</strong> HAPAG LLOYD EXPRESS V.024E</li>
+                    <li><strong>Cảng Xếp Hàng (POL):</strong> Cát Lái, Hồ Chí Minh</li>
+                    <li><strong>Cảng Dỡ Hàng (POD):</strong> Hamburg, Germany</li>
+                    <li><strong>Ngày Tàu Chạy Dự Kiến (ETD):</strong> 30/05/2024</li>
+                    <li><strong>Loại Container:</strong> 1 x 40'HC</li>
+                </ul>
+                <p class="mb-4">Vui lòng kiểm tra kỹ các thông tin trên. Nếu có bất kỳ sai sót nào, xin vui lòng phản hồi lại email này trước 17:00 ngày 26/05/2024.</p>
+                <p class="mb-4">Để lấy vỏ container, quý khách vui lòng xuất trình booking confirmation này tại bãi lấy rỗng (Depot) được chỉ định.</p>
+                <p class="mb-2">Trân trọng,</p>
+                <p class="font-bold">Đội ngũ Dịch vụ Khách hàng</p>
+                <p class="text-gray-500 text-xs">Hapag-Lloyd Vietnam</p>
+            `,
+            hasAttachment: true,
+            attachmentName: 'Booking_HL12345678.pdf',
+            attachmentSize: '142 KB'
+        },
+        2: {
+            subject: 'Chứng từ Vận chuyển: Bill of Lading Nháp',
+            senderName: 'Maersk Line',
+            senderEmail: '<docs@maersk.com>',
+            time: '09:12 AM (4 giờ trước)',
+            avatar: 'M',
+            avatarBg: 'bg-cyan-100',
+            avatarColor: 'text-cyan-600',
+            body: `
+                <p class="mb-4">Chào Nam,</p>
+                <p class="mb-4">Vui lòng kiểm tra bản nháp vận đơn (Draft Bill of Lading) đính kèm cho chuyến tàu tuần tới.</p>
+                <p class="mb-4">Xin lưu ý xác nhận hoặc cung cấp các chỉnh sửa cần thiết chậm nhất vào 12:00 trưa mai để chúng tôi kịp thời phát hành vận đơn gốc.</p>
+                <p class="mb-4">Thông tin chi tiết chuyến tàu:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li><strong>Số BL:</strong> MSK987654321</li>
+                    <li><strong>Tên tàu:</strong> MAERSK MC-KINNEY MOLLER</li>
+                </ul>
+                <p class="mb-2">Trân trọng,</p>
+                <p class="font-bold">Bộ phận Chứng từ</p>
+                <p class="text-gray-500 text-xs">Maersk Line Vietnam</p>
+            `,
+            hasAttachment: true,
+            attachmentName: 'Draft_BL_MSK987654321.pdf',
+            attachmentSize: '256 KB'
+        },
+        3: {
+            subject: 'Thông báo phí Local Charge 2024',
+            senderName: 'Cảng Cát Lái',
+            senderEmail: '<info@saigonnewport.com.vn>',
+            time: 'Hôm qua, 15:30',
+            avatar: 'C',
+            avatarBg: 'bg-green-100',
+            avatarColor: 'text-green-600',
+            body: `
+                <p class="mb-4">Kính gửi Quý Khách hàng,</p>
+                <p class="mb-4">Chúng tôi xin thông báo về việc cập nhật biểu phí dịch vụ tại cảng (Local Charges) áp dụng từ tháng 6 năm 2024.</p>
+                <p class="mb-4">Một số thay đổi chính bao gồm:</p>
+                <ul class="list-disc pl-5 mb-4 space-y-2">
+                    <li>Phí nâng hạ (THC) tăng 5% cho container 40 feet.</li>
+                    <li>Phí lưu bãi (DEM) miễn phí 5 ngày đầu, từ ngày thứ 6 áp dụng mức phí mới.</li>
+                </ul>
+                <p class="mb-4">Vui lòng xem tài liệu đính kèm để biết thêm chi tiết về toàn bộ biểu phí mới.</p>
+                <p class="mb-2">Trân trọng,</p>
+                <p class="font-bold">Ban Quản lý Cảng</p>
+                <p class="text-gray-500 text-xs">Tân Cảng Sài Gòn</p>
+            `,
+            hasAttachment: false
+        }
+    };
+
+    // Navigation Logic
+    const listView = document.getElementById('email-list-view');
+    const detailView = document.getElementById('email-detail-view');
+    const emailRows = document.querySelectorAll('.email-row');
+    const backBtn = document.getElementById('back-to-inbox');
+
+    emailRows.forEach(row => {
+        row.addEventListener('click', function() {
+            const id = this.getAttribute('data-email-id');
+            const data = emailData[id];
+            
+            if(data) {
+                // Populate Detail View
+                document.getElementById('detail-subject').textContent = data.subject;
+                document.getElementById('detail-sender-name').textContent = data.senderName;
+                document.getElementById('detail-sender-email').textContent = data.senderEmail;
+                document.getElementById('detail-time').textContent = data.time;
+                document.getElementById('detail-body').innerHTML = data.body;
+                
+                const avatar = document.getElementById('detail-avatar');
+                avatar.textContent = data.avatar;
+                avatar.className = `w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg ${data.avatarBg} ${data.avatarColor}`;
+                
+                const attachmentEl = document.getElementById('detail-attachment');
+                if(data.hasAttachment) {
+                    attachmentEl.classList.remove('hidden');
+                    attachmentEl.classList.add('flex');
+                    attachmentEl.querySelector('p.font-medium').textContent = data.attachmentName;
+                    attachmentEl.querySelector('p.text-xs').textContent = data.attachmentSize;
+                } else {
+                    attachmentEl.classList.add('hidden');
+                    attachmentEl.classList.remove('flex');
+                }
+
+                // Switch Views
+                listView.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                listView.classList.remove('z-10');
+                
+                detailView.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                detailView.classList.add('z-10');
+            }
+        });
+    });
+
+    backBtn.addEventListener('click', () => {
+        detailView.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+        detailView.classList.remove('z-10');
+        
+        listView.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+        listView.classList.add('z-10');
+    });
+
+</script>
+
+
+
+
+
+
+</body></html>

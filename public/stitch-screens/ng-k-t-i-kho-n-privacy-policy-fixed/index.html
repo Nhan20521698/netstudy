@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NetStudy - Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dce5d9",
+                        "on-background": "#161d16",
+                        "secondary-fixed": "#dae2fd",
+                        "inverse-surface": "#2a322a",
+                        "surface-container": "#e8f0e4",
+                        "primary-fixed": "#6bff8f",
+                        "primary-container": "#22c55e",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "surface-container-low": "#edf6ea",
+                        "inverse-on-surface": "#ebf3e7",
+                        "on-secondary-fixed": "#131b2e",
+                        "vibrant-green": "#22c55e",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#004b1e",
+                        "border-subtle": "#e2e8f0",
+                        "inverse-primary": "#4ae176",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-container": "#ff8b7c",
+                        "on-primary-fixed": "#002109",
+                        "surface-dim": "#d4ddd0",
+                        "outline": "#6d7b6c",
+                        "on-tertiary-fixed": "#410001",
+                        "outline-variant": "#bccbb9",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-surface": "#161d16",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#005321",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3d4a3d",
+                        "secondary-container": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "maritime-navy": "#0f172a",
+                        "secondary": "#565e74",
+                        "surface-bright": "#f3fcef",
+                        "surface-bg": "#f8fafc",
+                        "primary-fixed-dim": "#4ae176",
+                        "on-tertiary-container": "#76231b",
+                        "primary": "#006e2f",
+                        "on-primary": "#ffffff",
+                        "background": "#f3fcef",
+                        "surface-tint": "#006e2f",
+                        "surface": "#f3fcef",
+                        "surface-container-highest": "#dce5d9",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e2ebde",
+                        "tertiary": "#9e4036",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb4a9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "learning-max": "800px",
+                        "base": "4px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-sm": ["Inter"],
+                        "headline-xl-mobile": ["Montserrat"],
+                        "headline-xl": ["Montserrat"],
+                        "code-sm": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "code-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface-bg text-on-surface font-body-md h-screen w-full flex overflow-hidden">
+<!-- Left Panel: Form -->
+<div class="w-full md:w-1/2 h-full flex flex-col justify-center px-gutter md:px-12 lg:px-24 bg-white relative z-10 border-r border-border-subtle shadow-[2px_0px_10px_rgba(15,23,42,0.02)]">
+<div class="w-full max-w-md mx-auto">
+<!-- Header -->
+<div class="mb-10 flex flex-col items-start gap-4">
+<div class="w-16 h-16 rounded-xl bg-surface-container-low flex items-center justify-center border border-border-subtle shadow-[0px_2px_4px_rgba(15,23,42,0.05)]">
+<img alt="NetStudy Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgnH55x5UM2bt4rMh0hjC4MJOyIp_wgQjjpC-BlxTQRiNRL_28SQmKohQuPdtuPB98VhPq59h7bgH0sskaVMJyftsSOIfR-Za-V6wFr0mAVRv8LObxwaQKkXZGl_ezZPS2babrXPulr5OOy8VmpiyXqCoFNzeHeFBrLzLjLUXz83nTUhuSUve0mF3bCayNbLq0KzVn73VkC-BZF56Od0AAuhOhPJekPB5XyENGmwxvKj3E4mpultmUppro4o0s3nqoVg">
+</div>
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-maritime-navy mb-2">Create your account</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Join NetStudy for maritime education.</p>
+</div>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-6" method="POST">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-maritime-navy mb-2" for="fullname">Full Name</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-subtle rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:ring-2 focus:ring-vibrant-green focus:border-vibrant-green transition-all shadow-sm placeholder:text-on-surface-variant/50" id="fullname" name="fullname" placeholder="John Doe" required="" type="text">
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-maritime-navy mb-2" for="email">Email Address</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-subtle rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:ring-2 focus:ring-vibrant-green focus:border-vibrant-green transition-all shadow-sm placeholder:text-on-surface-variant/50" id="email" name="email" placeholder="john@example.com" required="" type="email">
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-maritime-navy mb-2" for="password">Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-subtle rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:ring-2 focus:ring-vibrant-green focus:border-vibrant-green transition-all shadow-sm placeholder:text-on-surface-variant/50" id="password" name="password" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-maritime-navy mb-2" for="confirm_password">Confirm Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-on-surface-variant pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 border border-border-subtle rounded-lg bg-surface-container-lowest text-on-surface font-body-md focus:ring-2 focus:ring-vibrant-green focus:border-vibrant-green transition-all shadow-sm placeholder:text-on-surface-variant/50" id="confirm_password" name="confirm_password" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Terms & Conditions -->
+<div class="flex items-start">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-vibrant-green bg-surface-container-lowest border-border-subtle rounded focus:ring-vibrant-green focus:ring-2" id="terms" name="terms" required="" type="checkbox">
+</div>
+<div class="ml-3 font-body-sm text-body-sm">
+<label class="text-on-surface-variant" for="terms">I agree to the <a class="font-label-md text-vibrant-green hover:underline" href="#" onclick="openTosModal(event)">Terms of Service</a> and <a class="font-label-md text-vibrant-green hover:underline" href="#" onclick="openPrivacyModal(event)">Privacy Policy</a>.</label>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm font-label-md text-label-md text-white bg-vibrant-green hover:bg-primary-fixed-dim focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vibrant-green transition-colors active:scale-[0.98]" type="submit">
+                    Sign Up
+                </button>
+</form>
+<!-- Login Link -->
+<div class="mt-8 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Already have an account? 
+                    <a class="font-label-md text-label-md text-maritime-navy hover:text-vibrant-green transition-colors ml-1" href="#">Log in</a>
+</p>
+</div>
+</div>
+</div>
+<!-- Right Panel: Visual Context (Hidden on mobile) -->
+<div class="hidden md:flex md:w-1/2 h-full bg-surface-container-low relative overflow-hidden flex-col items-center justify-center p-12">
+<!-- Abstract Maritime Graphic / Image Placeholder -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-60 mix-blend-multiply" data-alt="A sophisticated, high-contrast maritime logistics scene in a light-mode aesthetic. An expansive, highly organized modern port terminal is viewed from an isometric high angle. Rows of shipping containers in crisp whites and deep navies are stacked perfectly. Subtle vibrant green accents highlight active cranes. The scene is rendered with clean lines, soft volumetric lighting, and a professional, data-dense atmosphere reflecting global trade." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvp8V2rpTdLhDkUxjU2KcrhHn9Jvjp5mEqTcN0uKJgTdvkQVZAccuph_r5c8_dqCjiXW6KcIDXR-ubiEnuf7D8FoJ8aj9CQPen8bLKS53cnejoxJh6v9-5NT1B17tX-5YMabcZ5KSrwQg5WYdp3qCdnaaPZLDPVWVtj8OnymHRUeXfx4hTeQaM20rUHf63sHNSICTJOpNAn0CUpLzyXFsqKqmLGzJI5PtJsx3WGMWmEzRkyuaIdr51')"></div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-br from-surface-bg/80 to-surface-container/90"></div>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-10 w-full max-w-lg">
+<!-- Glassmorphism Card -->
+<div class="bg-white/80 backdrop-blur-xl border border-white/50 rounded-2xl p-8 shadow-[0px_10px_25px_rgba(15,23,42,0.08)]">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-vibrant-green text-[32px] font-variation-settings: 'FILL' 1;">directions_boat</span>
+<h2 class="font-headline-md text-headline-md text-maritime-navy">Global Maritime Standards</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-maritime-navy text-[16px]">school</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-maritime-navy mb-1">Advanced Simulation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Access industry-leading logistics scenarios and structural analyses in real-time environments.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-maritime-navy text-[16px]">verified</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-maritime-navy mb-1">Professional Certification</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Track your progress and validate your expertise with recognized institutional metrics.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="mt-8 flex justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-vibrant-green"></div>
+<div class="w-2 h-2 rounded-full bg-border-subtle"></div>
+<div class="w-2 h-2 rounded-full bg-border-subtle"></div>
+</div>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" id="tos-modal">
+<div class="absolute inset-0 bg-maritime-navy/60 backdrop-blur-sm" onclick="closeTosModal()"></div>
+<div class="relative bg-white w-full max-w-2xl max-h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+<div class="flex items-center justify-between p-6 border-b border-border-subtle">
+<h2 class="font-headline-md text-headline-md text-vibrant-green">ĐIỀU KHOẢN DỊCH VỤ</h2>
+<button class="text-on-surface-variant hover:text-maritime-navy transition-colors" onclick="closeTosModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 font-body-md text-on-surface space-y-4">
+<p class="font-label-md text-on-surface-variant">Cập nhật lần cuối: 31/08/2026</p>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">1. Chấp nhận Điều khoản</h3>
+<p>Bằng cách truy cập và sử dụng NetStudy, bạn đồng ý tuân thủ các điều khoản và điều kiện này.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">2. Quyền sở hữu trí tuệ</h3>
+<p>Tất cả nội dung, tài liệu đào tạo và mô phỏng trên nền tảng này thuộc sở hữu độc quyền của NetStudy hoặc các đối tác cấp phép.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">3. Tài khoản người dùng</h3>
+<p>Bạn có trách nhiệm bảo mật thông tin tài khoản và mật khẩu của mình.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">4. Sử dụng dịch vụ</h3>
+<p>Dịch vụ chỉ được sử dụng cho mục đích giáo dục và đào tạo hàng hải chuyên nghiệp.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">5. Bảo mật dữ liệu</h3>
+<p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn theo Chính sách Bảo mật của chúng tôi.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">6. Giới hạn trách nhiệm</h3>
+<p>NetStudy không chịu trách nhiệm cho bất kỳ thiệt hại gián tiếp nào phát sinh từ việc sử dụng nền tảng.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">7. Thay đổi điều khoản</h3>
+<p>Chúng tôi có quyền cập nhật các điều khoản này bất kỳ lúc nào mà không cần thông báo trước.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">8. Chấm dứt</h3>
+<p>Chúng tôi có quyền đình chỉ tài khoản nếu phát hiện vi phạm các điều khoản sử dụng.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">9. Luật áp dụng</h3>
+<p>Các điều khoản này được điều chỉnh bởi pháp luật hiện hành của Việt Nam.</p>
+</section>
+</div>
+<div class="p-6 border-t border-border-subtle flex justify-end">
+<button class="px-8 py-2 bg-vibrant-green text-white font-label-md rounded-lg hover:bg-primary-fixed-dim transition-colors shadow-sm" onclick="closeTosModal()">Đóng</button>
+</div>
+</div>
+</div>
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8" id="privacy-modal">
+<div class="absolute inset-0 bg-maritime-navy/60 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
+<div class="relative bg-white w-full max-w-2xl max-h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+<div class="flex items-center justify-between p-6 border-b border-border-subtle">
+<h2 class="font-headline-md text-headline-md text-vibrant-green">CHÍNH SÁCH BẢO MẬT</h2>
+<button class="text-on-surface-variant hover:text-maritime-navy transition-colors" onclick="closePrivacyModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 font-body-md text-on-surface space-y-4">
+<p class="font-label-md text-on-surface-variant">Cập nhật lần cuối: 31/08/2026</p>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">1. Thu thập thông tin</h3>
+<p>Chúng tôi thu thập thông tin bạn cung cấp trực tiếp cho chúng tôi khi tạo tài khoản, bao gồm tên và địa chỉ email.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">2. Sử dụng thông tin</h3>
+<p>Thông tin của bạn được sử dụng để cung cấp, duy trì và cải thiện dịch vụ của chúng tôi, cũng như liên lạc với bạn.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">3. Chia sẻ thông tin</h3>
+<p>Chúng tôi không bán hoặc chia sẻ thông tin cá nhân của bạn với bên thứ ba vì mục đích tiếp thị mà không có sự đồng ý của bạn.</p>
+</section>
+<section>
+<h3 class="font-headline-sm text-maritime-navy mb-2">4. Bảo mật dữ liệu</h3>
+<p>Chúng tôi thực hiện các biện pháp bảo mật hợp lý để bảo vệ thông tin của bạn khỏi bị truy cập trái phép, thay đổi hoặc phá hủy.</p>
+</section>
+</div>
+<div class="p-6 border-t border-border-subtle flex justify-end">
+<button class="px-8 py-2 bg-vibrant-green text-white font-label-md rounded-lg hover:bg-primary-fixed-dim transition-colors shadow-sm" onclick="closePrivacyModal()">Đóng</button>
+</div>
+</div>
+</div>
+<script>
+    function openTosModal(e) {
+        if (e) e.preventDefault();
+        document.getElementById('tos-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeTosModal() {
+        document.getElementById('tos-modal').classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+    function openPrivacyModal(e) {
+        if (e) e.preventDefault();
+        document.getElementById('privacy-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    function closePrivacyModal() {
+        document.getElementById('privacy-modal').classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+</script></body></html>

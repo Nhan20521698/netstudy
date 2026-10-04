@@ -1,0 +1,275 @@
+<!DOCTYPE html><html class="light" lang="en" style="width: 1280px; height: 628px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NetStudy Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#455f88",
+                      "primary-container": "#1a365d",
+                      "tertiary-container": "#003765",
+                      "on-primary-fixed": "#001b3c",
+                      "on-secondary-fixed": "#301400",
+                      "surface": "#f7fafc",
+                      "on-tertiary-container": "#68a2e9",
+                      "surface-variant": "#e0e3e5",
+                      "secondary": "#944b00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#d7dadc",
+                      "secondary-fixed": "#ffdcc5",
+                      "outline": "#74777f",
+                      "tertiary": "#002141",
+                      "on-surface": "#181c1e",
+                      "on-secondary-fixed-variant": "#703700",
+                      "primary": "#002045",
+                      "tertiary-fixed-dim": "#a2c9ff",
+                      "outline-variant": "#c4c6cf",
+                      "secondary-fixed-dim": "#ffb783",
+                      "surface-container-low": "#f1f4f6",
+                      "inverse-on-surface": "#eef1f3",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "surface-container": "#ebeef0",
+                      "on-tertiary-fixed": "#001c38",
+                      "surface-bright": "#f7fafc",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "surface-container-highest": "#e0e3e5",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#d6e3ff",
+                      "inverse-surface": "#2d3133",
+                      "secondary-container": "#fe9743",
+                      "background": "#f7fafc",
+                      "primary-fixed-dim": "#adc7f7",
+                      "on-background": "#181c1e",
+                      "on-tertiary-fixed-variant": "#004881",
+                      "tertiary-fixed": "#d3e4ff",
+                      "surface-container-high": "#e5e9eb",
+                      "on-primary-container": "#86a0cd",
+                      "inverse-primary": "#adc7f7",
+                      "on-secondary-container": "#6b3500",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#43474e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit-4": "16px",
+                      "unit-12": "48px",
+                      "base": "4px",
+                      "unit-8": "32px",
+                      "unit-2": "8px",
+                      "container-max": "1280px",
+                      "unit-6": "24px",
+                      "unit-3": "12px",
+                      "unit-1": "4px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "code-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Montserrat"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "code-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex items-center justify-center relative overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-40" data-alt="A wide-angle, high-resolution photograph of a massive modern cargo port at dawn. Hundreds of neatly stacked shipping containers in various colors create a highly structured, geometric pattern. The early morning light casts long, soft shadows, creating a calm yet industrious atmosphere. The scene evokes a sense of global logistics, efficiency, and scale, perfectly matching a professional corporate identity. Light mode palette with soft blues, grays, and subtle orange highlights from the rising sun." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOe1cbYFy0WWjjr5FisB-jyr0U2KrSG2OMh_tNOYO4JFkA-KCTAx5fim4yMt5OyNKW65NYJOEH5BTuamPQuWN3c9jWPDL3F404igD_byjq74XicCxgyiu8azjo1-ifMENXzAbiPLQiHRnL7L3gxnM_vo0p21Bpeo5jo1yE1bYCXbpLvwb8LJlaSkgn3odgBWJiJB3jAlZQRMClUtbusBRJPGZvJ56ymyekQ28wY-UYqiJFvv9YcNRC')">
+</div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 z-0 bg-gradient-to-b from-surface/80 to-surface/90"></div>
+<!-- Main Content Container -->
+<div class="relative z-10 w-full max-w-md px-4 sm:px-0">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-lg p-unit-8 flex flex-col gap-unit-6">
+<!-- Header -->
+<div class="text-center flex flex-col items-center gap-unit-2"><img alt="NetStudy Logo" class="w-32 h-32 object-contain mb-unit-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4HEPjEdRUZMrtprVCUfEP_cx3wIrxDSA1IBp0fkGe_ibFK37-C8lFJ4d2c1AMYq75LSIeNDSpiTJ5lT850aQmPZoLI89zZafL2XqvqHVpSlijjj62bo5ar3hGVOfmhKxq2twYjIpnSW39hTJl-qZgdow9GiCDSK6DCLJdbwOriDNrNhQ_jsxk_O6LNqqF4w6PVnU49WLwFfFPAg8Vq3hNA7Irg9M5LwU3w-iUu3u4cR_t-q_tQRWSJfh2MaozDMv1Pw">
+<p class="font-body-md text-body-md text-on-surface-variant">Welcome Back !</p></div>
+<!-- Form -->
+<form class="flex flex-col gap-unit-4">
+<!-- Email Field -->
+<div class="flex flex-col gap-unit-1">
+<label class="font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">mail</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="email" name="email" placeholder="student@netstudy.edu" type="email">
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-unit-1">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-body-sm text-body-sm text-primary hover:underline" href="#" onclick="openForgotPasswordModal(); return false;">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">lock</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-10 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="password" name="password" placeholder="••••••••" type="password">
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface focus:outline-none" type="button">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="mt-unit-2 w-full hover:bg-secondary hover:text-on-secondary font-label-md text-label-md py-3 rounded-lg flex justify-center items-center gap-2 transition-colors duration-200" style="background-color: rgb(0, 132, 61); color: rgb(255, 255, 255);" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="flex items-center gap-3 py-unit-2">
+<div class="flex-1 h-px bg-outline-variant"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">or</span>
+<div class="flex-1 h-px bg-outline-variant"></div>
+</div>
+<!-- Register Link -->
+<div class="text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">Bạn chưa có tài khoản? <a class="text-primary hover:underline font-label-md" href="#">Đăng ký ngay</a></p></div>
+</div>
+<!-- Footer Info -->
+<div class="mt-unit-6 text-center font-code-sm text-code-sm text-on-surface-variant opacity-70">
+<p class="">© 2026 NetStudy Logistics Academy</p>
+<p class=""><br></p>
+</div>
+</div>
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-on-surface/50 hidden" id="forgot-password-modal">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-lg p-unit-8 w-full max-w-md mx-4 flex flex-col gap-unit-6">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Quên mật khẩu</h2>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeForgotPasswordModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+      Nhập email của bạn để nhận hướng dẫn khôi phục mật khẩu.
+    </p>
+<div class="flex flex-col gap-unit-1">
+<label class="font-label-md text-label-md text-on-surface" for="reset-email">Địa chỉ Email</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-2 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" id="reset-email" placeholder="email@example.com" type="email">
+</div>
+<div class="flex flex-col gap-unit-2">
+<button class="w-full font-label-md text-label-md py-3 rounded-lg transition-colors duration-200" style="background-color: rgb(0, 132, 61); color: rgb(255, 255, 255);">
+        Gửi yêu cầu
+      </button>
+<button class="w-full border border-outline-variant text-on-surface font-label-md text-label-md py-3 rounded-lg hover:bg-surface-container-low transition-colors duration-200" onclick="closeForgotPasswordModal()">
+        Hủy
+      </button>
+</div>
+</div>
+</div><script>
+  function openForgotPasswordModal() {
+    document.getElementById('forgot-password-modal').classList.remove('hidden');
+  }
+  function closeForgotPasswordModal() {
+    document.getElementById('forgot-password-modal').classList.add('hidden');
+  }
+</script></body></html>

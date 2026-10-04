@@ -1,0 +1,15 @@
+.app-shell {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.app-body {
+  min-height: calc(100vh - 72px);
+}
+
+.app-content {
+  margin-left: 244px;
+  min-width: 0;
+  min-height: calc(100vh - 72px);
+  padding: 24px;
+}

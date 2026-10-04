@@ -1,0 +1,506 @@
+<!DOCTYPE html><html lang="en" style=""><head><link class="" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>WhatsApp Web Simulation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                "inverse-on-surface": "#eef1f3",
+                "primary-fixed": "#d6e3ff",
+                "on-primary": "#ffffff",
+                "on-primary-fixed": "#001b3c",
+                "outline-variant": "#c4c6cf",
+                "on-tertiary-container": "#68a2e9",
+                "on-background": "#181c1e",
+                "surface-bright": "#f7fafc",
+                "surface-variant": "#e0e3e5",
+                "secondary": "#944b00",
+                "on-primary-fixed-variant": "#2d476f",
+                "surface-container-low": "#f1f4f6",
+                "surface-container": "#ebeef0",
+                "on-surface-variant": "#43474e",
+                "on-secondary-fixed": "#301400",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#003765",
+                "tertiary-fixed-dim": "#a2c9ff",
+                "tertiary": "#002141",
+                "inverse-primary": "#adc7f7",
+                "on-tertiary": "#ffffff",
+                "on-primary-container": "#86a0cd",
+                "error": "#ba1a1a",
+                "surface-container-highest": "#e0e3e5",
+                "surface-tint": "#455f88",
+                "outline": "#74777f",
+                "surface-dim": "#d7dadc",
+                "primary": "#002045",
+                "on-error-container": "#93000a",
+                "surface-container-high": "#e5e9eb",
+                "primary-container": "#1a365d",
+                "secondary-fixed-dim": "#ffb783",
+                "surface": "#f7fafc",
+                "secondary-container": "#fe9743",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#001c38",
+                "on-secondary-container": "#6b3500",
+                "inverse-surface": "#2d3133",
+                "secondary-fixed": "#ffdcc5",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#703700",
+                "on-tertiary-fixed-variant": "#004881",
+                "background": "#f7fafc",
+                "tertiary-fixed": "#d3e4ff",
+                "primary-fixed-dim": "#adc7f7",
+                "on-secondary": "#ffffff",
+                "on-surface": "#181c1e",
+                "whatsapp": {
+                  "green": "#25D366",
+                  "dark": "#075E54",
+                  "teal": "#128C7E",
+                  "light": "#DCF8C6",
+                  "bg": "#E5DDD5",
+                  "header": "#F0F2F5",
+                  "border": "#E9EDEF"
+                },
+                "netstudy": {
+                  "sidebar": "#1a365d",
+                  "bg": "#f7fafc",
+                  "text": "#2d3748"
+                }
+          },
+          "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+          },
+          "spacing": {
+                "container-max": "1280px",
+                "unit-3": "12px",
+                "unit-1": "4px",
+                "unit-2": "8px",
+                "unit-4": "16px",
+                "base": "4px",
+                "unit-6": "24px",
+                "gutter": "24px",
+                "unit-12": "48px",
+                "unit-8": "32px"
+          },
+          "fontFamily": {
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Montserrat"
+                ],
+                "headline-xl": [
+                        "Montserrat"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "code-sm": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Montserrat"
+                ],
+                "headline-lg": [
+                        "Montserrat"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                sans: ['Montserrat', 'sans-serif']
+          },
+          "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "code-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ]
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">.whatsapp-bg {
+    background-color: #e5ddd5;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBEs3rugqTEOpOF-AohE9_OFR1IQw2CuXpVbV_KDi4YMjKYa50lA80LTvtDmxoUhmDRwwcD_crYHEYuC_MM9XAwthOI5lqdcxjBtTK8qp7md9sbErcfjw5vZKLWwp8UYfdxLaUE14l8XrqldLFsUjVHfnocmgNflIlgpkIt24NsHQAOEwpYqANZjqkPYMzkQbUoNKHQpShB2rgosuoi9itME9MTF747pFLxZIcM7zXCKE26nh4qEXf0);
+    background-repeat: repeat;
+    opacity: 0.9
+    }
+.chat-bubble-received::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #fff;
+    border-left: 10px solid transparent
+    }
+.chat-bubble-sent::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #DCF8C6;
+    border-right: 10px solid transparent
+    }
+/* Scrollbar styling for chat area */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px
+    }
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent
+    }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px
+    }</style>
+</head>
+<body class="bg-netstudy-bg font-sans h-screen overflow-hidden flex flex-col">
+<!-- BEGIN: Top Navigation Bar -->
+<header class="h-14 bg-white border-b border-gray-200 flex items-center justify-between px-4 shrink-0 z-20"><div class="flex items-center gap-4 shrink-0"><a class="flex items-center gap-2 text-primary transition-colors hover:text-whatsapp-green" href="#"><span class="material-symbols-outlined text-xl">arrow_back</span><span class="font-semibold text-sm">Quay lại học tập</span></a></div><div class="flex-1 flex items-center justify-center gap-8"><div class="flex items-center bg-surface-container-highest px-4 py-1.5 rounded-md border border-outline-variant shadow-sm"><span class="material-symbols-outlined text-outline mr-2 text-sm">schedule</span><span class="font-mono text-sm font-semibold text-on-surface tracking-wider">14:30:05 | 24/05/2024</span></div><div class="flex items-center bg-surface-container-highest p-1 rounded-lg border border-outline-variant"><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md bg-whatsapp-green text-white shadow-sm transition-all" data-speed="1X">1X</button><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md text-outline hover:bg-surface-variant transition-all" data-speed="2X">2X</button><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md text-outline hover:bg-surface-variant transition-all" data-speed="3X">3X</button><button class="speed-btn px-3 py-1 text-xs font-bold rounded-md text-outline hover:bg-surface-variant transition-all" data-speed="5X">5X</button></div></div><div class="flex items-center gap-4 text-outline shrink-0"><div class="relative"><button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors relative" id="notification-bell">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-0 right-0 w-3 h-3 bg-error border-2 border-white rounded-full z-10 hidden" id="notification-badge"></span>
+</button>
+<div class="absolute right-0 mt-2 w-80 bg-white border border-outline-variant rounded-lg shadow-xl z-50 overflow-hidden hidden transition-all duration-200" id="notification-dropdown">
+<div class="p-3 border-b border-surface-container bg-surface-container-low flex justify-between items-center">
+<span class="text-sm font-bold text-on-surface">Thông báo (<span class="" id="notif-count">5</span>)</span>
+<button class="text-[10px] text-primary hover:underline font-medium" id="mark-all-read">Đánh dấu tất cả đã đọc</button>
+</div>
+<div class="max-h-80 overflow-y-auto custom-scrollbar transition-all duration-200" id="notification-list-container">
+<div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer bg-primary-fixed/30" data-read="false">
+<div class="flex justify-between items-start">
+<p class="text-xs font-bold text-on-surface">Lô hàng mới đã cập nhật</p>
+<span class="unread-dot w-2 h-2 bg-error rounded-full shrink-0"></span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-1">Lịch trình tàu cho lô hàng Hamburg đã được cập nhật trong hệ thống.</p>
+<p class="text-[9px] text-outline mt-1">10 phút trước</p>
+</div>
+<div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer bg-primary-fixed/30" data-read="false">
+<div class="flex justify-between items-start">
+<p class="text-xs font-bold text-on-surface">Bài tập thực hành 2 đã hoàn thành</p>
+<span class="unread-dot w-2 h-2 bg-error rounded-full shrink-0"></span>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-1">Bạn đã hoàn thành xuất sắc phần mô phỏng kịch bản vận chuyển.</p>
+<p class="text-[9px] text-outline mt-1">1 giờ trước</p>
+</div>
+<div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer" data-read="true">
+<div class="flex justify-between items-start">
+<p class="text-xs font-medium text-on-surface-variant">Thông báo từ giảng viên</p>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-1">Chào Nam, hãy chú ý kiểm tra kỹ phần phí local charge nhé.</p>
+<p class="text-[9px] text-outline mt-1">Hôm qua</p>
+</div>
+<div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer" data-read="true">
+<div class="flex justify-between items-start">
+<p class="text-xs font-medium text-on-surface-variant">Cập nhật tài liệu Logistics v2.4</p>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-1">Giáo trình và biểu phí vận tải đường biển quốc tế đã được bổ sung vào học phần.</p>
+<p class="text-[9px] text-outline mt-1">2 ngày trước</p>
+</div>
+<div class="notification-item p-3 border-b border-surface-container hover:bg-surface-container-low cursor-pointer" data-read="true">
+<div class="flex justify-between items-start">
+<p class="text-xs font-medium text-on-surface-variant">Chào mừng đến với NetStudy</p>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-1">Bạn đã đăng nhập thành công vào hệ thống mô phỏng thực hành tương tác trực tuyến.</p>
+<p class="text-[9px] text-outline mt-1">3 ngày trước</p>
+</div>
+</div>
+<div class="p-2.5 text-center border-t border-surface-container bg-surface-container-lowest">
+<button class="text-xs text-primary font-semibold hover:underline flex items-center justify-center gap-1 w-full" id="toggle-all-notifs" onclick="(function(btn){ const list = document.getElementById('notification-list-container'); const isExpanded = list.classList.contains('max-h-none'); if (isExpanded) { list.classList.remove('max-h-none'); list.classList.add('max-h-80'); btn.querySelector('.btn-text').textContent = 'Xem tất cả thông báo'; btn.querySelector('.notif-icon').textContent = 'expand_more'; } else { list.classList.remove('max-h-80'); list.classList.add('max-h-none'); btn.querySelector('.btn-text').textContent = 'Thu gọn thông báo'; btn.querySelector('.notif-icon').textContent = 'expand_less'; } })(this)"><span class="btn-text">Xem tất cả thông báo</span><span class="material-symbols-outlined text-sm notif-icon">expand_more</span></button>
+</div>
+</div></div></div></header>
+<!-- END: Top Navigation Bar -->
+<div class="flex flex-1 h-[calc(100vh-3.5rem)]">
+<!-- BEGIN: Left Sidebar (NetStudy) -->
+<!-- END: Left Sidebar (NetStudy) -->
+<!-- BEGIN: Main Content Area -->
+<main class="flex-1 flex overflow-hidden relative"><div class="flex-1 flex flex-col bg-surface-container-low overflow-y-auto custom-scrollbar">
+<!-- Group / Forum Banner & Navigation -->
+<div class="bg-white border-b border-gray-200 px-6 py-4 shadow-sm shrink-0">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 max-w-5xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-white flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h1 class="text-base font-bold text-gray-900">CỘNG ĐỒNG LOGISTICS &amp; FORWARDER VIỆT NAM (EXIM &amp; FREIGHT)</h1>
+
+</div>
+<p class="text-xs text-gray-500 mt-0.5 flex items-center gap-2">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">public</span> Nhóm công khai</span>
+<span class="">•</span>
+<span class="">128.5K thành viên</span>
+<span class=""><br></span>
+
+</p>
+</div>
+</div>
+<!-- Search and Filter inside Group -->
+<div class="flex items-center gap-2">
+
+
+</div>
+</div>
+</div>
+<!-- Main Content Container: Feed & RFQ Detail -->
+<div class="max-w-5xl w-full mx-auto p-6 flex flex-col gap-6">
+<!-- Post Card -->
+<article class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+<!-- Post Header -->
+<div class="p-4 border-b border-gray-100 flex items-start justify-between"><div class="flex items-center gap-3"><img alt="Thu Vân" class="w-10 h-10 rounded-full object-cover border border-gray-200 shadow-sm" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&amp;auto=format&amp;fit=crop&amp;q=80"><div><div class="flex items-center gap-1.5"><span class="font-bold text-gray-900 text-sm hover:underline cursor-pointer">Thu Vân</span></div><div class="flex items-center gap-1.5 text-xs text-gray-500 mt-0.5"><span class="">2 giờ trước</span><span class="">•</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">public</span></span></div></div></div><div class="flex items-center gap-1"><button class="text-gray-400 hover:text-gray-600 p-1.5 rounded-lg hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined text-lg">bookmark_border</span></button><button class="text-gray-400 hover:text-gray-600 p-1.5 rounded-lg hover:bg-gray-100 transition-colors"><span class="material-symbols-outlined text-lg">more_horiz</span></button></div></div>
+<!-- Post Body -->
+<div class="p-5 flex flex-col gap-4"><div class="text-sm text-gray-800 leading-relaxed flex flex-col gap-2.5"><p class="">Chào mọi người trong group ạ!</p><p class="">Bên em chuẩn bị xuất 2 cont 40'HC hạt điều và tiêu đen đóng bao từ Cát Lái (Hồ Chí Minh) đi Hamburg (Đức), hàng dự kiến sẵn sàng ngày 05/06 tới.</p><p class="">Cần tìm hãng tàu / quý anh chị Forwarder có giá cước tốt và lịch tàu direct/transit time đẹp trong tháng 6 này báo giá giúp em với ạ. Yêu cầu xin free time Dem/Det tối thiểu 14 ngày tại cảng đến giúp em nhé.</p><p class="">Anh chị nào làm tuyến này inbox hoặc để lại thông tin em chủ động liên hệ lại nha. Em cảm ơn nhiều ạ!</p></div></div>
+<!-- Post Reaction Stats & Action Bar -->
+<div class="px-5 py-2.5 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+<div class="flex items-center gap-2">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-blue-500 text-white text-[10px]"><i class="fas fa-thumbs-up"></i></span>
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-amber-500 text-white text-[10px]"><i class="fas fa-lightbulb"></i></span>
+<span class="">34 người quan tâm</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="">18 bình luận</span>
+<span class="">7 lượt chia sẻ</span>
+</div>
+</div>
+<div class="px-4 py-2 border-t border-gray-100 bg-gray-50 flex items-center justify-around"><button class="flex-1 flex items-center justify-center gap-2 py-2 text-xs font-semibold text-gray-600 hover:bg-gray-200/60 rounded-md transition-colors"><span class="material-symbols-outlined text-base">thumb_up</span> Thích</button><button class="flex-1 flex items-center justify-center gap-2 py-2 text-xs font-semibold text-primary bg-blue-50/80 rounded-md transition-colors"><span class="material-symbols-outlined text-base">chat_bubble_outline</span> Bình luận</button><button class="flex-1 flex items-center justify-center gap-2 py-2 text-xs font-semibold text-gray-600 hover:bg-gray-200/60 rounded-md transition-colors"><span class="material-symbols-outlined text-base">share</span> Chia sẻ</button></div>
+</article>
+<!-- Comments & Sales Quotations Section -->
+<div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col gap-4"><div class="flex items-center justify-between border-b border-gray-100 pb-2.5 text-xs text-gray-500"><div class="flex items-center gap-1.5 cursor-pointer hover:bg-gray-100 px-2 py-1 rounded-md transition-colors"><span class="font-semibold text-gray-700 text-[13px]">Phù hợp nhất</span><span class="material-symbols-outlined text-sm text-gray-500">expand_more</span></div><div class="flex items-center gap-2 text-[12px] text-gray-400"><span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-green-500"></span> 18 bình luận trực tiếp</span></div></div><div class="flex items-start gap-2 pt-1"><div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm">AJ</div><div class="flex-1 flex flex-col gap-1.5"><div class="relative flex items-center bg-gray-100 hover:bg-gray-200/70 focus-within:bg-gray-100 transition-colors rounded-2xl px-3.5 py-2 border border-transparent focus-within:border-gray-300"><input class="w-full bg-transparent border-none text-[13px] text-gray-900 placeholder-gray-500 focus:ring-0 p-0 pr-24" placeholder="Viết bình luận công khai dưới tên Alex Johnson..." type="text"><div class="absolute right-2 flex items-center gap-1 text-gray-500"><button class="p-1 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors"></button><button class="p-1 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors"></button><button class="p-1 hover:text-gray-700 hover:bg-gray-200 rounded-full transition-colors"></button><button class="ml-1 p-1 text-blue-600 hover:bg-blue-50 rounded-full transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-lg font-bold">send</span></button></div></div><div class="text-[11px] text-gray-400 pl-2">Nhấn Enter để gửi</div></div></div><div class="flex flex-col gap-3.5 pt-2"><div class="flex items-start gap-2.5 group"><img alt="Hoàng Nam" class="w-9 h-9 rounded-full shrink-0 object-cover border border-gray-200 cursor-pointer hover:opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7MWD5Ixt-yixAWjt-Jnj4HLk10QQjpIFKFsxq2jAgEVieRo0ApOA6snD0bMOFtkeNObleWZyvXSj4FPgVZYsyzB0kckPVXsTREj2d5UPOnlUmVLacUNiZS-qPTRxIL545lr1pm1blTglHYNETRFwctLDRJaL8dFo2RwZCC26DDfUvugH8b1h9XrdKTg2LhTPrY5lrelUr6Zp6r4MF-KBanmTA8PbKoDJtZIU9_Q4x_AwuhOj4hNGQ"><div class="flex-1 flex flex-col"><div class="relative inline-block max-w-[90%]"><div class="bg-gray-100 hover:bg-gray-200/60 transition-colors rounded-2xl px-3.5 py-2 text-left"><div class="flex items-center gap-1.5 flex-wrap"><span class="font-semibold text-[13px] text-gray-900 hover:underline cursor-pointer">Hoàng Nam</span></div><p class="text-[13px] text-gray-800 leading-relaxed mt-0.5">Dạ chào chị Vân, tuyến HCM - Hamburg bên em đi direct service hãng Hapag-Lloyd thời gian transit time 26-28 ngày, giá cước cạnh tranh đợt này. Em đã gửi bảng chào giá chi tiết và schedule tàu rời cảng ngày 08/06 qua Gmail/Zalo chị check giúp em nhé!</p></div><div class="absolute -bottom-2 right-2 bg-white rounded-full px-1.5 py-0.5 shadow-sm border border-gray-100 flex items-center gap-1"><span class="w-4 h-4 rounded-full bg-blue-500 text-white flex items-center justify-center text-[8px]"><i class="fas fa-thumbs-up"></i></span><span class="text-[11px] font-semibold text-gray-600">4</span></div></div><div class="flex items-center gap-3 text-[12px] text-gray-500 mt-1 pl-3 font-semibold"><button class="hover:underline text-gray-600">Thích</button><button class="hover:underline text-gray-600">Phản hồi</button><button class="hover:underline text-gray-600">Chia sẻ</button><span class="font-normal text-gray-400">1 giờ</span></div><div class="ml-3 mt-2 flex items-start gap-2"><img alt="Thu Vân" class="w-6 h-6 rounded-full object-cover shrink-0 border border-gray-200" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&amp;auto=format&amp;fit=crop&amp;q=80"><div class="flex-1"><div class="bg-gray-100 rounded-2xl px-3 py-1.5 inline-block text-left"><span class="font-semibold text-[12px] text-gray-900 hover:underline cursor-pointer flex items-center gap-1">Thu Vân <span class="text-[9px] bg-gray-200 text-gray-600 font-normal px-1 rounded">Tác giả</span></span><p class="text-[12px] text-gray-800">Dạ em đã nhận được mail rồi anh Nam nhé, đang so sánh lịch transit với sếp ạ.</p></div><div class="flex items-center gap-3 text-[11px] text-gray-500 mt-0.5 pl-2 font-semibold"><button class="hover:underline text-gray-600">Thích</button><button class="hover:underline text-gray-600">Phản hồi</button><span class="font-normal text-gray-400">35 phút</span></div></div></div></div></div><div class="flex items-start gap-2.5 group"><img alt="Minh Quân" class="w-9 h-9 rounded-full shrink-0 object-cover border border-gray-200 cursor-pointer hover:opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpo57PkqPTj3KvDatQy0XI2WmvlGfanXn0GDTKzltpPy5095pQm9kRMcpMxVaO3m5K3QuMdFKDQ1ZGNKUuvuZwz2EQClvPR8pWfUG8O5OXlaMWxwfime5F6OhgfBu2tIiBYBnc2paWH6FzbElvlKinaLkZVU0NdbYOuF4AetlaNzObbEmWkEhXcoCPa8IaxTj4_tt3PP0O4uRKSisD39nhd994e27AUOBFJ-bzD79BJVqdD-5kkmkP"><div class="flex-1 flex flex-col"><div class="relative inline-block max-w-[90%]"><div class="bg-gray-100 hover:bg-gray-200/60 transition-colors rounded-2xl px-3.5 py-2 text-left"><div class="flex items-center gap-1.5 flex-wrap"><span class="font-semibold text-[13px] text-gray-900 hover:underline cursor-pointer">Minh Quân</span></div><p class="text-[13px] text-gray-800 leading-relaxed mt-0.5">Chào chị Vân, bên em có sẵn slot đi Hamburg qua hãng CMA/COSCO bao gồm free time 14 ngày Dem/Det theo đúng yêu cầu bên mình ạ. Em xin phép inbox kết bạn qua Zalo để tư vấn kỹ phần phụ phí local charge nhé!</p></div><div class="absolute -bottom-2 right-2 bg-white rounded-full px-1.5 py-0.5 shadow-sm border border-gray-100 flex items-center gap-1"><span class="w-4 h-4 rounded-full bg-blue-500 text-white flex items-center justify-center text-[8px]"><i class="fas fa-thumbs-up"></i></span><span class="text-[11px] font-semibold text-gray-600">2</span></div></div><div class="flex items-center gap-3 text-[12px] text-gray-500 mt-1 pl-3 font-semibold"><button class="hover:underline text-gray-600">Thích</button><button class="hover:underline text-gray-600">Phản hồi</button><button class="hover:underline text-gray-600">Chia sẻ</button><span class="font-normal text-gray-400">45 phút</span></div></div></div><div class="flex items-center gap-2 pl-12 text-[12px] font-semibold text-gray-500 hover:underline cursor-pointer"><span class="material-symbols-outlined text-base">subdirectory_arrow_right</span><span class="">Xem thêm 15 bình luận khác...</span></div></div></div>
+</div>
+</div></main>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Right Communication Panel -->
+<aside class="bg-white border-l border-gray-200 flex flex-col shrink-0 z-10 transition-all duration-300 overflow-hidden w-48">
+<div class="p-4 border-b border-gray-100 flex items-center justify-center"><button class="text-gray-500 hover:text-gray-700 transition-all duration-300 flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100" id="sidebar-toggle" onclick="const aside = this.closest('aside'); const isExpanding = aside.classList.contains('w-16'); aside.classList.toggle('w-48', isExpanding); aside.classList.toggle('w-16', !isExpanding); const icon = this.querySelector('.material-symbols-outlined'); icon.textContent = isExpanding ? 'chevron_right' : 'chevron_left'; aside.querySelectorAll('button &gt; span:last-child').forEach(el =&gt; { el.classList.toggle('hidden', !isExpanding); });"><span class="material-symbols-outlined">chevron_right</span></button></div>
+<div class="flex-1 py-4 flex flex-col gap-2"><button class="flex items-center px-4 py-3 rounded-l-full ml-2 shadow-sm gap-4 justify-start bg-whatsapp-green text-white hover:bg-[#1da851] transition-all duration-200">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0">
+<span class="material-symbols-outlined text-whatsapp-green text-xl font-bold">info</span>
+</div>
+<span class="font-semibold text-white">Thông tin</span>
+</button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0">
+<img alt="Gmail" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhq2PipY3MzOMZU_K1RTJcZz6wl31Kog1esDE3uaW9W1wlCdqIK9gbTiQGTSxkaJ1WmnlMKNhAS3x9gRm0ppK0lsNUAyucWEkQd2OGNp3JZT3dzTShwlXoDd4BFD07AOBI81X4rMck9Jp47cnE1OnJQOsyW_VDtylEiW_sHMHJud_WE8NP2kxSrd_S3Ysx-k0Ow4sg43JwaJ4tObJOBYf2P5aFCMixMsYtWKEQeSY0-KGvjc7rn8HKph0UXXThPypnLSnYdCWFg93c9g">
+</div>
+<span class="text-gray-700 group-hover:text-gray-900">Gmail</span>
+</button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0">
+<img alt="WeChat" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdt7x0r7SEVwiatws7lIi_9w918CHnvK6sL2t5n8htj4_8Kv4_FYUi5lShUKlq2skzCFD7woSR7E51UkDwIDyB-YkZwIO8tfgrwQ6kKycr8SWrwUfWcbHaKF9ULLrdA4-sgZaRj8wIDAFvTAp_39VB3oDRrlrqHGgt3XGUOdwA-kc501fBOleO7Oan1ELXbWecyuPAhZIacZCP_Zl4knq-IDcuEH9L_fm3HT2Kot6pinyBg65xCVrEAQJXXxpA-S0XZl141WYh5jzXbA">
+</div>
+<span class="text-gray-700 group-hover:text-gray-900">WeChat</span>
+</button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0 relative">
+<img alt="WhatsApp" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmw_Zp2MDuXowHmlLTFLeuRil3SYfu3LkjtwUJm02ikkPksrzuR5vK7FxFPjaOrgBX79kRhdvS5R56InyfiJ7I3SB6a-t9qLR-Pa0t-iKF0CkrnAJuZatGZfrfAxk8fnH_1L2GR12zdeCe-m4pVy0x6AG4g5ZW7UV_rT5lQ-bPxXjF7SejDmZgp0kC36sUO5i8HJOgrZpNA0Wx6qDMdPHxTTJERdAjBoyc3LbSc8fpoV5QkG1wdDFVjxdYF0NmEp7lnw">
+<span class="absolute -top-1 -right-1 w-4 h-4 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-white z-10">1</span>
+</div>
+<span class="text-gray-700 group-hover:text-gray-900">WhatsApp</span>
+</button>
+<button class="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors group gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm mr-2 shrink-0">
+<img alt="Zalo" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiWWxwS0-FdytXhqSzyGOAq2h9rHsQ51HxJBJzGMrUNzLxS1TE9PbSeFQ3g99JEeq8Zwk0YDrxxZN1nl1HmUzVMcvUCaHE7YKW4HJLX5XhuKuJbt8gEYe7wm-zWLFj92524KOhQtYSf_L22llbluTzhFhDws1rhOf8ENkkoYn1-jxZ7C4rretXJ8WUfGD-5sEb2TBG8Q1CBL0bA3OsYUQnwTdwP20WTINie6sGBWLmYOcXDZaztfJ_KhosRdkTaB2yZw">
+</div>
+<span class="text-gray-700 group-hover:text-gray-900">Zalo</span>
+</button></div>
+</aside>
+<!-- END: Right Communication Panel -->
+</div>
+<!-- Speed Confirmation Modal -->
+<div class="fixed inset-0 z-50 flex items-center justify-center hidden" id="speed-modal">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+<div class="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative z-10 flex flex-col gap-4">
+<h3 class="text-lg font-bold text-gray-900 border-b pb-3">Xác nhận thay đổi tốc độ</h3>
+<p class="text-gray-600 text-sm leading-relaxed" id="modal-speed-text">Bạn đang chuẩn bị thay đổi tốc độ mô phỏng sang 2X. Thời gian trong kịch bản sẽ trôi nhanh hơn. Bạn có muốn tiếp tục?</p>
+<div class="flex justify-end gap-3 mt-2">
+<button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors" id="cancel-speed">Hủy</button>
+<button class="px-4 py-2 bg-whatsapp-green text-white rounded-md text-sm font-medium hover:bg-[#1da851] transition-colors shadow-sm" id="confirm-speed">Đồng ý</button>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const speedButtons = document.querySelectorAll('.speed-btn');
+        const modal = document.getElementById('speed-modal');
+        const confirmBtn = document.getElementById('confirm-speed');
+        const cancelBtn = document.getElementById('cancel-speed');
+        const modalText = document.getElementById('modal-speed-text');
+        let pendingSpeedButton = null;
+
+        speedButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                pendingSpeedButton = e.target;
+                const speed = pendingSpeedButton.dataset.speed;
+                modalText.textContent = `Bạn đang chuẩn bị thay đổi tốc độ mô phỏng sang ${speed}. Thời gian trong kịch bản sẽ trôi nhanh hơn. Bạn có muốn tiếp tục?`;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            pendingSpeedButton = null;
+        });
+
+        confirmBtn.addEventListener('click', () => {
+            if (pendingSpeedButton) {
+                // Reset all buttons
+                speedButtons.forEach(btn => {
+                    btn.classList.remove('bg-whatsapp-green', 'text-white', 'shadow-sm');
+                    btn.classList.add('text-outline', 'hover:bg-surface-variant');
+                });
+                // Set active button
+                pendingSpeedButton.classList.remove('text-outline', 'hover:bg-surface-variant');
+                pendingSpeedButton.classList.add('bg-whatsapp-green', 'text-white', 'shadow-sm');
+            }
+            modal.classList.add('hidden');
+            pendingSpeedButton = null;
+        });
+    });
+</script>
+<script>
+  (function() {
+    const bell = document.getElementById('notification-bell');
+    const dropdown = document.getElementById('notification-dropdown');
+    const badge = document.getElementById('notification-badge');
+
+    if (bell && dropdown) {
+      bell.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+        if (badge) badge.classList.add('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && !bell.contains(e.target)) {
+          dropdown.classList.add('hidden');
+        }
+      });
+    }
+  })();
+</script><script>
+(function() {
+  const bell = document.getElementById('notification-bell');
+  const dropdown = document.getElementById('notification-dropdown');
+  const badge = document.getElementById('notification-badge');
+  const items = document.querySelectorAll('.notification-item');
+
+  const updateBellBadge = () => {
+    const unreadCount = document.querySelectorAll('.notification-item[data-read="false"]').length;
+    if (unreadCount === 0 && badge) {
+      badge.classList.add('hidden');
+    } else if (badge) {
+      badge.classList.remove('hidden');
+    }
+  };
+
+  const markAsRead = (item) => {
+    if (item.getAttribute('data-read') === 'false') {
+      item.setAttribute('data-read', 'true');
+      item.classList.remove('bg-primary-fixed/30');
+      const title = item.querySelector('p.font-bold');
+      if (title) {
+        title.classList.remove('font-bold', 'text-on-surface');
+        title.classList.add('font-medium', 'text-on-surface-variant');
+      }
+      const dot = item.querySelector('.unread-dot');
+      if (dot) dot.remove();
+      updateBellBadge();
+    }
+  };
+
+  if (bell && dropdown) {
+    items.forEach(item => {
+      item.addEventListener('click', () => markAsRead(item));
+    });
+
+    document.getElementById('mark-all-read')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      items.forEach(item => markAsRead(item));
+    });
+  }
+})();
+</script>
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html lang="vi" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tiếp tục học - International Shipping Fundamentals - NetStudy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-container-low": "#edf6ea",
+                      "primary-fixed": "#6bff8f",
+                      "outline-variant": "#bccbb9",
+                      "maritime-navy": "#0f172a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#002109",
+                      "on-tertiary-fixed": "#410001",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#006e2f",
+                      "primary-fixed-dim": "#4ae176",
+                      "secondary": "#565e74",
+                      "on-surface": "#161d16",
+                      "on-error-container": "#93000a",
+                      "on-background": "#161d16",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#ff8b7c",
+                      "primary": "#006e2f",
+                      "on-tertiary-fixed-variant": "#7f2a21",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "secondary-container": "#dae2fd",
+                      "surface": "#f3fcef",
+                      "surface-variant": "#dce5d9",
+                      "on-primary-fixed-variant": "#005321",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#5c647a",
+                      "inverse-primary": "#4ae176",
+                      "surface-dim": "#d4ddd0",
+                      "border-subtle": "#e2e8f0",
+                      "surface-container-highest": "#dce5d9",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-bg": "#f8fafc",
+                      "vibrant-green": "#22c55e",
+                      "tertiary-fixed": "#ffdad5",
+                      "surface-container": "#e8f0e4",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#6d7b6c",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "surface-bright": "#f3fcef",
+                      "background": "#f3fcef",
+                      "primary-container": "#22c55e",
+                      "on-primary-container": "#004b1e",
+                      "tertiary-fixed-dim": "#ffb4a9",
+                      "surface-container-high": "#e2ebde",
+                      "on-surface-variant": "#3d4a3d",
+                      "inverse-on-surface": "#ebf3e7",
+                      "on-tertiary-container": "#76231b",
+                      "inverse-surface": "#2a322a",
+                      "tertiary": "#9e4036"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "base": "4px",
+                      "learning-max": "800px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "unit-3": "12px",
+                      "unit-4": "16px",
+                      "unit-8": "32px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Montserrat"],
+                      "headline-md": ["Montserrat"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "headline-xl": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Montserrat"],
+                      "body-sm": ["Inter"],
+                      "headline-xl-mobile": ["Montserrat"],
+                      "code-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-xl-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { background-color: #f8fafc; } /* Base surface background */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .sidebar-collapsed .sidebar-label {
+            display: none;
+        }
+        .sidebar-collapsed .px-6 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased bg-surface-bg flex h-screen overflow-hidden">
+<!-- SideNavBar (JSON Component) -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] border-r border-outline-variant flex flex-col py-6 z-40 transition-all duration-300 ease-in-out bg-white overflow-hidden w-[280px] -translate-x-full md:translate-x-0" id="sidebar">
+<div class="px-6 flex items-center justify-between whitespace-nowrap mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="NetStudy Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_5y7k9ptwihKv8KNs9QUJjDUiegJTHKMdb7sTbSWXI2DvN59NHFPiUGAKXuxKjn0bnJU4mGUuaTEFM0j3eZYogDMWhLWrBc1XTLhcz1N57iz4LdAQR5x56tbXedjqLShO3izWkXytmqCT6CFnJoNTSftpyukw5t-N-6InsBkhbIjRX29ryLuORAwQipu6zZJW7M8q8AlhUSnAUe0xyRig5sdohAlDM7Iaumr4dB5h0caQ2nBGJb9j0b6906wEfU5lY5CGVLic-lzikQ"/>
+</div>
+<div class="sidebar-label">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">NetStudy <div class="">Academy</div></h2>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 flex flex-col gap-2 whitespace-nowrap">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out cursor-pointer" href="#">
+<span class="material-symbols-outlined text-[20px]">school</span>
+<span class="font-label-md text-label-md sidebar-label">Courses</span>
+</a>
+</nav>
+<div class="px-4 pt-4 border-t border-outline-variant flex flex-col gap-2 whitespace-nowrap">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out cursor-pointer" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-md text-label-md sidebar-label">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out cursor-pointer" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+<span class="font-label-md text-label-md sidebar-label">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col overflow-hidden transition-all duration-300 md:ml-[280px] pt-16" id="main-content">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 border-b border-outline-variant transition-colors bg-white"><button class="p-2 mr-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 flex items-center justify-center" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-unit-4">
+</div>
+<div class="flex-1 max-w-md mx-unit-8 hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-sm focus:outline-none focus:border-primary transition-colors" placeholder="Search courses..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-unit-4">
+<div class="relative" id="notification-wrapper"><button aria-label="Thông báo" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 relative flex items-center justify-center" id="notif-bell-btn" onclick="toggleNotifDropdown(event)"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-white animate-pulse hidden" id="bell-unread-dot"></span></button><div class="absolute right-0 top-12 w-80 md:w-96 bg-white border border-outline-variant rounded-xl shadow-xl z-50 overflow-hidden hidden" id="notification-dropdown"><div class="p-unit-4 border-b border-outline-variant flex justify-between items-center bg-white"><div class="flex items-center gap-2"><h3 class="font-headline-sm text-[16px] font-bold text-on-surface">Thông báo</h3><span class="bg-error text-white font-bold text-[11px] px-2 py-0.5 rounded-full leading-none" id="notif-count-badge">3 mới</span></div><button class="text-primary font-label-md text-code-sm hover:underline cursor-pointer" onclick="markAllNotificationsRead()">Đánh dấu tất cả đã đọc</button></div><div class="max-h-96 overflow-y-auto divide-y divide-outline-variant/60" id="notification-list"><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">verified</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Chứng chỉ mới đã được cấp</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn đã hoàn thành khóa học Vận tải Quốc tế và nhận chứng chỉ chính thức.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">Vừa xong</p></div></div><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Portfolio của bạn đã được lưu</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Thông tin năng lực và kinh nghiệm làm việc đã được cập nhật thành công vào hồ sơ.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">2 giờ trước</p></div></div><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">directions_boat</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Lời mời tham gia phòng mô phỏng mới</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn được mời tham gia bài tập mô phỏng xử lý khủng hoảng Kênh đào Suez.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">Hôm qua</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">assignment</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Nhắc nhở hạn nộp bài tập</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Hạn chót nộp bài phân tích Vận đơn đường biển Bill of Lading vào ngày mai.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">2 ngày trước</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">description</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Cập nhật tài liệu Incoterms 2020</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Tài liệu phân biệt rủi ro CIF vs FOB đã được cập nhật phiên bản mới nhất.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">4 ngày trước</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">forum</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Tin nhắn mới từ giảng viên</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Giảng viên phụ trách đã phản hồi thắc mắc về phân bổ chi phí DEM/DET của bạn.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">1 tuần trước</p></div></div></div><div class="p-unit-3 text-center bg-surface-container-low border-t border-outline-variant"><button class="text-primary font-label-md text-label-md py-1 flex items-center justify-center gap-1 w-full font-medium cursor-pointer" id="show-all-notifs-btn" onclick="toggleAllNotifications(this)"><span class="flex items-center justify-center gap-1" id="show-all-notifs-label"><span class="">Xem tất cả thông báo</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></button></div></div><script class="">function collapseNotifications() { document.querySelectorAll('.extra-notif').forEach(item => item.classList.add('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Xem tất cả thông báo ->'; const toggleBtn = document.getElementById('show-all-notifs-btn'); if (toggleBtn) { toggleBtn.classList.remove('opacity-70'); toggleBtn.onclick = function() { toggleAllNotifications(toggleBtn); }; } } function toggleAllNotifications(btn) { const extras = document.querySelectorAll('.extra-notif'); const isExpanded = !extras[0] || !extras[0].classList.contains('hidden'); if (isExpanded) { collapseNotifications(); } else { extras.forEach(item => item.classList.remove('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Thu gọn ^'; } } revealAllNotifications = function() { toggleAllNotifications(document.getElementById('show-all-notifs-btn')); };</script></div>
+<div class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center cursor-pointer ml-2 overflow-hidden bg-white hover:opacity-90 transition-all"><img alt="User Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjNfvlGczurC9h4kcyj1MwY6_P5otnlAvU_bFnBux1ad-NQfeK9jPKwE98J0TO-M4OJ7GY3L7rPSZ5B7yQxHd2G7Ah1NSAotoJTQS5eZLb-OcVksvYa7UA_3B8O7wzjYxuXO3cEg_aoQ5S70jkXEVrN8QXaxB8AjhlYiUOPrqOS8a5bZl5WRuNvOXDaXJzKjxKB2T0vrElOcWi8vpSgLo1InNl76LXXucJgrprHIdClJXckQKBv7lg"/></div>
+</div>
+</nav>
+<!-- Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-4 md:p-8 bg-surface-bg relative">
+<!-- Abstract background pattern (simulating global trade routes) -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, #0f172a 1px, transparent 0); background-size: 32px 32px;"></div>
+<div class="max-w-learning-max mx-auto relative z-0 pb-20 md:pb-8 mt-4">
+<!-- Course Header Bento Item -->
+<div class="glass-panel bg-surface-container-lowest border border-border-subtle rounded-xl p-6 md:p-8 mb-6 shadow-[0px_2px_4px_rgba(15,23,42,0.05)] relative overflow-hidden">
+<!-- Accent decorative element -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-vibrant-green/10 rounded-bl-full -z-10 blur-xl"></div>
+<div class="flex flex-col md:flex-row justify-between gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-1 bg-maritime-navy text-on-primary rounded font-label-md text-[10px] uppercase tracking-widest">ACTIVE</span>
+<span class="font-body-sm text-secondary text-sm">Phần 1/4</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-maritime-navy mb-2">International Shipping Fundamentals</h1>
+<p class="font-body-md text-secondary mb-6 max-w-2xl">Master the core principles of global logistics, trade regulations, and maritime operations required for modern international shipping.</p>
+<!-- Resume CTA -->
+<button class="bg-vibrant-green hover:bg-primary-fixed-dim text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md flex items-center gap-2 transition-colors shadow-sm w-full sm:w-auto justify-center">
+<span class="material-symbols-outlined">play_circle</span>
+                                Resume: Lesson 1 - Incoterms 2020
+                            </button>
+</div>
+<!-- Progress Overview -->
+<div class="md:w-64 bg-surface-bg border border-border-subtle rounded-lg p-5 flex flex-col justify-center shrink-0">
+<div class="flex justify-between items-end mb-2">
+<span class="font-label-md text-secondary">Course Progress</span>
+<span class="font-headline-sm text-maritime-navy">15%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-[8px] bg-surface-container-high rounded-full overflow-hidden mb-3">
+<div class="h-full bg-vibrant-green rounded-full transition-all duration-1000 ease-out" style="width: 15%"></div>
+</div>
+<div class="flex justify-between text-sm">
+<span class="font-body-sm text-secondary">Completed</span>
+<span class="font-label-md text-maritime-navy">1 / 12 Lessons</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Curriculum List -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl shadow-[0px_2px_4px_rgba(15,23,42,0.05)] overflow-hidden">
+<div class="p-6 border-b border-border-subtle bg-surface-bg flex justify-between items-center">
+<h2 class="font-headline-md text-maritime-navy">Curriculum</h2>
+<span class="font-body-sm text-secondary text-sm">4 Modules</span>
+</div>
+<div class="divide-y divide-border-subtle">
+<!-- Module 1: In Progress -->
+<div class="p-4 md:p-6 bg-surface-bright transition-colors hover:bg-surface-bg cursor-pointer group">
+<div class="flex items-start justify-between gap-4 mb-4">
+<div>
+<h3 class="font-headline-sm text-maritime-navy mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-vibrant-green text-xl">book</span>
+                                        Module 1: Trade Terms &amp; Legal Frameworks
+                                    </h3>
+<p class="font-body-sm text-secondary text-sm">Understanding the international rules governing shipping contracts.</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-maritime-navy transition-colors">expand_less</span>
+</div>
+<!-- Lessons list -->
+<div class="pl-2 md:pl-8 space-y-2 mt-4 relative before:absolute before:left-[19px] md:before:left-[43px] before:top-4 before:bottom-6 before:w-[2px] before:bg-surface-container-high">
+<!-- Lesson 1 (Completed) -->
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors relative z-10">
+<div class="w-6 h-6 rounded-full bg-vibrant-green flex items-center justify-center shrink-0 shadow-sm ring-4 ring-surface-bright">
+<span class="material-symbols-outlined text-on-primary text-[14px]">check</span>
+</div>
+<div class="flex-1 flex justify-between items-center">
+<span class="font-label-md text-maritime-navy line-through text-secondary">Introduction to Global Trade</span>
+<span class="font-body-sm text-secondary text-xs hidden sm:inline">15 min</span>
+</div>
+</div>
+<!-- Lesson 2 (Active/Next) -->
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-low border border-vibrant-green/30 transition-colors relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-bright border-2 border-vibrant-green flex items-center justify-center shrink-0 ring-4 ring-surface-bright">
+<span class="w-2 h-2 rounded-full bg-vibrant-green"></span>
+</div>
+<div class="flex-1 flex justify-between items-center">
+<span class="font-label-md text-maritime-navy font-bold">Incoterms 2020 Overview</span>
+<span class="px-2 py-1 bg-vibrant-green text-on-primary rounded text-[10px] font-bold uppercase">Resume</span>
+</div>
+</div>
+<!-- Lesson 3 (Locked) -->
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-bg transition-colors opacity-60 relative z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center shrink-0 ring-4 ring-surface-bright">
+<span class="material-symbols-outlined text-secondary text-[14px]">lock</span>
+</div>
+<div class="flex-1 flex justify-between items-center">
+<span class="font-body-md text-maritime-navy">Customs Clearance Processes</span>
+<span class="font-body-sm text-secondary text-xs hidden sm:inline">25 min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Module 2: Locked -->
+<div class="p-4 md:p-6 hover:bg-surface-bg transition-colors cursor-not-allowed opacity-75">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">lock</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-secondary mb-1 text-sm md:text-base">Module 2: Maritime Geography &amp; Routing</h3>
+<p class="font-body-sm text-secondary text-xs md:text-sm">Major sea lanes, chokepoints, and route optimization.</p>
+</div>
+</div>
+<span class="font-body-sm text-secondary text-xs md:text-sm hidden sm:inline">4 Lessons</span>
+</div>
+</div>
+<!-- Module 3: Locked -->
+<div class="p-4 md:p-6 hover:bg-surface-bg transition-colors cursor-not-allowed opacity-75">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">lock</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-secondary mb-1 text-sm md:text-base">Module 3: Containerization &amp; Cargo Types</h3>
+<p class="font-body-sm text-secondary text-xs md:text-sm">Vessel types, TEU calculations, and specialized freight.</p>
+</div>
+</div>
+<span class="font-body-sm text-secondary text-xs md:text-sm hidden sm:inline">3 Lessons</span>
+</div>
+</div>
+<!-- Capstone Simulation Room Feature Card -->
+<div class="p-6 md:p-8 bg-gradient-to-br from-surface-bright via-surface-container-lowest to-vibrant-green/10 border-t-2 border-vibrant-green/40 relative overflow-hidden transition-all duration-300 hover:shadow-lg group">
+<!-- Accent subtle background glow -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-vibrant-green/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<div class="flex-1">
+<!-- Badges row -->
+<div class="flex flex-wrap items-center gap-2 mb-3">
+<span class="px-2.5 py-1 bg-maritime-navy text-vibrant-green font-bold text-[11px] rounded tracking-wide uppercase flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+          CAPSTONE / THỰC HÀNH MÔ PHỎNG
+        </span>
+<span class="px-2.5 py-1 bg-tertiary/10 text-tertiary border border-tertiary/20 font-medium text-[11px] rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          BẮT BUỘC ĐỂ CẤP CHỨNG CHỈ
+        </span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-md text-maritime-navy font-bold text-lg md:text-xl mb-2 flex items-center gap-2.5">
+<span class="w-9 h-9 rounded-lg bg-vibrant-green text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">interactive_space</span>
+</span>
+        Phòng mô phỏng (Simulation Room) - Trải nghiệm Nhập vai Thực tế
+      </h3>
+<!-- Description -->
+<p class="font-body-md text-secondary text-sm md:text-base leading-relaxed mb-4 max-w-2xl">
+        Nhập vai điều phối viên Logistics xử lý tình huống phát sinh, booking tàu và đàm phán cước phí trực tiếp qua các kênh liên lạc thực tế: Zalo, Gmail, WeChat, WhatsApp.
+      </p>
+<!-- Communication Channels preview -->
+<div class="flex flex-wrap items-center gap-2.5 mb-4">
+<span class="text-xs font-semibold text-maritime-navy mr-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">hub</span> Kênh liên lạc mô phỏng:
+        </span>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-border-subtle rounded-lg shadow-sm text-xs font-medium text-maritime-navy">
+<span class="w-2 h-2 rounded-full bg-vibrant-green animate-ping"></span>
+<span class="font-bold text-primary">Zalo PC</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-border-subtle rounded-lg shadow-sm text-xs font-medium text-maritime-navy">
+<span class="material-symbols-outlined text-tertiary text-[14px]">mail</span>
+<span class="">Gmail Business</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-border-subtle rounded-lg shadow-sm text-xs font-medium text-maritime-navy">
+<span class="material-symbols-outlined text-vibrant-green text-[14px]">chat</span>
+<span class="">WeChat</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-white border border-border-subtle rounded-lg shadow-sm text-xs font-medium text-maritime-navy">
+<span class="material-symbols-outlined text-vibrant-green text-[14px]">call</span>
+<span class="">WhatsApp Web</span>
+</div>
+</div>
+<!-- Condition note -->
+<div class="flex items-start gap-2 p-3 bg-surface-container-low border border-outline-variant/40 rounded-lg text-xs text-on-surface-variant max-w-2xl">
+<span class="material-symbols-outlined text-secondary text-[16px] mt-0.5 shrink-0">info</span>
+<span class=""><strong class="text-maritime-navy font-semibold">Yêu cầu:</strong> Hoàn thành 100% các module lý thuyết &amp; bài kiểm tra trắc nghiệm/tự luận để mở khóa toàn bộ kịch bản.</span>
+</div>
+</div>
+<!-- Action Column -->
+<div class="flex flex-col items-stretch sm:items-end justify-center shrink-0 lg:pl-4">
+<button class="bg-maritime-navy hover:bg-vibrant-green hover:text-maritime-navy text-on-primary font-label-md px-6 py-3.5 rounded-lg shadow-md transition-all duration-200 flex items-center justify-center gap-2 group/btn cursor-pointer whitespace-nowrap" onclick="alert('Chào mừng bạn đến với Phòng Mô Phỏng Logistics! Kịch bản hiện tại yêu cầu hoàn thành Module 1 để bắt đầu tương tác nhập vai.')">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover/btn:translate-x-0.5">play_arrow</span>
+<span class="font-bold">Vào Phòng Mô Phỏng Ngay</span>
+</button>
+<span class="text-[11px] text-secondary text-center sm:text-right mt-2 flex items-center gap-1 justify-center sm:justify-end">
+<span class="w-1.5 h-1.5 rounded-full bg-vibrant-green"></span>
+        Sẵn sàng kết nối mô phỏng
+      </span>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation Shell Replacement (Hidden on md and up) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest border-t border-border-subtle flex justify-around p-2 z-20 shadow-[0_-2px_10px_rgba(15,23,42,0.05)]">
+<a class="flex flex-col items-center p-2 text-vibrant-green" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="text-[10px] font-label-md">Courses</span>
+</a>
+<a class="flex flex-col items-center p-2 text-secondary" href="#">
+<span class="material-symbols-outlined mb-1">view_module</span>
+<span class="text-[10px] font-label-md">Modules</span>
+</a>
+<a class="flex flex-col items-center p-2 text-secondary" href="#">
+<span class="material-symbols-outlined mb-1">trending_up</span>
+<span class="text-[10px] font-label-md">Progress</span>
+</a>
+<a class="flex flex-col items-center p-2 text-secondary" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="text-[10px] font-label-md">Profile</span>
+</a>
+</nav>
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+        
+        if (window.innerWidth < 768) {
+            sidebar.classList.toggle('-translate-x-full');
+        } else {
+            sidebar.classList.toggle('w-[280px]');
+            sidebar.classList.toggle('w-[80px]');
+            sidebar.classList.toggle('sidebar-collapsed');
+            
+            mainContent.classList.toggle('md:ml-[280px]');
+            mainContent.classList.toggle('md:ml-[80px]');
+        }
+    }
+
+    function toggleNotifDropdown(event) {
+        if (event) event.stopPropagation();
+        const dropdown = document.getElementById('notification-dropdown');
+        if (dropdown) {
+            dropdown.classList.toggle('hidden');
+        }
+    }
+
+    function markItemRead(item) {
+        if (item) {
+            item.classList.remove('bg-surface-container-low/40');
+            const dot = item.querySelector('.notif-dot');
+            if (dot) dot.classList.add('hidden');
+        }
+    }
+
+    function markAllNotificationsRead() {
+        const items = document.querySelectorAll('#notification-list .notif-item');
+        items.forEach(item => {
+            item.classList.remove('bg-surface-container-low/40');
+            const dot = item.querySelector('.notif-dot');
+            if (dot) dot.classList.add('hidden');
+        });
+        const badge = document.getElementById('notif-count-badge');
+        if (badge) {
+            badge.textContent = '0 mới';
+            badge.classList.remove('bg-error');
+            badge.classList.add('bg-outline');
+        }
+        const bellDot = document.getElementById('bell-unread-dot');
+        if (bellDot) {
+            bellDot.classList.add('hidden');
+        }
+    }
+
+    // Click outside to close notification dropdown
+    document.addEventListener('click', function(event) {
+        const wrapper = document.getElementById('notification-wrapper');
+        const dropdown = document.getElementById('notification-dropdown');
+        if (wrapper && dropdown && !dropdown.classList.contains('hidden')) {
+            if (!wrapper.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        }
+    });
+</script>
+</body></html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NetStudy - Module Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#f3fcef",
+                "tertiary-fixed-dim": "#ffb4a9",
+                "inverse-surface": "#2a322a",
+                "tertiary-fixed": "#ffdad5",
+                "outline-variant": "#bccbb9",
+                "on-secondary": "#ffffff",
+                "surface-container-low": "#edf6ea",
+                "surface": "#f3fcef",
+                "on-primary-container": "#004b1e",
+                "tertiary": "#9e4036",
+                "on-error": "#ffffff",
+                "border-subtle": "#e2e8f0",
+                "outline": "#6d7b6c",
+                "secondary": "#565e74",
+                "inverse-primary": "#4ae176",
+                "secondary-fixed": "#dae2fd",
+                "primary": "#006e2f",
+                "on-secondary-fixed-variant": "#3f465c",
+                "secondary-container": "#dae2fd",
+                "on-surface-variant": "#3d4a3d",
+                "surface-tint": "#006e2f",
+                "surface-dim": "#d4ddd0",
+                "maritime-navy": "#0f172a",
+                "on-tertiary-container": "#76231b",
+                "on-tertiary-fixed": "#410001",
+                "tertiary-container": "#ff8b7c",
+                "primary-container": "#22c55e",
+                "surface-bright": "#f3fcef",
+                "error-container": "#ffdad6",
+                "on-background": "#161d16",
+                "on-error-container": "#93000a",
+                "vibrant-green": "#22c55e",
+                "on-tertiary-fixed-variant": "#7f2a21",
+                "surface-bg": "#f8fafc",
+                "on-surface": "#161d16",
+                "surface-container-highest": "#dce5d9",
+                "surface-container-high": "#e2ebde",
+                "secondary-fixed-dim": "#bec6e0",
+                "primary-fixed-dim": "#4ae176",
+                "on-primary-fixed": "#002109",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#005321",
+                "surface-variant": "#dce5d9",
+                "on-primary": "#ffffff",
+                "on-secondary-container": "#5c647a",
+                "surface-container-lowest": "#ffffff",
+                "inverse-on-surface": "#ebf3e7",
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#131b2e",
+                "surface-container": "#e8f0e4",
+                "primary-fixed": "#6bff8f"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "base": "4px",
+                "container-max": "1280px",
+                "gutter": "24px",
+                "learning-max": "800px",
+                "unit-3": "12px",
+                "unit-4": "16px",
+                "unit-8": "32px"
+        },
+        "fontFamily": {
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-xl-mobile": [
+                        "Montserrat"
+                ],
+                "code-sm": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Montserrat"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Montserrat"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Montserrat"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-xl": [
+                        "Montserrat"
+                ],
+                "headline-md": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "code-sm": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+  }
+</style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen bg-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 border-b border-outline-variant transition-colors bg-white"><button class="p-2 mr-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 flex items-center justify-center" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-unit-4">
+</div>
+<div class="flex-1 max-w-md mx-unit-8 hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-sm focus:outline-none focus:border-primary transition-colors" placeholder="Search courses..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-unit-4">
+<div class="relative" id="notification-wrapper"><button aria-label="Thông báo" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 relative flex items-center justify-center" id="notif-bell-btn" onclick="toggleNotifDropdown(event)"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-white animate-pulse" id="bell-unread-dot"></span></button><div class="absolute right-0 top-12 w-80 md:w-96 bg-white border border-outline-variant rounded-xl shadow-xl z-50 overflow-hidden hidden" id="notification-dropdown"><div class="p-unit-4 border-b border-outline-variant flex justify-between items-center bg-white"><div class="flex items-center gap-2"><h3 class="font-headline-sm text-[16px] font-bold text-on-surface">Thông báo</h3><span class="bg-error text-white font-bold text-[11px] px-2 py-0.5 rounded-full leading-none" id="notif-count-badge">3 mới</span></div><button class="text-primary font-label-md text-code-sm hover:underline cursor-pointer" onclick="markAllNotificationsRead()">Đánh dấu tất cả đã đọc</button></div><div class="max-h-96 overflow-y-auto divide-y divide-outline-variant/60" id="notification-list"><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">verified</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Chứng chỉ mới đã được cấp</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn đã hoàn thành khóa học Vận tải Quốc tế và nhận chứng chỉ chính thức.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">Vừa xong</p></div></div><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Portfolio của bạn đã được lưu</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Thông tin năng lực và kinh nghiệm làm việc đã được cập nhật thành công vào hồ sơ.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">2 giờ trước</p></div></div><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">directions_boat</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Lời mời tham gia phòng mô phỏng mới</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn được mời tham gia bài tập mô phỏng xử lý khủng hoảng Kênh đào Suez.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">Hôm qua</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">assignment</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Nhắc nhở hạn nộp bài tập</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Hạn chót nộp bài phân tích Vận đơn đường biển Bill of Lading vào ngày mai.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">2 ngày trước</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">description</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Cập nhật tài liệu Incoterms 2020</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Tài liệu phân biệt rủi ro CIF vs FOB đã được cập nhật phiên bản mới nhất.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">4 ngày trước</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">forum</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Tin nhắn mới từ giảng viên</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Giảng viên phụ trách đã phản hồi thắc mắc về phân bổ chi phí DEM/DET của bạn.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">1 tuần trước</p></div></div></div><div class="p-unit-3 text-center bg-surface-container-low border-t border-outline-variant"><button class="text-primary font-label-md text-label-md py-1 flex items-center justify-center gap-1 w-full font-medium cursor-pointer" id="show-all-notifs-btn" onclick="toggleAllNotifications(this)"><span class="flex items-center justify-center gap-1" id="show-all-notifs-label"><span class="">Xem tất cả thông báo</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></button></div></div><script class="">function collapseNotifications() { document.querySelectorAll('.extra-notif').forEach(item => item.classList.add('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Xem tất cả thông báo ->'; const toggleBtn = document.getElementById('show-all-notifs-btn'); if (toggleBtn) { toggleBtn.classList.remove('opacity-70'); toggleBtn.onclick = function() { toggleAllNotifications(toggleBtn); }; } } function toggleAllNotifications(btn) { const extras = document.querySelectorAll('.extra-notif'); const isExpanded = !extras[0] || !extras[0].classList.contains('hidden'); if (isExpanded) { collapseNotifications(); } else { extras.forEach(item => item.classList.remove('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Thu gọn ^'; } } revealAllNotifications = function() { toggleAllNotifications(document.getElementById('show-all-notifs-btn')); };</script></div>
+<div class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center cursor-pointer ml-2 overflow-hidden bg-white hover:opacity-90 transition-all"><img alt="User Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjNfvlGczurC9h4kcyj1MwY6_P5otnlAvU_bFnBux1ad-NQfeK9jPKwE98J0TO-M4OJ7GY3L7rPSZ5B7yQxHd2G7Ah1NSAotoJTQS5eZLb-OcVksvYa7UA_3B8O7wzjYxuXO3cEg_aoQ5S70jkXEVrN8QXaxB8AjhlYiUOPrqOS8a5bZl5WRuNvOXDaXJzKjxKB2T0vrElOcWi8vpSgLo1InNl76LXXucJgrprHIdClJXckQKBv7lg"></div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<nav class="hidden md:flex border-r border-outline-variant fixed left-0 top-0 h-screen flex-col z-40 transition-all duration-300 ease-in-out bg-white overflow-y-auto w-[280px] pt-16 pb-6" id="leftSidebar">
+<div class="px-6 flex items-center gap-3 mb-4 mt-4">
+<div class="w-10 h-10 rounded flex items-center justify-center shrink-0" id="navLogo">
+<img alt="NetStudy Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0WeRZQ2Was4ob-oopgyUZc0hU8EYlOeHKx6jz83xJC8bmFUFacG43wxcELUC9QTYKlNTHp7XuWaxwI2YAZLSOwSrBAH4l3KrMOXFX6k260WWfRighsTUwxitPYiWQxaQKfv9S5ejIVtMDfuQ-39Y7xcV0KfL5ljmBUiDQEqZI_U2p57KM8gky_i_j3POyvK5IMdaVztfnM0VjtYtnmcbWeh6u0vkElz-xn7wWOnX_8irE857FPitceiTEGd_lszYEz3oTgKeich7EfQ">
+</div>
+<div class="sidebar-text"><h2 class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap">NetStudy<div class="">Academy</div></h2></div>
+</div>
+<div class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out font-label-md text-label-md overflow-hidden" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="school">school</span>
+<span class="sidebar-text whitespace-nowrap"><h2 class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap"><span class="" style="color: rgb(61, 74, 61); font-family: Inter; font-size: 14px; letter-spacing: 0.7px;">Courses</span></h2></span>
+</a>
+
+</div>
+<div class="px-4 space-y-1 mt-auto pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out font-label-md text-label-md overflow-hidden" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="settings">settings</span>
+<span class="sidebar-text whitespace-nowrap"><h2 class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap"><span class="" style="color: rgb(61, 74, 61); font-family: Inter; font-size: 14px; letter-spacing: 0.7px;">Settings</span></h2></span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 ease-in-out font-label-md text-label-md overflow-hidden" href="#">
+<span class="material-symbols-outlined shrink-0" data-icon="contact_support">contact_support</span>
+<span class="sidebar-text whitespace-nowrap"><h2 class="font-headline-sm text-headline-sm text-primary font-bold whitespace-nowrap"><span class="" style="color: rgb(61, 74, 61); font-family: Inter; font-size: 14px; letter-spacing: 0.7px;">Support</span></h2></span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="pt-16 min-h-screen flex flex-col lg:flex-row transition-all duration-300 ease-in-out bg-white md:ml-[280px]" id="mainContent">
+<!-- Center Column: Lesson Content -->
+<div class="flex-1 flex flex-col min-w-0 bg-white">
+<div class="max-w-[800px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs / Top Meta -->
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mb-6"><a class="hover:text-primary transition-colors cursor-pointer hover:underline active:opacity-80" href="#" title="Back to Course Overview">Global Logistics Fundamentals</a>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors cursor-pointer hover:underline active:opacity-80" href="#" title="Back to Module Curriculum">Module 2: International Trade Terms</a>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span aria-current="page" class="text-primary font-medium">Lesson 1: Incoterms 2020</span></div>
+<!-- Video Player Area -->
+<div class="w-full aspect-video bg-inverse-surface rounded-xl overflow-hidden relative group mb-8 shadow-sm border border-outline-variant flex items-center justify-center">
+<!-- Video Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="A professional instructor standing in front of a sleek, modern digital presentation screen explaining complex logistics diagrams. The lighting is studio-quality, emphasizing clarity and corporate professionalism with a navy blue and white color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBzRPaxCc8bnTJOnje0qM2nXzMsiTZQ4bpKr5rqgFFFn-DvfR7aB1bRg2Rnv8qxL9mGHGfckfoJEBwKKOGzvso3Z4r8JWWLXIvyB_vv47fX51AMiqVVJVtxL35QJezNssW8lzCz1s9r3qZgAj6hJVMQQH2NLtrCr89Bp8tAfLg9ATwJ7XDpScbVokmOkaceC8GZ6KK6d6LuONZfIR9V1_bULz9DG4PCwN69zvnufivYtaSIDhrpUQin')"></div>
+<!-- Play Button Overlay -->
+<button class="z-10 w-16 h-16 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center text-on-primary backdrop-blur-sm transition-transform hover:scale-105 active:scale-95 shadow-[0px_10px_25px_rgba(0,110,47,0.15)]">
+<span class="material-symbols-outlined text-4xl ml-1" data-icon="play_arrow" data-weight="fill">play_arrow</span>
+</button>
+<!-- Video Controls Bar -->
+<div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black/70 to-transparent flex items-end px-4 pb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-full flex items-center gap-4 text-white">
+<span class="material-symbols-outlined text-sm cursor-pointer" data-icon="pause">pause</span>
+<div class="flex-1 h-1 bg-white/30 rounded-full overflow-hidden cursor-pointer relative">
+<div class="absolute top-0 left-0 h-full bg-primary w-1/3"></div>
+</div>
+<span class="font-code-sm text-code-sm">04:12 / 15:30</span>
+<span class="material-symbols-outlined text-sm cursor-pointer" data-icon="volume_up">volume_up</span>
+<span class="material-symbols-outlined text-sm cursor-pointer" data-icon="fullscreen">fullscreen</span>
+</div>
+</div>
+</div>
+<!-- Lesson Title & Description -->
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-4">Lesson 1: Incoterms 2020 Overview</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Understand the fundamental framework of International Commercial Terms (Incoterms) established by the International Chamber of Commerce. This lesson covers the obligations, risks, and costs involved in the delivery of goods from seller to buyer.
+                </p>
+</div>
+<!-- Rich Text Content Area -->
+<div class="prose prose-slate max-w-none font-body-md text-body-md text-on-surface space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary mt-8 mb-4">The Role of Incoterms</h3>
+<p class="">
+                    Incoterms clearly communicate the tasks, costs, and risks associated with the global or international transportation and delivery of goods. They are essential for smooth global trade, ensuring both buyers and sellers understand their responsibilities at every stage of the logistics chain.
+                </p>
+<div class="bg-surface-container-low border-l-4 border-primary p-6 rounded-r my-8"><div class="flex flex-col gap-2"><span class="text-label-md font-label-md text-primary uppercase tracking-wider">Key Concept</span><p class="text-on-surface-variant">Incoterms do NOT determine ownership or transfer title to the goods, nor do they cover payment terms. They strictly address delivery mechanisms.</p></div></div>
+<h3 class="font-headline-md text-headline-md text-primary mt-8 mb-4">Classification by Transport Mode</h3>
+<p class="">
+                    The 2020 rules are divided into two primary categories based on the mode of transport:
+                </p>
+<ul class="list-disc pl-6 space-y-2 mb-6 text-on-surface-variant">
+<li class=""><strong>Rules for any mode or modes of transport:</strong> EXW, FCA, CPT, CIP, DAP, DPU, DDP</li>
+<li class=""><strong>Rules for sea and inland waterway transport:</strong> FAS, FOB, CFR, CIF</li>
+</ul>
+<!-- Explanatory Diagram -->
+<div class="my-10 bg-white border border-outline-variant rounded-xl p-6 shadow-sm">
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-4">Risk and Cost Transfer Diagram</h4>
+<div class="w-full h-64 rounded-lg overflow-hidden relative bg-white">
+<div class="w-full h-full bg-cover bg-center" data-alt="A clean, modern infographic diagram illustrating the transfer of risk and cost between buyer and seller across a stylized global supply chain. The diagram uses a strict corporate color palette of deep navy blue, crisp white, and subtle orange accents for progress indicators." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI6x-WCVsfR_W5idV5x3xwepy3HmcN90sHuUUC_IfUT52DHwRvuwcBgdrtc636MIN69o7oKX9V23pKa1GUW2i7wkn7JNRm6fUfZJ2kgCNZ_wGSL5Y2CWXR7tvzOD_UNGNuuiSztAhPz_xNTUAt_x3R1AbUM--dwTrMW8GSPB4FWkZ121c859r_lunrm_4ay-z0Cl_4ohuOYVuTCck8oDI-nKx9BwePbKZDvJOgU2UTd5Y_OZQbFDqL')"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 text-center">Figure 1.1: Typical transfer points for FOB vs CIF agreements.</p>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="mt-12 pt-8 border-t border-outline-variant flex items-center justify-between">
+<button class="px-6 py-2 border border-outline text-primary font-label-md text-label-md rounded hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                    Previous Lesson
+                </button>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:brightness-110 active:scale-95 transition-all flex items-center gap-2">
+                    Next Lesson
+                    <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="h-16"></div> <!-- Bottom padding -->
+</div>
+</div>
+<!-- Right Sidebar: Module Syllabus -->
+<aside class="w-full lg:w-[320px] bg-white border-l border-outline-variant flex-shrink-0 relative">
+<div class="sticky top-16 h-[calc(100vh-64px)] flex flex-col">
+<!-- Syllabus Header -->
+<div class="p-6 border-b border-outline-variant bg-white">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Module 2 Contents</h3>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span class="">1 of 5 Lessons</span>
+<span class="">20% Complete</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2 bg-surface-container-high rounded-full mt-3 overflow-hidden">
+<div class="h-full bg-primary w-1/5 rounded-full"></div>
+</div>
+</div>
+<!-- Syllabus List -->
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1 px-3">
+<!-- Active Lesson -->
+<li class="">
+<a class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low border border-primary/20 transition-colors" href="#">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[14px]" data-icon="play_arrow">play_arrow</span>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-primary mb-1">Lesson 1: Incoterms 2020</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">15 min video • Reading</span>
+</div>
+</a>
+</li>
+<!-- Completed Lesson (hypothetical, for UI demonstration) -->
+<li class="">
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group" href="#">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary/50 flex items-center justify-center bg-surface">
+<span class="material-symbols-outlined text-transparent text-[14px]" data-icon="check">check</span>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary transition-colors">Lesson 2: Bill of Lading</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">12 min video</span>
+</div>
+</a>
+</li>
+<li class="">
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group" href="#">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full border-2 border-outline-variant group-hover:border-primary/50 flex items-center justify-center">
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary transition-colors">Lesson 3: Commercial Invoice</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">10 min video • Quiz</span>
+</div>
+</a>
+</li>
+<li class="">
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group opacity-75" href="#">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">Lesson 4: Packing List</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Locked</span>
+</div>
+</a>
+</li>
+<li class="">
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors group opacity-75" href="#">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">Module 2 Assessment</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">Locked</span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+<!-- Quick Actions in Sidebar -->
+<div class="p-4 border-t border-outline-variant bg-white">
+<button class="w-full px-4 py-2 bg-white border border-outline text-on-surface font-label-md text-label-md rounded shadow-sm hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="forum">forum</span>
+                    Ask Instructor
+                </button>
+</div>
+</div>
+</aside>
+</main>
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('leftSidebar');
+    const mainContent = document.getElementById('mainContent');
+    const sidebarTexts = document.querySelectorAll('.sidebar-text');
+    
+    if (sidebar && mainContent) {
+      sidebar.classList.toggle('w-[280px]');
+      sidebar.classList.toggle('w-[80px]');
+      
+      mainContent.classList.toggle('md:ml-[280px]');
+      mainContent.classList.toggle('md:ml-[80px]');
+      
+      sidebarTexts.forEach(el => {
+        el.classList.toggle('hidden');
+      });
+    }
+  }
+
+  function toggleNotifDropdown(e) {
+    if (e) e.stopPropagation();
+    const dropdown = document.getElementById('notification-dropdown');
+    if (dropdown) {
+      dropdown.classList.toggle('hidden');
+    }
+  }
+
+  function updateUnreadCount() {
+    const activeDots = document.querySelectorAll('.notif-dot:not(.bg-transparent)');
+    const count = activeDots.length;
+    const badge = document.getElementById('notif-count-badge');
+    const bellDot = document.getElementById('bell-unread-dot');
+
+    if (badge) {
+      if (count > 0) {
+        badge.textContent = count + ' mới';
+        badge.className = 'bg-error text-white font-bold text-[11px] px-2 py-0.5 rounded-full leading-none';
+      } else {
+        badge.textContent = '0 mới';
+        badge.className = 'bg-surface-container-high text-on-surface-variant font-bold text-[11px] px-2 py-0.5 rounded-full leading-none';
+      }
+    }
+
+    if (bellDot) {
+      if (count > 0) {
+        bellDot.classList.remove('hidden');
+      } else {
+        bellDot.classList.add('hidden');
+      }
+    }
+  }
+
+  function markItemRead(item) {
+    if (!item) return;
+    item.classList.remove('bg-surface-container-low/40');
+    const dot = item.querySelector('.notif-dot');
+    if (dot) {
+      dot.classList.remove('bg-error');
+      dot.classList.add('bg-transparent');
+    }
+    const title = item.querySelector('p.font-bold');
+    if (title) {
+      title.classList.remove('font-bold');
+      title.classList.add('font-medium');
+    }
+    updateUnreadCount();
+  }
+
+  function markAllNotificationsRead() {
+    document.querySelectorAll('.notif-item').forEach(item => {
+      markItemRead(item);
+    });
+  }
+
+  // Global click to close notification dropdown
+  document.addEventListener('click', function(e) {
+    const wrapper = document.getElementById('notification-wrapper');
+    const dropdown = document.getElementById('notification-dropdown');
+    if (dropdown && wrapper && !wrapper.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+
+  // Initial check
+  updateUnreadCount();
+</script>
+
+
+</body></html>

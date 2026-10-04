@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="vi" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chỉnh sửa Portfolio Cá nhân - Alex Johnson | NetStudy Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error-container": "#93000a",
+          "tertiary-container": "#ff8b7c",
+          "primary-fixed-dim": "#4ae176",
+          "on-tertiary-container": "#76231b",
+          "error-container": "#ffdad6",
+          "secondary-fixed": "#dae2fd",
+          "surface": "#f3fcef",
+          "surface-dim": "#d4ddd0",
+          "surface-bright": "#f3fcef",
+          "tertiary-fixed": "#ffdad5",
+          "on-primary-fixed": "#002109",
+          "inverse-surface": "#2a322a",
+          "primary-fixed": "#6bff8f",
+          "error": "#ba1a1a",
+          "surface-container-high": "#e2ebde",
+          "on-tertiary-fixed": "#410001",
+          "background": "#f3fcef",
+          "outline-variant": "#bccbb9",
+          "primary-container": "#22c55e",
+          "surface-tint": "#006e2f",
+          "tertiary-fixed-dim": "#ffb4a9",
+          "on-primary-container": "#004b1e",
+          "on-primary-fixed-variant": "#005321",
+          "on-background": "#161d16",
+          "on-error": "#ffffff",
+          "secondary-fixed-dim": "#bec6e0",
+          "surface-container": "#e8f0e4",
+          "surface-variant": "#dce5d9",
+          "secondary": "#565e74",
+          "primary": "#006e2f",
+          "on-surface": "#161d16",
+          "tertiary": "#9e4036",
+          "on-surface-variant": "#3d4a3d",
+          "inverse-primary": "#4ae176",
+          "inverse-on-surface": "#ebf3e7",
+          "surface-container-highest": "#dce5d9",
+          "on-primary": "#ffffff",
+          "on-secondary": "#ffffff",
+          "outline": "#6d7b6c",
+          "on-secondary-fixed-variant": "#3f465c",
+          "on-tertiary": "#ffffff",
+          "surface-container-low": "#edf6ea",
+          "secondary-container": "#dae2fd",
+          "on-secondary-fixed": "#131b2e",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed-variant": "#7f2a21",
+          "on-secondary-container": "#5c647a",
+          "primary-dark": "#15803d",
+          "vibrant-green": "#22c55e",
+          "maritime-navy": "#0f172a",
+          "navy-muted": "#1e293b",
+          "surface-bg": "#f8fafc",
+          "border-subtle": "#e2e8f0"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.375rem",
+          "xl": "0.625rem",
+          "2xl": "1rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "unit-3": "0.75rem",
+          "unit-4": "1rem",
+          "unit-8": "2rem"
+        },
+        "fontFamily": {
+          "headline": ["Montserrat", "sans-serif"],
+          "display": ["Montserrat", "sans-serif"],
+          "body": ["Inter", "sans-serif"],
+          "label": ["Inter", "sans-serif"]
+        }
+      },
+    },
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Collapsible Sidebar Styles */
+  #main-sidebar {
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), padding 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .sidebar-collapsed #main-sidebar {
+    width: 76px !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .sidebar-collapsed .nav-text-label,
+  .sidebar-collapsed .brand-text {
+    display: none !important;
+  }
+  .sidebar-collapsed .nav-link-item {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .sidebar-collapsed .brand-container {
+    justify-content: center !important;
+  }
+  
+  /* Tooltip indicator for collapsed mode */
+  .sidebar-collapsed .nav-link-item {
+    position: relative;
+  }
+  .sidebar-collapsed .nav-link-item:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 6px;
+    z-index: 60;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+</style>
+</head>
+<body class="bg-[#f8fafc] text-on-surface h-full flex overflow-hidden font-body flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 border-b border-outline-variant transition-colors bg-white"><button class="p-2 mr-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 flex items-center justify-center" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-unit-4">
+</div>
+<div class="flex-1 max-w-md mx-unit-8 hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-sm focus:outline-none focus:border-primary transition-colors" placeholder="Search courses..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-unit-4">
+<div class="relative" id="notification-wrapper"><button aria-label="Thông báo" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 relative flex items-center justify-center" id="notif-bell-btn" onclick="toggleNotifDropdown(event)"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-white animate-pulse hidden" id="bell-unread-dot"></span></button><div class="absolute right-0 top-12 w-80 md:w-96 bg-white border border-outline-variant rounded-xl shadow-xl z-50 overflow-hidden hidden" id="notification-dropdown"><div class="p-unit-4 border-b border-outline-variant flex justify-between items-center bg-white"><div class="flex items-center gap-2"><h3 class="font-headline-sm text-[16px] font-bold text-on-surface">Thông báo</h3><span class="bg-error text-white font-bold text-[11px] px-2 py-0.5 rounded-full leading-none" id="notif-count-badge">3 mới</span></div><button class="text-primary font-label-md text-code-sm hover:underline cursor-pointer" onclick="markAllNotificationsRead()">Đánh dấu tất cả đã đọc</button></div><div class="max-h-96 overflow-y-auto divide-y divide-outline-variant/60" id="notification-list"><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">verified</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Chứng chỉ mới đã được cấp</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn đã hoàn thành khóa học Vận tải Quốc tế và nhận chứng chỉ chính thức.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">Vừa xong</p></div></div><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Portfolio của bạn đã được lưu</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Thông tin năng lực và kinh nghiệm làm việc đã được cập nhật thành công vào hồ sơ.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">2 giờ trước</p></div></div><div class="notif-item p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">directions_boat</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-body-sm text-on-surface">Lời mời tham gia phòng mô phỏng mới</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn được mời tham gia bài tập mô phỏng xử lý khủng hoảng Kênh đào Suez.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">Hôm qua</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">assignment</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Nhắc nhở hạn nộp bài tập</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Hạn chót nộp bài phân tích Vận đơn đường biển Bill of Lading vào ngày mai.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">2 ngày trước</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">description</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Cập nhật tài liệu Incoterms 2020</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Tài liệu phân biệt rủi ro CIF vs FOB đã được cập nhật phiên bản mới nhất.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">4 ngày trước</p></div></div><div class="notif-item extra-notif p-unit-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-unit-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">forum</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-body-sm text-on-surface">Tin nhắn mới từ giảng viên</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-body-sm text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Giảng viên phụ trách đã phản hồi thắc mắc về phân bổ chi phí DEM/DET của bạn.</p><p class="text-code-sm text-on-surface-variant mt-1 text-[11px]">1 tuần trước</p></div></div></div><div class="p-unit-3 text-center bg-surface-container-low border-t border-outline-variant"><button class="text-primary font-label-md text-label-md py-1 flex items-center justify-center gap-1 w-full font-medium cursor-pointer" id="show-all-notifs-btn" onclick="toggleAllNotifications(this)"><span class="flex items-center justify-center gap-1" id="show-all-notifs-label"><span class="">Xem tất cả thông báo</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></button></div></div><script class="">function collapseNotifications() { document.querySelectorAll('.extra-notif').forEach(item => item.classList.add('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Xem tất cả thông báo ->'; const toggleBtn = document.getElementById('show-all-notifs-btn'); if (toggleBtn) { toggleBtn.classList.remove('opacity-70'); toggleBtn.onclick = function() { toggleAllNotifications(toggleBtn); }; } } function toggleAllNotifications(btn) { const extras = document.querySelectorAll('.extra-notif'); const isExpanded = !extras[0] || !extras[0].classList.contains('hidden'); if (isExpanded) { collapseNotifications(); } else { extras.forEach(item => item.classList.remove('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Thu gọn ^'; } } revealAllNotifications = function() { toggleAllNotifications(document.getElementById('show-all-notifs-btn')); };</script></div>
+<div class="w-9 h-9 rounded-xl border border-outline-variant flex items-center justify-center cursor-pointer ml-2 overflow-hidden bg-white hover:opacity-90 transition-all"><img alt="User Profile" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjNfvlGczurC9h4kcyj1MwY6_P5otnlAvU_bFnBux1ad-NQfeK9jPKwE98J0TO-M4OJ7GY3L7rPSZ5B7yQxHd2G7Ah1NSAotoJTQS5eZLb-OcVksvYa7UA_3B8O7wzjYxuXO3cEg_aoQ5S70jkXEVrN8QXaxB8AjhlYiUOPrqOS8a5bZl5WRuNvOXDaXJzKjxKB2T0vrElOcWi8vpSgLo1InNl76LXXucJgrprHIdClJXckQKBv7lg"/></div>
+</div>
+</nav>
+<!-- Main Wrapper -->
+<div class="flex-1 flex h-full overflow-hidden pt-16"><aside class="hidden md:flex flex-col bg-surface-container-lowest border-r border-border-subtle h-full w-[275px] py-5 px-4 z-30 flex-shrink-0 shadow-sm justify-between transition-all duration-200" id="main-sidebar"><div class="flex flex-col flex-1"><div class="brand-container flex items-center gap-3 mb-8 px-1"><img alt="NetStudy Logo" class="w-10 h-10 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbIy_OZamhOdAEpweQQW7qxP9mJGSMa32YpIUbxaMajBQtyMwl8LV0oRJ-EKDRbMKSgVrAnT3RY-bJgN4ZePlqveeIFnD9RoU-Sg5QBMOO1rQRE3iw6gN6nyNnFuhgQLx5M8EoNfs7WWm7ma866bui6yKuNRFxzDuZ4DBwU2eR0oxzZhrfkebGYKvgjoq3Vfgdt9bOyqn1PRzsTo3knG330190nLiDMK3ra3OM-4psPBR2bzFY-Yt2Ni4xZi5FsG7csg"/><div class="brand-text overflow-hidden"><span class="text-base font-bold text-maritime-navy tracking-tight block leading-tight font-headline"><h2 class="font-headline-sm text-headline-sm text-primary font-bold" style="--tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-size: 20px; --tw-text-opacity: 1; color: rgb(0, 110, 47); letter-spacing: normal; font-family: Montserrat; line-height: 28px; outline: none !important; box-shadow: none !important;">NetStudy Academy</h2></span></div></div><nav class="space-y-1.5 font-headline font-medium text-xs tracking-wide"><a class="nav-link-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-secondary hover:text-maritime-navy hover:bg-[#f1f5f9] transition-all" data-tooltip="Khóa học (Courses)" href="#" title="Khóa học (Courses)"><span class="material-symbols-outlined text-[20px] shrink-0">school</span><span class="nav-text-label text-sm font-medium whitespace-nowrap"><span class="" style="color: rgb(61, 74, 61); font-family: Inter, sans-serif; letter-spacing: normal;">Courses</span></span></a></nav></div><div class="border-t border-border-subtle pt-4 space-y-1 font-headline text-xs font-semibold text-secondary"><a class="nav-link-item flex items-center gap-3 px-3.5 py-2.5 rounded-lg hover:bg-[#f1f5f9] hover:text-maritime-navy transition-all" data-tooltip="Cài đặt (Settings)" href="#" title="Settings"><span class="material-symbols-outlined text-[20px] shrink-0">settings</span><span class="nav-text-label whitespace-nowrap">Settings</span></a><a class="nav-link-item flex items-center gap-3 px-3.5 py-2.5 rounded-lg hover:bg-[#f1f5f9] hover:text-maritime-navy transition-all" data-tooltip="Hỗ trợ (Support)" href="#" title="Support"><span class="material-symbols-outlined text-[20px] shrink-0">help_outline</span><span class="nav-text-label whitespace-nowrap">Support</span></a></div></aside>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto p-4 md:p-8 bg-[#f8fafc]">
+<div class="max-w-[1240px] mx-auto space-y-6 pb-16">
+<!-- Page Header & Action Buttons -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-3xl border border-border-subtle shadow-sm">
+<div class="flex items-start sm:items-center gap-3.5">
+<a class="p-2 rounded-2xl border border-border-subtle text-secondary hover:text-maritime-navy hover:bg-[#f1f5f9] transition-colors shadow-2xs mt-0.5 sm:mt-0" href="#" title="Quay lại Hồ sơ">
+<span class="material-symbols-outlined text-[20px] block">arrow_back</span>
+</a>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-3 py-1 rounded-full bg-emerald-50 text-primary-dark font-headline font-bold text-[10px] tracking-wide border border-emerald-200">PORTFOLIO NĂNG LỰC</span>
+<span class="text-secondary text-xs">•</span>
+<span class="text-xs font-medium text-secondary">Học viên NetStudy Academy</span>
+</div>
+<h1 class="font-headline font-extrabold text-xl md:text-2xl text-maritime-navy tracking-tight">Chỉnh sửa Portfolio cá nhân</h1>
+<p class="text-xs md:text-sm text-secondary mt-1">Cập nhật hồ sơ năng lực chuyên gia Logistics, kinh nghiệm thực chiến và dự án mô phỏng tại NetStudy Academy</p>
+</div>
+</div>
+<div class="flex items-center gap-3 self-end sm:self-auto shrink-0">
+<button class="px-5 py-2.5 text-xs font-headline font-semibold text-secondary hover:text-maritime-navy bg-white hover:bg-[#f1f5f9] border border-border-subtle rounded-2xl transition-all shadow-xs cursor-pointer" type="button">
+            Hủy thay đổi
+          </button>
+<button class="px-6 py-2.5 text-xs font-headline font-bold text-white bg-primary-dark hover:bg-primary active:scale-98 rounded-2xl transition-all shadow-sm shadow-emerald-700/20 flex items-center gap-2 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="">Lưu Portfolio</span>
+</button>
+</div>
+</div>
+<!-- 2-Column Professional Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- CỘT TRÁI: Thông tin tóm tắt, Giới thiệu bio & Kỹ năng (4 Cột) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Card Thông tin Chuyên viên -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6 relative overflow-hidden text-center"><div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-r from-primary-dark via-vibrant-green to-emerald-500 opacity-90"></div><div class="relative z-10 inline-block mt-4 mb-3"><div class="w-28 h-28 rounded-3xl ring-4 ring-white shadow-md overflow-hidden mx-auto bg-white"><img alt="Alex Johnson" class="w-full h-full object-cover rounded-3xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXE6OCvk732jGoV-ddpVrQge9_eiiCviwkeaW7iYSAaDYs_Lr8xDWLfPzAWRyhpL9E8q4eO2wjiPOMjhHj9A9GmluWQQv3R4ekjwHQOFugv1-oLcPhDVs8-iC9LOWugoi_T9PIJ6n4mkuPhK7HGQjEiXeKxdY5PJMT_D6n2KMOK_1dysdzlYeRzpi6CergxaTg7sUA50_E74tWYe_FgyhElmJWXbmXlau5H96_guS1DiJAuvgxsSS_"/></div></div><div class="mb-4"><label class="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-50 text-primary-dark hover:bg-emerald-100 rounded-2xl text-xs font-headline font-bold cursor-pointer transition-colors border border-emerald-200 shadow-2xs" for="avatar-file-upload"><span class="material-symbols-outlined text-[16px]">photo_camera</span><span class="">Đổi ảnh đại diện</span></label><input accept="image/*" class="hidden" id="avatar-file-upload" type="file"/></div><div class="space-y-3 text-left"><div class="space-y-1"><label class="text-[11px] font-headline font-bold text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-vibrant-green">person</span>Họ và tên</label><input class="w-full px-4 py-2 bg-surface-bg border border-border-subtle rounded-2xl text-sm font-headline font-bold text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" type="text" value="Alex Johnson"/></div><div class="space-y-1"><label class="text-[11px] font-headline font-bold text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-vibrant-green">badge</span>Chức danh nghề nghiệp / Vị trí</label><input class="w-full px-4 py-2 bg-surface-bg border border-border-subtle rounded-2xl text-xs font-semibold text-vibrant-green focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" type="text" value="Chuyên viên Điều phối Logistics &amp; Quản trị Chuỗi cung ứng"/></div><div class="space-y-1"><label class="text-[11px] font-headline font-bold text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">cake</span>Ngày tháng năm sinh</label><div class="relative"><input class="w-full pl-9 pr-4 py-2 bg-surface-bg border border-border-subtle rounded-2xl text-xs text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="DD/MM/YYYY" type="text" value="15/08/1998"/><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary/70 text-[15px]">calendar_today</span></div></div><div class="grid grid-cols-1 gap-2.5"><div class="space-y-1"><label class="text-[11px] font-headline font-bold text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">call</span>Số điện thoại</label><div class="relative"><input class="w-full pl-9 pr-4 py-2 bg-surface-bg border border-border-subtle rounded-2xl text-xs text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="Số điện thoại" type="tel" value="+84 90 123 4567"/><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary/70 text-[15px]">phone_iphone</span></div></div><div class="space-y-1"><label class="text-[11px] font-headline font-bold text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">mail</span>Gmail / Email</label><div class="relative"><input class="w-full pl-9 pr-4 py-2 bg-surface-bg border border-border-subtle rounded-2xl text-xs text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="Địa chỉ email" type="email" value="alex.johnson@example.com"/><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary/70 text-[15px]">alternate_email</span></div></div></div></div><div class="mt-4 pt-4 border-t border-border-subtle space-y-2.5 text-left"><div class="flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-surface-bg border border-border-subtle/60"><span class="text-[11px] font-headline font-semibold text-secondary tracking-wide flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary-dark">verified</span>Xác thực hồ sơ</span><span class="text-xs font-bold text-primary-dark bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">NetStudy Certified</span></div><div class="p-3.5 rounded-2xl bg-surface-bg/80 border border-border-subtle space-y-1.5"><label class="text-[11px] font-headline font-bold text-secondary flex items-center justify-between"><span class="">Trạng thái tìm việc</span><span class="text-[10px] text-emerald-700 font-semibold">Đang công khai</span></label><div class="relative flex items-center rounded-2xl bg-white border border-emerald-200 shadow-2xs hover:border-emerald-300 transition-all px-3 py-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0 ring-2 ring-emerald-100" id="status-indicator-dot"></span><select class="w-full appearance-none bg-transparent font-semibold text-xs text-emerald-800 pl-2 pr-6 py-0.5 cursor-pointer outline-none focus:outline-none focus:ring-0 border-none" id="recruitment-status-select"><option selected="" value="available">🟢 Sẵn sàng nhận việc (Open to work)</option><option value="considering">🟡 Đang cân nhắc cơ hội phù hợp</option><option value="unavailable">⚪ Không sẵn sàng / Tạm dừng</option></select><span class="material-symbols-outlined text-[16px] text-emerald-700 pointer-events-none absolute right-2 select-none">unfold_more</span></div></div></div></div>
+<!-- Mục: Mục tiêu nghề nghiệp & Giới thiệu tóm tắt (Bio) -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline font-bold text-sm text-maritime-navy flex items-center gap-2">
+<span class="material-symbols-outlined text-vibrant-green text-[20px]">badge</span>
+                Mục tiêu nghề nghiệp &amp; Bio
+              </h3>
+<span class="text-[11px] text-secondary font-medium">Tóm tắt năng lực</span>
+</div>
+<p class="text-xs text-secondary mb-2">Đoạn văn giới thiệu nổi bật khi chia sẻ portfolio đến nhà tuyển dụng:</p>
+<textarea class="w-full p-4 bg-surface-bg border border-border-subtle rounded-2xl text-xs md:text-sm text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green leading-relaxed resize-y transition-all" rows="5">Chuyên viên điều phối Logistics với hơn 4 năm kinh nghiệm thực chiến trong nghiệp vụ hải quan điện tử VNACCS, kiểm soát chứng từ FBL/B-L và tối ưu cước vận tải biển container. Thành thạo phân bổ chi phí Local Charges, đàm phán hãng tàu quốc tế và xử lý khủng hoảng chuỗi cung ứng theo tiêu chuẩn Incoterms 2020.</textarea>
+<div class="flex justify-between items-center mt-2 text-[11px] text-secondary">
+<span class="">284 / 500 ký tự</span>
+</div>
+</div>
+<!-- Mục: Kỹ năng chuyên môn (Specialized Skills) -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline font-bold text-sm text-maritime-navy flex items-center gap-2">
+<span class="material-symbols-outlined text-vibrant-green text-[20px]">psychology</span>
+                Kỹ năng chuyên môn
+              </h3>
+<span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-primary-dark border border-emerald-200">6 Kỹ năng</span>
+</div>
+<!-- Skill Tags list with rounded-2xl / rounded-full tags -->
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-bg text-maritime-navy hover:border-vibrant-green border border-border-subtle rounded-2xl text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">check_circle</span>
+                Incoterms 2020
+                <button class="hover:text-error text-secondary transition-colors ml-0.5" title="Xóa kỹ năng" type="button"><span class="material-symbols-outlined text-[15px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-bg text-maritime-navy hover:border-vibrant-green border border-border-subtle rounded-2xl text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">check_circle</span>
+                FIATA Multimodal B/L
+                <button class="hover:text-error text-secondary transition-colors ml-0.5" title="Xóa kỹ năng" type="button"><span class="material-symbols-outlined text-[15px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-bg text-maritime-navy hover:border-vibrant-green border border-border-subtle rounded-2xl text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">check_circle</span>
+                Hải quan điện tử VNACCS
+                <button class="hover:text-error text-secondary transition-colors ml-0.5" title="Xóa kỹ năng" type="button"><span class="material-symbols-outlined text-[15px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-bg text-maritime-navy hover:border-vibrant-green border border-border-subtle rounded-2xl text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">check_circle</span>
+                Tối ưu cước tàu &amp; Local Charges
+                <button class="hover:text-error text-secondary transition-colors ml-0.5" title="Xóa kỹ năng" type="button"><span class="material-symbols-outlined text-[15px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-bg text-maritime-navy hover:border-vibrant-green border border-border-subtle rounded-2xl text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">check_circle</span>
+                Khai báo VGM &amp; Manifest
+                <button class="hover:text-error text-secondary transition-colors ml-0.5" title="Xóa kỹ năng" type="button"><span class="material-symbols-outlined text-[15px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-surface-bg text-maritime-navy hover:border-vibrant-green border border-border-subtle rounded-2xl text-xs font-medium transition-all group">
+<span class="material-symbols-outlined text-[15px] text-vibrant-green">check_circle</span>
+                Quản trị rủi ro hàng hải
+                <button class="hover:text-error text-secondary transition-colors ml-0.5" title="Xóa kỹ năng" type="button"><span class="material-symbols-outlined text-[15px]">close</span></button>
+</span>
+</div>
+<!-- Add skill field -->
+<div class="flex gap-2">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[18px]">add_task</span>
+<input class="w-full pl-9 pr-4 py-2.5 bg-surface-bg border border-border-subtle rounded-2xl text-xs text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="Nhập thêm kỹ năng..." type="text"/>
+</div>
+<button class="px-4 py-2.5 bg-primary-dark hover:bg-primary text-white rounded-2xl font-headline text-xs font-semibold transition-all shadow-xs flex items-center gap-1 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Thêm</span>
+</button>
+</div>
+</div>
+<!-- Mục: Ngôn ngữ chuyên ngành -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline font-bold text-sm text-maritime-navy flex items-center gap-2">
+<span class="material-symbols-outlined text-vibrant-green text-[20px]">translate</span>
+Ngôn ngữ chuyên ngành
+</h3>
+<button class="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-primary-dark border border-emerald-200 rounded-xl font-headline font-bold text-[11px] inline-flex items-center gap-1 transition-all cursor-pointer shadow-2xs" id="open-add-language-btn" type="button">
+<span class="material-symbols-outlined text-[15px]">add</span>
+<span class="">Thêm ngôn ngữ</span>
+</button>
+</div>
+<div class="space-y-2.5" id="language-list-container">
+<div class="p-3.5 bg-surface-bg rounded-2xl border border-border-subtle hover:border-vibrant-green/50 hover:bg-white transition-all group flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-8 h-8 rounded-xl bg-emerald-100 text-primary-dark font-bold text-xs flex items-center justify-center shrink-0">VN</span>
+<div class="min-w-0">
+<div class="text-xs font-bold text-maritime-navy truncate">Tiếng Việt</div>
+<div class="text-[11px] text-secondary truncate">Bản ngữ (Native Proficiency)</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">Thành thạo</span>
+<div class="flex items-center gap-0.5">
+<button class="p-1.5 text-secondary hover:text-primary-dark hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-error hover:bg-error-container/40 rounded-xl transition-colors cursor-pointer" title="Xóa">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-3.5 bg-surface-bg rounded-2xl border border-border-subtle hover:border-vibrant-green/50 hover:bg-white transition-all group flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="w-8 h-8 rounded-xl bg-blue-100 text-blue-800 font-bold text-xs flex items-center justify-center shrink-0">EN</span>
+<div class="min-w-0">
+<div class="text-xs font-bold text-maritime-navy truncate">Tiếng Anh Thương mại &amp; Hàng hải</div>
+<div class="text-[11px] text-secondary truncate">IELTS 7.5 / Commercial &amp; Maritime English</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">Chuyên nghiệp</span>
+<div class="flex items-center gap-0.5">
+<button class="p-1.5 text-secondary hover:text-primary-dark hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-error hover:bg-error-container/40 rounded-xl transition-colors cursor-pointer" title="Xóa">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CỘT PHẢI: Kinh nghiệm, Dự án mô phỏng, Chứng chỉ & Export (8 Cột) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- KHỐI 1: Kinh nghiệm làm việc & Thực tập -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6">
+<div class="flex items-center justify-between pb-4 border-b border-border-subtle mb-5">
+<div class="flex items-center gap-2.5">
+<span class="w-9 h-9 rounded-2xl bg-emerald-100 text-primary-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">work_history</span>
+</span>
+<div>
+<h3 class="font-headline font-bold text-sm md:text-base text-maritime-navy">Kinh nghiệm làm việc &amp; Thực tập</h3>
+<p class="text-xs text-secondary">Thực tế nghiệp vụ tại các doanh nghiệp giao nhận &amp; vận tải</p>
+</div>
+</div>
+<button class="px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-primary-dark border border-emerald-200 rounded-2xl font-headline font-bold text-xs inline-flex items-center gap-1.5 transition-all cursor-pointer shadow-2xs" id="open-add-experience-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="">Thêm kinh nghiệm</span>
+</button>
+</div>
+<!-- Experience Timeline Items -->
+<div class="space-y-4">
+<!-- Job Item 1 -->
+<div class="p-5 rounded-2xl border border-border-subtle bg-surface-bg/60 hover:bg-white hover:border-vibrant-green/50 hover:shadow-sm transition-all group">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-2xl bg-emerald-500/15 text-primary-dark flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-maritime-navy">Chuyên viên Thực tập Khai báo Hải quan &amp; Điều vận</h4>
+<p class="text-xs font-semibold text-primary-dark mt-0.5">Công ty TNHH Logistics ABC</p>
+<div class="flex items-center gap-2 mt-1 text-[11px] text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">calendar_today</span> 06/2023 - Hiện tại</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">location_on</span> TP. Hồ Chí Minh</span>
+</div>
+<p class="text-xs text-secondary mt-2 leading-relaxed">
+                        Xử lý chứng từ tờ khai hàng nhập khẩu cont FCL, phối hợp hãng tàu và kiểm hóa tại cảng Cát Lái. Thực hiện đối soát manifest và lệnh giao hàng D/O điện tử.
+                      </p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 self-end sm:self-start shrink-0">
+<button class="p-1.5 text-secondary hover:text-primary-dark hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-error hover:bg-error-container/40 rounded-xl transition-colors cursor-pointer" title="Xóa">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Job Item 2 -->
+<div class="p-5 rounded-2xl border border-border-subtle bg-surface-bg/60 hover:bg-white hover:border-vibrant-green/50 hover:shadow-sm transition-all group">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-sm text-maritime-navy">Trợ lý Điều phối Chứng từ Xuất nhập khẩu</h4>
+<p class="text-xs font-semibold text-blue-700 mt-0.5">Global Freight Inc.</p>
+<div class="flex items-center gap-2 mt-1 text-[11px] text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">calendar_today</span> 01/2023 - 05/2023</span>
+<span class="">•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">location_on</span> Rotterdam / Remote</span>
+</div>
+<p class="text-xs text-secondary mt-2 leading-relaxed">
+                        Hỗ trợ phát hành vận đơn FBL, lập bảng chi tiết đóng gói Packing List và đối chiếu hóa đơn thương mại CIF/FOB cho các tuyến đường biển Châu Âu.
+                      </p>
+</div>
+</div>
+<div class="flex items-center gap-1.5 self-end sm:self-start shrink-0">
+<button class="p-1.5 text-secondary hover:text-primary-dark hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer" title="Chỉnh sửa">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 text-secondary hover:text-error hover:bg-error-container/40 rounded-xl transition-colors cursor-pointer" title="Xóa">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- KHỐI 2: Dự án mô phỏng & Thực hành tình huống tại NetStudy -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6"><div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-border-subtle mb-5 gap-3">
+<div class="flex items-center gap-2.5">
+<span class="w-9 h-9 rounded-2xl bg-emerald-100 text-primary-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">model_training</span>
+</span>
+<div>
+<h3 class="font-headline font-bold text-sm md:text-base text-maritime-navy">Dự án Mô phỏng Thực chiến tại NetStudy</h3>
+<p class="text-xs text-secondary">Kết quả giải quyết tình huống &amp; Capstone Projects được xác thực kỹ thuật số</p>
+</div>
+</div>
+<!-- Toggle switch công khai -->
+<div class="flex items-center gap-2.5 bg-surface-bg px-3.5 py-2 rounded-2xl border border-border-subtle">
+<span class="text-xs font-medium text-maritime-navy">Hiển thị công khai với nhà tuyển dụng</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-vibrant-green"></div>
+</label>
+</div>
+</div>
+<!-- Practical Simulation Projects Categorized by Program -->
+<div class="space-y-6">
+<!-- Group 1: Vận tải Biển & Cước Quốc tế -->
+<div class="space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-xl bg-emerald-100 text-primary-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">directions_boat</span>
+</span>
+<h4 class="font-headline font-bold text-xs sm:text-sm text-maritime-navy">Vận tải Biển &amp; Cước Quốc tế (Ocean Freight &amp; Liner Shipping)</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-primary-dark border border-emerald-200">2 Dự án hoàn thành</span>
+<span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> NetStudy Verified
+        </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+<!-- Project A -->
+<div class="p-4 rounded-2xl border border-emerald-200 bg-white hover:border-vibrant-green hover:shadow-xs transition-all relative flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-vibrant-green rounded-l-2xl"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-1.5 pl-1">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-primary-dark font-bold text-[9px] tracking-wide">HOÀN THÀNH</span>
+<span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span> 95/100
+            </span>
+</div>
+<h5 class="font-headline font-bold text-xs text-maritime-navy leading-snug pl-1">
+            Quy trình Xử lý Báo giá cước &amp; Local Charges tuyến Cát Lái - Hamburg
+          </h5>
+<p class="text-[11px] text-secondary mt-1.5 leading-relaxed pl-1">
+            Thương lượng thực chiến qua Zalo bot mô phỏng đàm phán cước tàu, phân bổ chi phí THC/CIC và lập biểu phí PDF chuẩn quốc tế (12 tác vụ nghiệp vụ).
+          </p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-emerald-100 flex items-center justify-between text-xs pl-1">
+<span class="text-secondary font-medium text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">task_alt</span> 12 tác vụ
+          </span>
+<button class="text-primary-dark font-bold hover:text-vibrant-green flex items-center gap-1 cursor-pointer text-[11px]" type="button">
+<span class="">Xem báo cáo</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project B -->
+<div class="p-4 rounded-2xl border border-blue-200 bg-white hover:border-blue-500 hover:shadow-xs transition-all relative flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-blue-600 rounded-l-2xl"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-1.5 pl-1">
+<span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold text-[9px] tracking-wide">HOÀN THÀNH</span>
+<span class="text-xs font-bold text-blue-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span> 92/100
+            </span>
+</div>
+<h5 class="font-headline font-bold text-xs text-maritime-navy leading-snug pl-1">
+            Xử lý Khủng hoảng Kênh đào Suez &amp; Tối ưu hải trình Pacific
+          </h5>
+<p class="text-[11px] text-secondary mt-1.5 leading-relaxed pl-1">
+            Điều phối 15 TEUs chuyển hướng vòng qua Mũi Hảo Vọng, tính toán bảo hiểm CIF phát sinh và thương thảo phụ phí rủi ro với chủ hàng.
+          </p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-blue-100 flex items-center justify-between text-xs pl-1">
+<span class="text-secondary font-medium text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 4 giờ mô phỏng
+          </span>
+<button class="text-blue-700 font-bold hover:text-blue-900 flex items-center gap-1 cursor-pointer text-[11px]" type="button">
+<span class="">Xem báo cáo</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Group 2: Thủ tục Hải quan & Logistics Cảng biển -->
+<div class="space-y-3 pt-2 border-t border-border-subtle">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-xl bg-emerald-100 text-primary-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-[15px]">anchor</span>
+</span>
+<h4 class="font-headline font-bold text-xs sm:text-sm text-maritime-navy">Thủ tục Hải quan &amp; Logistics Cảng biển (Customs Clearance &amp; Port Ops)</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-primary-dark border border-emerald-200">2 Dự án thực hành</span>
+<span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> NetStudy Verified
+        </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+<!-- Project C -->
+<div class="p-4 rounded-2xl border border-emerald-200 bg-white hover:border-vibrant-green hover:shadow-xs transition-all relative flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-vibrant-green rounded-l-2xl"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-1.5 pl-1">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-primary-dark font-bold text-[9px] tracking-wide">HOÀN THÀNH</span>
+<span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">stars</span> 96/100
+            </span>
+</div>
+<h5 class="font-headline font-bold text-xs text-maritime-navy leading-snug pl-1">
+            Thực hành Khai báo Tờ khai Hải quan điện tử VNACCS/VCIS cho Lô hàng FCL
+          </h5>
+<p class="text-[11px] text-secondary mt-1.5 leading-relaxed pl-1">
+            Xử lý bộ chứng từ phân luồng vàng, áp mã HS code, khai báo tờ khai nhập khẩu cont 40HQ và đối soát chứng nhận xuất xứ C/O Form E cùng kiểm tra chuyên ngành.
+          </p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-emerald-100 flex items-center justify-between text-xs pl-1">
+<span class="text-secondary font-medium text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">task_alt</span> 8 tác vụ
+          </span>
+<button class="text-primary-dark font-bold hover:text-vibrant-green flex items-center gap-1 cursor-pointer text-[11px]" type="button">
+<span class="">Xem báo cáo</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project D -->
+<div class="p-4 rounded-2xl border border-amber-200 bg-white hover:border-amber-400 hover:shadow-xs transition-all relative flex flex-col justify-between overflow-hidden">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-amber-500 rounded-l-2xl"></div>
+<div>
+<div class="flex items-center justify-between gap-2 mb-1.5 pl-1">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[9px] tracking-wide">ĐANG THỰC HIỆN</span>
+<span class="text-xs font-bold text-amber-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span> 88/100
+            </span>
+</div>
+<h5 class="font-headline font-bold text-xs text-maritime-navy leading-snug pl-1">
+            Điều phối Giải phóng Hàng tại Cảng Cát Lái &amp; Khắc phục Lưu bãi Demurrage
+          </h5>
+<p class="text-[11px] text-secondary mt-1.5 leading-relaxed pl-1">
+            Xử lý lệnh giao hàng D/O điện tử (eDO), phối hợp nhà xe nâng hạ bãi cont và đàm phán miễn trừ hạn lưu bãi container Demurrage/Detention với hãng tàu.
+          </p>
+</div>
+<div class="mt-3 pt-2.5 border-t border-amber-100 flex items-center justify-between text-xs pl-1">
+<span class="text-secondary font-medium text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span> Đang tiến hành
+          </span>
+<button class="text-amber-700 font-bold hover:text-amber-800 flex items-center gap-1 cursor-pointer text-[11px]" type="button">
+<span class="">Tiếp tục bài tập</span>
+<span class="material-symbols-outlined text-[13px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<!-- KHỐI 3: Chứng chỉ chính quy đã đạt được -->
+<div class="bg-white rounded-3xl border border-border-subtle shadow-sm p-6"><div class="flex items-center justify-between pb-4 border-b border-border-subtle mb-5"><div class="flex items-center gap-2.5"><span class="w-9 h-9 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">workspace_premium</span></span><div><h3 class="font-headline font-bold text-sm md:text-base text-maritime-navy">Chứng chỉ &amp; Bằng cấp chính quy</h3></div></div></div></div></div>
+</div>
+</div>
+</main>
+</div>
+<!-- Functions for TopNavBar actions -->
+<script>
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-collapsed');
+  }
+
+  function toggleNotifDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('notification-dropdown');
+    const badge = document.getElementById('bell-unread-dot');
+    if (dropdown) {
+      const isHidden = dropdown.classList.contains('hidden');
+      if (isHidden) {
+        dropdown.classList.remove('hidden');
+        if (badge) badge.classList.add('hidden');
+      } else {
+        dropdown.classList.add('hidden');
+      }
+    }
+  }
+
+  function markAllNotificationsRead() {
+    const dots = document.querySelectorAll('.notif-dot');
+    dots.forEach(d => {
+      d.classList.remove('bg-error');
+      d.classList.add('bg-transparent');
+    });
+    const items = document.querySelectorAll('.notif-item');
+    items.forEach(i => {
+      i.classList.remove('bg-surface-container-low/40');
+    });
+    const badge = document.getElementById('notif-count-badge');
+    if (badge) {
+      badge.textContent = '0 mới';
+      badge.classList.remove('bg-error');
+      badge.classList.add('bg-secondary');
+    }
+    const bellDot = document.getElementById('bell-unread-dot');
+    if (bellDot) bellDot.classList.add('hidden');
+  }
+
+  function markItemRead(item) {
+    if (!item) return;
+    const dot = item.querySelector('.notif-dot');
+    if (dot) {
+      dot.classList.remove('bg-error');
+      dot.classList.add('bg-transparent');
+    }
+    item.classList.remove('bg-surface-container-low/40');
+  }
+
+  document.addEventListener('click', (e) => {
+    const wrapper = document.getElementById('notification-wrapper');
+    const dropdown = document.getElementById('notification-dropdown');
+    if (wrapper && dropdown && !wrapper.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+</script>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-maritime-navy/60 backdrop-blur-sm animate-fadeIn hidden" id="add-experience-modal"><div class="bg-white w-full max-w-2xl rounded-2xl shadow-xl border border-border-subtle overflow-hidden flex flex-col max-h-[90vh] animate-fadeIn"><div class="p-5 sm:p-6 border-b border-border-subtle flex items-start justify-between bg-surface-bg/50 shrink-0"><div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-emerald-100 text-primary-dark flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[22px]">work</span></div><div><h3 class="font-headline font-bold text-base sm:text-lg text-maritime-navy tracking-tight">Thêm kinh nghiệm làm việc &amp; Thực tập</h3><p class="text-xs text-secondary mt-0.5">Cập nhật các dự án, công việc hoặc kỳ thực tập logistics thực tế của bạn</p></div></div><button class="text-secondary hover:text-maritime-navy p-1.5 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" id="close-exp-modal-x"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-left font-body"><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Chức danh / Vị trí công việc <span class="text-error">*</span></label><input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: Chuyên viên Khai báo Hải quan &amp; Forwarding" type="text"/></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Tên công ty / Doanh nghiệp <span class="text-error">*</span></label><input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: Tân Cảng - Cát Lái / Global Freight Inc." type="text"/></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Loại hình công việc</label><select class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all cursor-pointer"><option value="fulltime">Toàn thời gian (Full-time)</option><option value="parttime">Bán thời gian (Part-time)</option><option selected="" value="intern">Thực tập sinh (Internship)</option><option value="freelance">Dự án độc lập (Freelance / Contract)</option></select></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Địa điểm làm việc</label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[16px]">location_on</span><input class="w-full pl-9 pr-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: TP. Hồ Chí Minh hoặc Remote" type="text"/></div></div></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Thời gian làm việc</label><div class="grid grid-cols-1 sm:grid-cols-2 gap-3"><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[16px]">calendar_month</span><input class="w-full pl-9 pr-3 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="Bắt đầu (VD: 06/2023)" type="text"/></div><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[16px]">event</span><input class="w-full pl-9 pr-3 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="Kết thúc (VD: Hiện tại hoặc 12/2023)" type="text"/></div></div><div class="mt-2 flex items-center gap-2"><input class="rounded border-border-subtle text-vibrant-green focus:ring-vibrant-green cursor-pointer" id="currently-working-checkbox" type="checkbox"/><label class="text-xs text-secondary cursor-pointer select-none" for="currently-working-checkbox">Hiện tại tôi đang làm việc ở vị trí này</label></div></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Mô tả chi tiết công việc &amp; Trách nhiệm chính</label><textarea class="w-full p-3 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green leading-relaxed resize-y transition-all" placeholder="Mô tả cụ thể các tác vụ logistics đã đảm nhận (VD: Phát hành Bill of Lading, xử lý chứng từ D/O, làm việc với hãng tàu và chi cục Hải quan, phân bổ chi phí Local Charges...)" rows="4"></textarea></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Thành tích nổi bật / Kỹ năng áp dụng</label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[16px]">emoji_events</span><input class="w-full pl-9 pr-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: Xử lý hơn 200 TEUs/tháng, Tối ưu 15% chi phí DEM/DET..." type="text"/></div></div></div><div class="p-4 sm:p-5 border-t border-border-subtle bg-surface-bg/50 flex items-center justify-end gap-3 shrink-0"><button class="px-4 py-2.5 text-xs font-headline font-semibold text-secondary hover:text-maritime-navy bg-white hover:bg-[#f1f5f9] border border-border-subtle rounded-xl transition-all shadow-xs cursor-pointer" id="cancel-exp-modal-btn" type="button">Hủy bỏ</button><button class="px-5 py-2.5 text-xs font-headline font-bold text-white bg-primary-dark hover:bg-primary active:scale-98 rounded-xl transition-all shadow-sm shadow-emerald-700/20 flex items-center gap-2 cursor-pointer" id="save-exp-modal-btn" type="button"><span class="material-symbols-outlined text-[18px]">check_circle</span>Lưu kinh nghiệm</button></div></div></div><script>document.addEventListener('DOMContentLoaded', () => { const modal = document.getElementById('add-experience-modal'); const openBtn = document.getElementById('open-add-experience-btn'); const closeX = document.getElementById('close-exp-modal-x'); const cancelBtn = document.getElementById('cancel-exp-modal-btn'); const saveBtn = document.getElementById('save-exp-modal-btn'); const closeModal = () => { if (modal) modal.classList.add('hidden'); }; const openModal = () => { if (modal) modal.classList.remove('hidden'); }; if (openBtn) openBtn.addEventListener('click', openModal); if (closeX) closeX.addEventListener('click', closeModal); if (cancelBtn) cancelBtn.addEventListener('click', closeModal); if (saveBtn) saveBtn.addEventListener('click', closeModal); if (modal) { modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); }); } });</script>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-maritime-navy/60 backdrop-blur-sm animate-fadeIn hidden" id="add-language-modal">
+<div class="bg-white w-full max-w-md rounded-2xl shadow-xl border border-border-subtle overflow-hidden flex flex-col max-h-[90vh] animate-fadeIn">
+<div class="p-5 border-b border-border-subtle flex items-start justify-between bg-surface-bg/50 shrink-0">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-100 text-primary-dark flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">translate</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-base text-maritime-navy tracking-tight">Thêm ngôn ngữ chuyên ngành</h3>
+<p class="text-xs text-secondary mt-0.5">Cập nhật ngoại ngữ và chứng chỉ phục vụ công việc Logistics</p>
+</div>
+</div>
+<button class="text-secondary hover:text-maritime-navy p-1.5 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" id="close-lang-modal-x" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-5 overflow-y-auto space-y-4 text-left font-body">
+<div>
+<label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Tên ngôn ngữ <span class="text-error">*</span></label>
+<input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: Tiếng Trung Thương mại, Tiếng Hàn..." type="text"/>
+</div>
+<div>
+<label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Trình độ / Chứng chỉ</label>
+<input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: HSK 5 / Giao tiếp xuất nhập khẩu..." type="text"/>
+</div>
+<div>
+<label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Mã viết tắt hiển thị</label>
+<input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all uppercase" maxlength="4" placeholder="VD: CN, KR, JP, DE..." type="text"/>
+</div>
+<div>
+<label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Mức độ thành thạo</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-emerald-200 bg-emerald-50/50 cursor-pointer hover:border-vibrant-green transition-all text-xs font-medium text-maritime-navy">
+<input checked="" class="text-vibrant-green focus:ring-vibrant-green" name="lang-level" type="radio" value="native"/>
+<span class="">Bản ngữ</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-border-subtle bg-surface-bg hover:bg-white cursor-pointer hover:border-vibrant-green transition-all text-xs font-medium text-maritime-navy">
+<input class="text-vibrant-green focus:ring-vibrant-green" name="lang-level" type="radio" value="fluent"/>
+<span class="">Thành thạo</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-border-subtle bg-surface-bg hover:bg-white cursor-pointer hover:border-vibrant-green transition-all text-xs font-medium text-maritime-navy">
+<input class="text-vibrant-green focus:ring-vibrant-green" name="lang-level" type="radio" value="intermediate"/>
+<span class="">Trung cấp</span>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-xl border border-border-subtle bg-surface-bg hover:bg-white cursor-pointer hover:border-vibrant-green transition-all text-xs font-medium text-maritime-navy">
+<input class="text-vibrant-green focus:ring-vibrant-green" name="lang-level" type="radio" value="basic"/>
+<span class="">Cơ bản</span>
+</label>
+</div>
+</div>
+</div>
+<div class="p-4 sm:p-5 border-t border-border-subtle bg-surface-bg/50 flex items-center justify-end gap-3 shrink-0">
+<button class="px-4 py-2.5 text-xs font-headline font-semibold text-secondary hover:text-maritime-navy bg-white hover:bg-[#f1f5f9] border border-border-subtle rounded-xl transition-all shadow-xs cursor-pointer" id="cancel-lang-modal-btn" type="button">Hủy bỏ</button>
+<button class="px-5 py-2.5 text-xs font-headline font-bold text-white bg-primary-dark hover:bg-primary active:scale-98 rounded-xl transition-all shadow-sm shadow-emerald-700/20 flex items-center gap-2 cursor-pointer" id="save-lang-modal-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="">Lưu ngôn ngữ</span>
+</button>
+</div>
+</div>
+</div>
+<script class="">
+  document.addEventListener('DOMContentLoaded', () => {
+    const langModal = document.getElementById('add-language-modal');
+    const openLangBtn = document.getElementById('open-add-language-btn');
+    const closeLangX = document.getElementById('close-lang-modal-x');
+    const cancelLangBtn = document.getElementById('cancel-lang-modal-btn');
+    const saveLangBtn = document.getElementById('save-lang-modal-btn');
+    const closeLang = () => { if (langModal) langModal.classList.add('hidden'); };
+    const openLang = () => { if (langModal) langModal.classList.remove('hidden'); };
+    if (openLangBtn) openLangBtn.addEventListener('click', openLang);
+    if (closeLangX) closeLangX.addEventListener('click', closeLang);
+    if (cancelLangBtn) cancelLangBtn.addEventListener('click', closeLang);
+    if (saveLangBtn) saveLangBtn.addEventListener('click', closeLang);
+    if (langModal) {
+      langModal.addEventListener('click', (e) => {
+        if (e.target === langModal) closeLang();
+      });
+    }
+  });
+</script>
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-maritime-navy/60 backdrop-blur-sm animate-fadeIn hidden" id="add-certificate-modal"><div class="bg-white w-full max-w-2xl rounded-2xl shadow-xl border border-border-subtle overflow-hidden flex flex-col max-h-[90vh] animate-fadeIn"><div class="p-5 sm:p-6 border-b border-border-subtle flex items-start justify-between bg-surface-bg/50 shrink-0"><div class="flex items-start gap-3"><div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 mt-0.5"><span class="material-symbols-outlined text-[22px]">workspace_premium</span></div><div><h3 class="font-headline font-bold text-base sm:text-lg text-maritime-navy tracking-tight">Thêm chứng chỉ mới</h3><p class="text-xs text-secondary mt-0.5">Cập nhật bằng cấp, chứng chỉ chuyên môn và chứng nhận số NetStudy</p></div></div><button class="text-secondary hover:text-maritime-navy p-1.5 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" id="close-cert-modal-x" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-left font-body"><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Tên chứng chỉ <span class="text-error">*</span></label><input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: FIATA Multimodal Transport" type="text"/></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Tổ chức cấp / Chứng thực <span class="text-error">*</span></label><input class="w-full px-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: NetStudy Academy &amp; Hiệp hội Vận tải Quốc tế" type="text"/></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Năm cấp &amp; Trạng thái</label><div class="grid grid-cols-2 gap-2"><input class="w-full px-3 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="Năm cấp (2024)" type="text" value="2024"/><select class="w-full px-2 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all cursor-pointer"><option selected="" value="newest">Mới nhất</option><option value="certified">Đã cấp</option><option value="verified">Đã xác thực</option></select></div></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Mã số xác thực / Chứng chỉ</label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[16px]">qr_code</span><input class="w-full pl-9 pr-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="VD: NET-2024-LOG-8842" type="text"/></div></div></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Đường dẫn chứng chỉ online (URL)</label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[16px]">link</span><input class="w-full pl-9 pr-3.5 py-2 bg-surface-bg border border-border-subtle rounded-xl text-xs sm:text-sm text-maritime-navy placeholder:text-secondary/60 focus:outline-none focus:border-vibrant-green focus:ring-1 focus:ring-vibrant-green transition-all" placeholder="https://verify.netstudy.edu.vn/cert/..." type="url"/></div></div><div><label class="text-xs font-headline font-bold text-maritime-navy block mb-1.5">Tải lên file đính kèm (PDF / Hình ảnh chứng chỉ)</label><div class="border-2 border-dashed border-border-subtle hover:border-vibrant-green rounded-2xl p-4 text-center bg-surface-bg/50 transition-colors cursor-pointer group"><span class="material-symbols-outlined text-[28px] text-secondary group-hover:text-primary-dark transition-colors">upload_file</span><p class="text-xs font-semibold text-maritime-navy mt-1">Kéo thả tệp hoặc <span class="text-primary-dark font-bold hover:underline">chọn tệp từ máy tính</span></p><p class="text-[11px] text-secondary mt-0.5">Hỗ trợ PDF, PNG, JPG (Dung lượng tối đa 10MB)</p></div></div></div><div class="p-4 sm:p-5 border-t border-border-subtle bg-surface-bg/50 flex items-center justify-end gap-3 shrink-0"><button class="px-4 py-2.5 text-xs font-headline font-semibold text-secondary hover:text-maritime-navy bg-white hover:bg-[#f1f5f9] border border-border-subtle rounded-xl transition-all shadow-xs cursor-pointer" id="cancel-cert-modal-btn" type="button">Hủy bỏ</button><button class="px-5 py-2.5 text-xs font-headline font-bold text-white bg-primary-dark hover:bg-primary active:scale-98 rounded-xl transition-all shadow-sm shadow-emerald-700/20 flex items-center gap-2 cursor-pointer" id="save-cert-modal-btn" type="button"><span class="material-symbols-outlined text-[18px]">check_circle</span>Lưu chứng chỉ</button></div></div></div><script>document.addEventListener('DOMContentLoaded', () => { const certModal = document.getElementById('add-certificate-modal'); const openCertBtn = document.getElementById('open-add-cert-btn'); const closeCertX = document.getElementById('close-cert-modal-x'); const cancelCertBtn = document.getElementById('cancel-cert-modal-btn'); const saveCertBtn = document.getElementById('save-cert-modal-btn'); const closeCert = () => { if (certModal) certModal.classList.add('hidden'); }; const openCert = () => { if (certModal) certModal.classList.remove('hidden'); }; if (openCertBtn) openCertBtn.addEventListener('click', openCert); if (closeCertX) closeCertX.addEventListener('click', closeCert); if (cancelCertBtn) cancelCertBtn.addEventListener('click', closeCert); if (saveCertBtn) saveCertBtn.addEventListener('click', closeCert); if (certModal) { certModal.addEventListener('click', (e) => { if (e.target === certModal) closeCert(); }); } });</script>
+</body></html>

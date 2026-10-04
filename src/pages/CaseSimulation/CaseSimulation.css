@@ -1,0 +1,1065 @@
+.cs-page {
+  width: 100%;
+  min-height: 100%;
+  background: #f8fafc;
+  color: #161d16;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.cs-page *,
+.cs-page *::before,
+.cs-page *::after {
+  box-sizing: border-box;
+}
+
+.cs-container {
+  width: min(800px, 100%);
+  margin: 0 auto;
+  padding: 8px 0 50px;
+}
+
+/* =========================
+   ASSESSMENT HEADER
+========================= */
+
+.cs-assessment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+}
+
+.cs-header-main {
+  min-width: 0;
+}
+
+.cs-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cs-test-badge,
+.cs-duration-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.cs-test-badge {
+  background: #0f172a;
+  color: #fff;
+}
+
+.cs-duration-badge {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.cs-header-main h1 {
+  margin: 0;
+  color: #0f172a;
+  font-family: Montserrat, Inter, sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 750;
+}
+
+.cs-header-main p {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cs-timer {
+  min-width: 175px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #b8cfba;
+  border-radius: 8px;
+  background: #edf6ea;
+}
+
+.cs-timer svg {
+  color: #006e2f;
+}
+
+.cs-timer div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-timer span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.cs-timer strong {
+  margin-top: 2px;
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* =========================
+   COMMON CARD
+========================= */
+
+.cs-card {
+  margin-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+}
+
+/* =========================
+   PART 1
+========================= */
+
+.cs-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.cs-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.cs-section-heading svg {
+  color: #006e2f;
+}
+
+.cs-section-heading h2 {
+  margin: 0;
+  color: #0f172a;
+  font-family: Montserrat, Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.cs-question-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cs-question-progress > span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.cs-small-progress {
+  width: 105px;
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #dce5d9;
+}
+
+.cs-small-progress div {
+  height: 100%;
+  border-radius: inherit;
+  background: #22c55e;
+  transition: width 0.25s ease;
+}
+
+.cs-quiz-body {
+  padding: 28px 32px 30px;
+}
+
+.cs-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.cs-question-number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cs-question p {
+  margin: 0;
+  color: #0f172a;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 650;
+}
+
+.cs-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 41px;
+}
+
+.cs-option {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.cs-option:hover {
+  border-color: #bccbb9;
+  background: #f8fafc;
+}
+
+.cs-option-selected {
+  border: 2px solid #22c55e;
+  padding: 12px 14px;
+  background: #ecfdf3;
+}
+
+.cs-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cs-radio {
+  width: 17px;
+  height: 17px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 50%;
+}
+
+.cs-option-selected .cs-radio {
+  border-color: #15803d;
+}
+
+.cs-radio span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #15803d;
+}
+
+.cs-option-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cs-option-selected .cs-option-content {
+  color: #0f172a;
+  font-weight: 650;
+}
+
+.cs-option-letter {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.cs-correct-icon {
+  flex-shrink: 0;
+  color: #15803d;
+}
+
+.cs-quiz-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 18px;
+  margin-top: 22px;
+  border-top: 1px solid #e2e8f0;
+  padding-left: 41px;
+}
+
+.cs-prev-button,
+.cs-next-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 15px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cs-prev-button {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+}
+
+.cs-prev-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cs-next-button {
+  border: 0;
+  background: #22c55e;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(34, 197, 94, 0.18);
+}
+
+.cs-next-button:hover {
+  background: #16a34a;
+}
+
+/* =========================
+   PART 2
+========================= */
+
+.cs-case-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.cs-case-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-width: 0;
+}
+
+.cs-case-heading > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #9e4036;
+}
+
+.cs-case-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-case-title-row h2 {
+  margin: 0;
+  color: #0f172a;
+  font-family: Montserrat, Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.cs-points-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #ffe4e1;
+  color: #9e4036;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.cs-case-heading p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cs-case-progress {
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.cs-case-progress-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
+.cs-case-progress-text strong {
+  color: #0f172a;
+  font-size: 11px;
+}
+
+.cs-case-progress-text span {
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.cs-case-progress-bar {
+  width: 120px;
+  height: 9px;
+  overflow: hidden;
+  border: 1px solid #bccbb9;
+  border-radius: 999px;
+  background: #dce5d9;
+}
+
+.cs-case-progress-bar div {
+  height: 100%;
+  border-radius: inherit;
+  background: #22c55e;
+}
+
+/* =========================
+   SCENARIO TABS
+========================= */
+
+.cs-scenario-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  background: rgba(237, 246, 234, 0.45);
+}
+
+.cs-scenario-tab {
+  min-width: 230px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 13px;
+  border: 1px solid rgba(188, 203, 185, 0.65);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.cs-scenario-tab:hover {
+  background: #fff;
+}
+
+.cs-scenario-active {
+  border: 2px solid #22c55e;
+  padding: 10px 12px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+}
+
+.cs-scenario-number {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cs-scenario-number-active {
+  background: #22c55e;
+  color: #fff;
+}
+
+.cs-scenario-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-scenario-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cs-scenario-title-row strong {
+  color: #0f172a;
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.cs-status-active,
+.cs-status-pending {
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cs-status-active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.cs-status-pending {
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+.cs-scenario-meta {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+/* =========================
+   CASE CONTENT
+========================= */
+
+.cs-case-content {
+  padding: 25px 26px 28px;
+}
+
+.cs-briefing {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding: 19px;
+  border: 1px solid rgba(188, 203, 185, 0.65);
+  border-radius: 10px;
+  background: rgba(237, 246, 234, 0.5);
+}
+
+.cs-briefing-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(188, 203, 185, 0.65);
+}
+
+.cs-briefing-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #0f172a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.cs-briefing-title svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #006e2f;
+}
+
+.cs-deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #fff0ed;
+  color: #9e4036;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.cs-shipment-data {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.cs-shipment-data div {
+  min-width: 0;
+}
+
+.cs-shipment-data span {
+  display: block;
+  margin-bottom: 3px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.cs-shipment-data strong {
+  color: #334155;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.cs-mono {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.cs-incoterm {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: #dcfce7;
+  color: #006e2f !important;
+}
+
+.cs-narrative {
+  margin: 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.cs-task-box {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.cs-task-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #0f172a;
+  font-size: 12px;
+}
+
+.cs-task-heading svg {
+  color: #22c55e;
+}
+
+.cs-task-box ul {
+  margin: 9px 0 0;
+  padding-left: 23px;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.cs-task-box li + li {
+  margin-top: 7px;
+}
+
+.cs-task-box strong {
+  color: #0f172a;
+}
+
+.cs-task-box b {
+  color: #006e2f;
+}
+
+/* =========================
+   EDITOR
+========================= */
+
+.cs-editor {
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.cs-editor-toolbar {
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 8px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.cs-editor-toolbar button {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+}
+
+.cs-editor-toolbar button:hover {
+  background: #e2e8f0;
+}
+
+.cs-toolbar-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 5px;
+  background: #cbd5e1;
+}
+
+.cs-toolbar-label {
+  margin-left: 4px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.cs-editor textarea {
+  width: 100%;
+  min-height: 190px;
+  display: block;
+  padding: 15px;
+  border: 0;
+  outline: none;
+  resize: vertical;
+  color: #0f172a;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.cs-editor textarea::placeholder {
+  color: #94a3b8;
+}
+
+.cs-editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.cs-save-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.cs-save-status svg {
+  color: #16a34a;
+}
+
+.cs-word-count {
+  color: #64748b;
+  font-size: 10px;
+}
+
+/* =========================
+   AI NOTICE
+========================= */
+
+.cs-ai-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 10px;
+  text-align: center;
+}
+
+.cs-ai-notice svg {
+  color: #006e2f;
+}
+
+/* =========================
+   CASE NAVIGATION
+========================= */
+
+.cs-bottom-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 26px;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.cs-case-prev,
+.cs-save-button,
+.cs-case-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cs-case-prev {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+}
+
+.cs-case-prev:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.cs-save-button {
+  border: 0;
+  background: transparent;
+  color: #006e2f;
+}
+
+.cs-save-button:hover {
+  background: #edf6ea;
+}
+
+.cs-case-next {
+  border: 0;
+  background: #22c55e;
+  color: #fff;
+}
+
+.cs-case-next:hover {
+  background: #16a34a;
+}
+
+/* =========================
+   FINAL ACTIONS
+========================= */
+
+.cs-final-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.cs-draft-button,
+.cs-submit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.cs-draft-button {
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #475569;
+}
+
+.cs-draft-button:hover {
+  background: #f8fafc;
+}
+
+.cs-submit-button {
+  border: 0;
+  background: #006e2f;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 110, 47, 0.2);
+}
+
+.cs-submit-button:hover {
+  background: #005321;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .cs-container {
+    width: 100%;
+  }
+
+  .cs-assessment-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cs-timer {
+    width: 100%;
+  }
+
+  .cs-case-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cs-case-progress {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 700px) {
+  .cs-container {
+    padding: 0 0 35px;
+  }
+
+  .cs-assessment-header {
+    padding: 22px 18px;
+    border-radius: 0;
+  }
+
+  .cs-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px;
+  }
+
+  .cs-question-progress {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cs-quiz-body {
+    padding: 22px 18px;
+  }
+
+  .cs-question {
+    gap: 10px;
+  }
+
+  .cs-options {
+    padding-left: 0;
+  }
+
+  .cs-quiz-navigation {
+    padding-left: 0;
+  }
+
+  .cs-case-header {
+    padding: 18px;
+  }
+
+  .cs-case-progress {
+    justify-content: space-between;
+  }
+
+  .cs-case-progress-bar {
+    flex: 1;
+    max-width: 150px;
+  }
+
+  .cs-case-content {
+    padding: 18px;
+  }
+
+  .cs-briefing {
+    padding: 14px;
+  }
+
+  .cs-briefing-header {
+    flex-direction: column;
+  }
+
+  .cs-deadline {
+    align-self: flex-start;
+  }
+
+  .cs-shipment-data {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cs-bottom-navigation {
+    flex-wrap: wrap;
+    padding: 13px 18px;
+  }
+
+  .cs-save-button {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cs-final-actions {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-header-main h1 {
+    font-size: 18px;
+  }
+
+  .cs-header-main p {
+    font-size: 12px;
+  }
+
+  .cs-shipment-data {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-case-progress {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cs-case-progress-text {
+    align-items: flex-start;
+  }
+
+  .cs-case-progress-bar {
+    width: 100%;
+    max-width: none;
+  }
+
+  .cs-task-box ul,
+  .cs-narrative {
+    font-size: 11px;
+  }
+
+  .cs-final-actions {
+    flex-direction: column;
+  }
+
+  .cs-draft-button,
+  .cs-submit-button {
+    justify-content: center;
+    width: 100%;
+  }
+}

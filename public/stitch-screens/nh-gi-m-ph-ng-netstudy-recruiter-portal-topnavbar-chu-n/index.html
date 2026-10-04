@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-fixed":"#410001","on-primary-container":"#004b1e","primary-fixed":"#6bff8f","inverse-primary":"#4ae176","primary-container":"#22c55e","background":"#f3fcef","on-secondary-fixed":"#131b2e","on-surface":"#161d16","surface-container":"#e8f0e4","outline-variant":"#bccbb9","surface-variant":"#dce5d9","outline":"#6d7b6c","on-primary":"#ffffff","on-background":"#161d16","inverse-surface":"#2a322a","tertiary-fixed":"#ffdad5","primary":"#006e2f","on-error":"#ffffff","error-container":"#ffdad6","surface-container-highest":"#dce5d9","surface":"#f3fcef","tertiary":"#9e4036","surface-tint":"#006e2f","secondary":"#565e74","secondary-fixed-dim":"#bec6e0","surface-container-high":"#e2ebde","on-secondary-container":"#5c647a","on-tertiary-container":"#76231b","secondary-fixed":"#dae2fd","tertiary-container":"#ff8b7c","on-secondary":"#ffffff","surface-dim":"#d4ddd0","on-primary-fixed-variant":"#005321","on-error-container":"#93000a","on-tertiary":"#ffffff","tertiary-fixed-dim":"#ffb4a9","surface-bright":"#f3fcef","on-surface-variant":"#3d4a3d","on-primary-fixed":"#002109","surface-container-lowest":"#ffffff","error":"#ba1a1a","secondary-container":"#dae2fd","on-tertiary-fixed-variant":"#7f2a21","on-secondary-fixed-variant":"#3f465c","inverse-on-surface":"#ebf3e7","surface-container-low":"#edf6ea","primary-fixed-dim":"#4ae176"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{},"fontFamily":{"headline":["Montserrat"],"display":["Montserrat"],"body":["Inter"],"label":["Inter"]},"fontSize":{}}}}</script></head><body class="font-body text-on-surface min-h-screen bg-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 border-b border-outline-variant transition-colors bg-white"><button class="p-2 mr-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 flex items-center justify-center" onclick="toggleSidebar()">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-4">
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Search courses..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative" id="notification-wrapper"><button aria-label="Thông báo" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-80 relative flex items-center justify-center" id="notif-bell-btn" onclick="toggleNotifDropdown(event)"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-white animate-pulse hidden" id="bell-unread-dot"></span></button><div class="absolute right-0 top-12 w-80 md:w-96 bg-white border border-outline-variant rounded-xl shadow-xl z-50 overflow-hidden hidden" id="notification-dropdown"><div class="p-4 border-b border-outline-variant flex justify-between items-center bg-white"><div class="flex items-center gap-2"><h3 class="text-[16px] font-bold text-on-surface font-headline">Thông báo</h3><span class="bg-error text-white font-bold text-[11px] px-2 py-0.5 rounded-full leading-none" id="notif-count-badge">3 mới</span></div><button class="text-primary text-xs hover:underline cursor-pointer font-medium" onclick="markAllNotificationsRead()">Đánh dấu tất cả đã đọc</button></div><div class="max-h-96 overflow-y-auto divide-y divide-outline-variant/60" id="notification-list"><div class="notif-item p-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">verified</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-sm text-on-surface">Chứng chỉ mới đã được cấp</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn đã hoàn thành khóa học Vận tải Quốc tế và nhận chứng chỉ chính thức.</p><p class="text-on-surface-variant mt-1 text-[11px]">Vừa xong</p></div></div><div class="notif-item p-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">badge</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-sm text-on-surface">Portfolio của bạn đã được lưu</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Thông tin năng lực và kinh nghiệm làm việc đã được cập nhật thành công vào hồ sơ.</p><p class="text-on-surface-variant mt-1 text-[11px]">2 giờ trước</p></div></div><div class="notif-item p-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-3 bg-surface-container-low/40" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">directions_boat</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-bold text-sm text-on-surface">Lời mời tham gia phòng mô phỏng mới</p><span class="w-2 h-2 bg-error rounded-full notif-dot flex-shrink-0"></span></div><p class="text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Bạn được mời tham gia bài tập mô phỏng xử lý khủng hoảng Kênh đào Suez.</p><p class="text-on-surface-variant mt-1 text-[11px]">Hôm qua</p></div></div><div class="notif-item extra-notif p-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">assignment</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-sm text-on-surface">Nhắc nhở hạn nộp bài tập</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Hạn chót nộp bài phân tích Vận đơn đường biển Bill of Lading vào ngày mai.</p><p class="text-on-surface-variant mt-1 text-[11px]">2 ngày trước</p></div></div><div class="notif-item extra-notif p-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">description</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-sm text-on-surface">Cập nhật tài liệu Incoterms 2020</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Tài liệu phân biệt rủi ro CIF vs FOB đã được cập nhật phiên bản mới nhất.</p><p class="text-on-surface-variant mt-1 text-[11px]">4 ngày trước</p></div></div><div class="notif-item extra-notif p-4 hover:bg-surface-container-low cursor-pointer transition-colors flex items-start gap-3 hidden" onclick="markItemRead(this)"><div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[18px]">forum</span></div><div class="flex-1"><div class="flex items-center justify-between"><p class="font-medium text-sm text-on-surface">Tin nhắn mới từ giảng viên</p><span class="w-2 h-2 bg-transparent rounded-full notif-dot flex-shrink-0"></span></div><p class="text-on-surface-variant line-clamp-2 text-[13px] mt-0.5">Giảng viên phụ trách đã phản hồi thắc mắc về phân bổ chi phí DEM/DET của bạn.</p><p class="text-on-surface-variant mt-1 text-[11px]">1 tuần trước</p></div></div></div><div class="p-3 text-center bg-surface-container-low border-t border-outline-variant"><button class="text-primary py-1 flex items-center justify-center gap-1 w-full font-medium cursor-pointer text-xs" id="show-all-notifs-btn" onclick="toggleAllNotifications(this)"><span class="flex items-center justify-center gap-1" id="show-all-notifs-label"><span class="">Xem tất cả thông báo</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></button></div></div><script class="">function collapseNotifications() { document.querySelectorAll('.extra-notif').forEach(item => item.classList.add('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Xem tất cả thông báo ->'; const toggleBtn = document.getElementById('show-all-notifs-btn'); if (toggleBtn) { toggleBtn.classList.remove('opacity-70'); toggleBtn.onclick = function() { toggleAllNotifications(toggleBtn); }; } } function toggleAllNotifications(btn) { const extras = document.querySelectorAll('.extra-notif'); const isExpanded = !extras[0] || !extras[0].classList.contains('hidden'); if (isExpanded) { collapseNotifications(); } else { extras.forEach(item => item.classList.remove('hidden')); const btnLabel = document.getElementById('show-all-notifs-label'); if (btnLabel) btnLabel.textContent = 'Thu gọn ^'; } } revealAllNotifications = function() { toggleAllNotifications(document.getElementById('show-all-notifs-btn')); }; function toggleNotifDropdown(event) { event.stopPropagation(); const dd = document.getElementById('notification-dropdown'); if (dd) dd.classList.toggle('hidden'); } function markItemRead(el) { const dot = el.querySelector('.notif-dot'); if (dot) { dot.classList.remove('bg-error'); dot.classList.add('bg-transparent'); } el.classList.remove('bg-surface-container-low/40'); } function markAllNotificationsRead() { document.querySelectorAll('.notif-dot').forEach(d => { d.classList.remove('bg-error'); d.classList.add('bg-transparent'); }); document.querySelectorAll('.notif-item').forEach(i => i.classList.remove('bg-surface-container-low/40')); const badge = document.getElementById('notif-count-badge'); if (badge) badge.classList.add('hidden'); const bellDot = document.getElementById('bell-unread-dot'); if (bellDot) bellDot.classList.add('hidden'); } function toggleSidebar() { const sb = document.getElementById('main-sidebar'); if (sb) sb.classList.toggle('-translate-x-full'); } document.addEventListener('click', function(e) { const wrap = document.getElementById('notification-wrapper'); const dd = document.getElementById('notification-dropdown'); if (wrap && dd && !wrap.contains(e.target)) { dd.classList.add('hidden'); } });</script></div>
+<div class="w-9 h-9 rounded-full border border-outline-variant flex items-center justify-center cursor-pointer ml-2 overflow-hidden bg-white hover:opacity-90 transition-all"><img alt="User Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjNfvlGczurC9h4kcyj1MwY6_P5otnlAvU_bFnBux1ad-NQfeK9jPKwE98J0TO-M4OJ7GY3L7rPSZ5B7yQxHd2G7Ah1NSAotoJTQS5eZLb-OcVksvYa7UA_3B8O7wzjYxuXO3cEg_aoQ5S70jkXEVrN8QXaxB8AjhlYiUOPrqOS8a5bZl5WRuNvOXDaXJzKjxKB2T0vrElOcWi8vpSgLo1InNl76LXXucJgrprHIdClJXckQKBv7lg"/></div>
+</div>
+</nav>
+<div class="flex flex-1 pt-16">
+<!-- Sidebar -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 bg-surface-container-low z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)] transition-transform duration-200" id="main-sidebar"><div class="flex flex-col"><div class="h-16 px-6 flex items-center justify-between bg-surface-container-low border-b border-outline-variant/30"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline font-bold text-lg shadow-sm">N</div><div class="flex flex-col"><span class="text-sm font-headline font-bold uppercase tracking-wider text-on-surface">NetStudy</span><span class="text-[11px] font-label text-on-surface-variant uppercase tracking-wider">Recruiter Portal</span></div></div></div><div class="px-4 py-3"><div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container border-subtle transition-all"><div class="flex items-center gap-2.5 min-w-0"><div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary font-bold text-xs shrink-0">V</div><div class="truncate"><p class="text-xs font-semibold text-on-surface truncate">VIMC / Global Freight Inc.</p><p class="text-[10px] text-on-surface-variant uppercase tracking-wider">DN Đối Tác Chiến Lược</p></div></div><span class="material-symbols-outlined text-base text-on-surface-variant">unfold_more</span></div></div><nav class="px-3 space-y-1 mt-2" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm rounded-xl"><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="dashboard" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl transition-colors">space_dashboard</span><span class="">Bảng điều khiển</span></div></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="post-job" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl transition-colors">post_add</span><span class="">Đăng tin tuyển dụng</span></div></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="posted-jobs" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl transition-colors">work_history</span><span class="">Tin đã đăng</span></div><span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-surface-container-highest text-on-surface-variant">5</span></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="candidate-search" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl transition-colors">person_search</span><span class="">Tìm kiếm ứng viên</span></div></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="applications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl transition-colors">assignment_ind</span><span class="">Hồ sơ ứng tuyển</span></div><span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-primary-container text-on-primary-container">148</span></a><a class="flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-semibold shadow-sm transition-all text-sm group" data-path="simulation-eval" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl transition-colors">model_training</span><span class="">Đánh giá mô phỏng</span></div></a></nav></div><div class="p-3"><div class="bg-surface-container-high rounded-xl p-3 mb-3"><div class="flex items-center gap-2 mb-1"><span class="material-symbols-outlined text-primary text-sm">verified</span><span class="text-xs font-bold text-on-surface">Hạn ngạch nhân tài</span></div><p class="text-[11px] text-on-surface-variant leading-relaxed">Còn lại 42/50 lượt liên hệ ứng viên chứng chỉ IATA &amp; FIATA tháng này.</p></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="settings" href="#"><span class="material-symbols-outlined text-xl">settings</span><span class="">Cài đặt doanh nghiệp</span></a><a class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all text-sm group" data-path="support" href="#"><span class="material-symbols-outlined text-xl">contact_support</span><span class="">Hỗ trợ đối tác</span></a></nav></div></aside>
+<!-- Main Body Content -->
+<main class="w-full pl-0 lg:pl-72 min-h-screen bg-white transition-[padding]"><div class="w-full px-6 lg:px-8 py-8 min-h-screen bg-white"><div class="flex flex-col w-full pb-16 space-y-8">
+<!-- Top Command & Filter Strip -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-container/20 text-primary font-headline text-xs font-bold tracking-wide uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          Hệ Thống Khảo Sát Tác Nghiệp Chuẩn Quốc Tế
+        </span>
+<span class="text-xs text-outline font-medium tracking-wide">ID: SIM-2025-VIMC-884</span>
+</div>
+<h1 class="text-2xl lg:text-3xl font-bold font-headline text-on-surface tracking-tight">
+        Báo Cáo Đánh Giá Năng Lực Mô Phỏng Nghiệp Vụ
+      </h1>
+<p class="text-sm text-on-surface-variant mt-1">
+        Phân tích dữ liệu thực hành thực tế của ứng viên qua các tình huống giả lập Zalo, WhatsApp, Gmail, VNACCS và Case study thực chiến.
+      </p>
+</div>
+<!-- Candidate Selector Dropdown -->
+<div class="flex items-center gap-3 shrink-0">
+<div class="relative min-w-[340px] max-w-full">
+<div class="bg-surface-container-lowest shadow-sm rounded-xl p-2.5 flex items-center justify-between cursor-pointer transition hover:bg-surface-container-low group border border-outline-variant/50" id="candidateSelectorToggle">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline font-bold text-sm shadow-sm shrink-0">
+              AJ
+            </div>
+<div class="min-w-0 text-left">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold font-headline text-on-surface truncate">Alex Johnson</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary text-on-primary uppercase">95/100 Điểm</span>
+</div>
+<p class="text-xs text-on-surface-variant truncate">Ứng tuyển: Chuyên viên Điều phối Logistics (Ocean Freight)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-on-surface transition-transform">unfold_more</span>
+</div>
+</div>
+<button class="p-2.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition shadow-sm border border-outline-variant/30" title="Làm mới số liệu" type="button">
+<span class="material-symbols-outlined text-xl">sync</span>
+</button>
+</div>
+</div>
+<!-- Hero Overview: Scorecard Banner & Radar Chart Bento -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Left Overall Hero Card -->
+<div class="xl:col-span-4 bg-gradient-to-br from-surface-container-lowest via-surface-container-lowest to-surface-container-low rounded-xl p-6 shadow-sm flex flex-col justify-between relative overflow-hidden border border-outline-variant/40">
+<div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-outline">Xếp loại Năng Lực Toàn Diện</span>
+<span class="inline-flex items-center gap-1 text-xs font-semibold text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Top 2% Thí sinh kỳ này
+          </span>
+</div>
+<div class="flex items-baseline gap-3 mt-4">
+<div class="text-6xl font-bold font-headline text-primary tracking-tighter">95</div>
+<div class="text-xl font-bold text-outline">/ 100</div>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-bold font-headline tracking-wide uppercase">Xuất Sắc</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+          Ứng viên hoàn thành 4 kịch bản đa kênh và 1 bài test lý thuyết hàng hải chuyên sâu trong tổng thời lượng 48 phút. Không phát hiện vi phạm bản quyền hay hỗ trợ ngoại vi gian lận.
+        </p>
+<!-- Quick metrics row -->
+<div class="grid grid-cols-3 gap-3 mt-6 pt-6 bg-surface-container/50 rounded-xl p-3">
+<div class="text-center">
+<div class="text-[11px] text-outline font-medium">Tốc độ xử lý</div>
+<div class="text-base font-bold font-headline text-on-surface mt-0.5">Nhanh +28%</div>
+<div class="text-[10px] text-primary">So với trung bình</div>
+</div>
+<div class="text-center">
+<div class="text-[11px] text-outline font-medium">Chứng từ chuẩn</div>
+<div class="text-base font-bold font-headline text-on-surface mt-0.5">98.5%</div>
+<div class="text-[10px] text-primary">Độ chính xác B/L</div>
+</div>
+<div class="text-center">
+<div class="text-[11px] text-outline font-medium">Chứng chỉ FIATA</div>
+<div class="text-base font-bold font-headline text-on-surface mt-0.5">Verified</div>
+<div class="text-[10px] text-primary">NetStudy ID valid</div>
+</div>
+</div>
+</div>
+<!-- Candidate profile short metadata -->
+<div class="flex items-center gap-3 pt-6 mt-6 bg-surface-container-low/70 rounded-xl p-3.5 border border-outline-variant/30">
+<img class="w-12 h-12 rounded-xl object-cover shrink-0 shadow-sm" data-alt="Professional corporate headshot of young Vietnamese logistics professional Alex Johnson smiling confidently wearing dark navy suit in clean office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2LnjR7YEhYw0NP4Hb6KePrsArL1hef7BC4Fe_iS-YA5VYGRTOKT_Dv5z6kay1DV3hQbr1vliWjvAoAbaTTc-2TGoDxJkcA__qzkj7u5Kztih-okyT4vcGZbyLpm7hkq0oWC8eObuRCDGrACZ51XUh0UELlHIBgoh3CiNvCO1O0paHbO196Ok8J9KSGTupDkLA9nIz6nmPNzAx4iqjIK50T6a4UlY-8JQAm5s3Si_BiTlH1L-11ERm"/>
+<div class="min-w-0 flex-1">
+<p class="text-sm font-bold font-headline text-on-surface truncate">Alex Johnson (Nguyễn Hải)</p>
+<p class="text-xs text-on-surface-variant truncate">Cử nhân Kinh tế Vận tải biển • 2 năm kinh nghiệm</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium">IELTS 7.5</span>
+<span class="text-[10px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-medium">VNACCS Pro</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Center/Right Radar Chart & Competency Details -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between border border-outline-variant/40">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-4 gap-2">
+<div>
+<h2 class="text-base font-bold font-headline text-on-surface">Đồ Thị Mạng Nhện 5 Khía Cạnh Năng Lực Cốt Lõi</h2>
+<p class="text-xs text-on-surface-variant">So sánh điểm số thực chiến của Alex Johnson với Chuẩn năng lực Ngành Logistics Việt Nam</p>
+</div>
+<div class="flex items-center gap-4 text-xs font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-on-surface">Alex Johnson (95%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-outline">Mức TB Ngành (68%)</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+<!-- SVG Radar Chart -->
+<div class="md:col-span-6 flex justify-center py-2 relative">
+<svg class="w-64 h-64 sm:w-72 sm:h-72 overflow-visible" viewbox="0 0 320 320">
+<!-- Background Polygons (Web) -->
+<polygon fill="none" points="160,30 284,120 236,267 84,267 36,120" stroke="#bccbb9" stroke-opacity="0.3" stroke-width="1"></polygon>
+<polygon fill="none" points="160,60 253,128 217,238 103,238 67,128" stroke="#bccbb9" stroke-opacity="0.3" stroke-width="1"></polygon>
+<polygon fill="none" points="160,95 217,136 195,204 125,204 103,136" stroke="#bccbb9" stroke-opacity="0.4" stroke-width="1"></polygon>
+<polygon fill="none" points="160,130 188,145 178,179 142,179 132,145" stroke="#bccbb9" stroke-opacity="0.3" stroke-width="1"></polygon>
+<!-- Axis lines -->
+<line stroke="#bccbb9" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="160" y1="160" y2="30"></line>
+<line stroke="#bccbb9" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="284" y1="160" y2="120"></line>
+<line stroke="#bccbb9" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="236" y1="160" y2="267"></line>
+<line stroke="#bccbb9" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="84" y1="160" y2="267"></line>
+<line stroke="#bccbb9" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="36" y1="160" y2="120"></line>
+<!-- Industry Benchmark Polygon (Avg ~68%) -->
+<polygon fill="#bec6e0" fill-opacity="0.25" points="160,71 244,133 212,233 108,233 75,133" stroke="#bec6e0" stroke-width="1.5"></polygon>
+<!-- Candidate Polygon (Alex Johnson: 98, 92, 95, 90, 94) -->
+<polygon class="transition-all hover:fill-opacity-50" fill="#22c55e" fill-opacity="0.35" points="160,33 274,123 232,261 92,256 43,122" stroke="#006e2f" stroke-width="2.5"></polygon>
+<!-- Vertex Dots -->
+<circle class="shadow-sm" cx="160" cy="33" fill="#006e2f" r="4"></circle>
+<circle cx="274" cy="123" fill="#006e2f" r="4"></circle>
+<circle cx="232" cy="261" fill="#006e2f" r="4"></circle>
+<circle cx="92" cy="256" fill="#006e2f" r="4"></circle>
+<circle cx="43" cy="122" fill="#006e2f" r="4"></circle>
+<!-- Labels outside vertices -->
+<text class="text-[10px] font-bold fill-[#161d16] font-headline" text-anchor="middle" x="160" y="16">Chứng từ &amp; B/L (98%)</text>
+<text class="text-[10px] font-bold fill-[#161d16] font-headline" text-anchor="start" x="295" y="122">Đàm phán cước (92%)</text>
+<text class="text-[10px] font-bold fill-[#161d16] font-headline" text-anchor="middle" x="236" y="286">Hải quan VNACCS (95%)</text>
+<text class="text-[10px] font-bold fill-[#161d16] font-headline" text-anchor="middle" x="74" y="286">Khủng hoảng (90%)</text>
+<text class="text-[10px] font-bold fill-[#161d16] font-headline" text-anchor="end" x="25" y="122">Tiếng Anh &amp; Ngoại thương (94%)</text>
+</svg>
+</div>
+<!-- Competency Breakdown Progress Bars -->
+<div class="md:col-span-6 space-y-3.5">
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">description</span>
+                Nghiệp vụ Chứng từ &amp; Bill of Lading
+              </span>
+<span class="font-bold text-primary">98% <span class="text-outline font-normal">/ TB 70%</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">handshake</span>
+                Đàm phán cước &amp; Giao tiếp đối tác
+              </span>
+<span class="font-bold text-primary">92% <span class="text-outline font-normal">/ TB 65%</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">terminal</span>
+                Khai báo Hải quan VNACCS/VCIS
+              </span>
+<span class="font-bold text-primary">95% <span class="text-outline font-normal">/ TB 62%</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">crisis_alert</span>
+                Xử lý khủng hoảng chuỗi cung ứng
+              </span>
+<span class="font-bold text-primary">90% <span class="text-outline font-normal">/ TB 58%</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center text-xs mb-1">
+<span class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">translate</span>
+                Tiếng Anh Ngoại thương &amp; Incoterms
+              </span>
+<span class="font-bold text-primary">94% <span class="text-outline font-normal">/ TB 74%</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 94%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant pt-4 mt-2 bg-surface-container/30 px-3 py-2 rounded-lg">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">verified</span>
+          Đạt chứng nhận mô phỏng chuẩn FIATA cấp bởi NetStudy Academy
+        </span>
+<a class="font-semibold text-primary hover:underline flex items-center gap-1" href="#fullScenarios">
+          Xem 4 kịch bản thực chiến bên dưới <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Detailed Practical Channels Grid -->
+<div class="space-y-4" id="fullScenarios">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-lg font-bold font-headline text-on-surface">
+          Chi Tiết Thực Hành Theo Từng Kênh Tác Nghiệp Thực Tế
+        </h2>
+<p class="text-xs text-on-surface-variant">
+          Đặc sản đào tạo và khảo sát độc quyền NetStudy mô phỏng môi trường làm việc thực chiến
+        </p>
+</div>
+<span class="text-xs font-semibold px-3 py-1 bg-surface-container-high text-on-surface rounded-full">
+        4 Mô Phỏng Tương Tác
+      </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- 1. Zalo Channel Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group border border-outline-variant/40">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#0068ff]/10 flex items-center justify-center text-[#0068ff] shrink-0 font-bold font-headline text-base">
+                Z
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-bold font-headline text-on-surface">Kênh Zalo - Đàm phán Báo giá Tuyến Cát Lái - Hamburg</h3>
+</div>
+<p class="text-xs text-outline">Kịch bản tương tác khách hàng &amp; Đại lý Forwarder FCL</p>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xl font-bold font-headline text-primary">95<span class="text-xs font-normal text-outline">/100</span></div>
+<span class="text-[10px] font-semibold text-primary uppercase">Đạt chuẩn Senior</span>
+</div>
+</div>
+<!-- Simulation Meta tags -->
+<div class="flex flex-wrap gap-2 mt-4 text-[11px]">
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">schedule</span>
+              Thời gian: 14 phút 30 giây (Chuẩn nghiệp vụ: 15-20p)
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">tune</span>
+              2 Container 40'HC RF
+            </span>
+</div>
+<!-- Assessment details -->
+<div class="mt-4 bg-surface-container-low rounded-xl p-3.5 space-y-2 text-xs">
+<div class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+              Đánh giá chuyên môn của AI &amp; Chuyên gia:
+            </div>
+<p class="text-on-surface-variant leading-relaxed">
+              Báo giá chuẩn xác toàn bộ phụ phí Local Charges (THC, Seal fee, Bill fee, Telex release). Xử lý khéo léo yêu cầu giữ chỗ gấp của khách hàng VIP (Thu Vân - Công ty XNK Nông sản Việt) khi tàu chỉ còn 2 slot cắm điện lạnh. Giữ vững biên lợi nhuận ròng 80 USD/cont mà không làm mất khách.
+            </p>
+</div>
+</div>
+<div class="pt-5 mt-4 flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-on-primary-container transition py-1.5" type="button">
+<span class="material-symbols-outlined text-base">chat</span>
+            Xem lại toàn bộ lịch sử đoạn chat Zalo mô phỏng
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<span class="text-[11px] text-outline">18 tin nhắn trao đổi</span>
+</div>
+</div>
+<!-- 2. WhatsApp Channel Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group border border-outline-variant/40">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#25d366]/10 flex items-center justify-center text-[#25d366] shrink-0 font-bold font-headline text-base">
+                W
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-bold font-headline text-on-surface">Kênh WhatsApp - Xử lý Khủng hoảng Tàu Tắc Kênh Suez</h3>
+</div>
+<p class="text-xs text-outline">Mô phỏng khẩn cấp: Đối tác Hãng tàu Hapag-Lloyd &amp; Consignee Rotterdam</p>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xl font-bold font-headline text-primary">92<span class="text-xs font-normal text-outline">/100</span></div>
+<span class="text-[10px] font-semibold text-primary uppercase">Phản xạ nhanh</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-4 text-[11px]">
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">timer</span>
+              Thời gian phản hồi đầu tiên: 2 phút 15 giây
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">warning</span>
+              Sự cố Bất khả kháng (Force Majeure)
+            </span>
+</div>
+<div class="mt-4 bg-surface-container-low rounded-xl p-3.5 space-y-2 text-xs">
+<div class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+              Đánh giá chuyên môn của AI &amp; Chuyên gia:
+            </div>
+<p class="text-on-surface-variant leading-relaxed">
+              Đưa ra giải pháp chuyển tải vòng qua Mũi Hảo Vọng (Cape of Good Hope) kịp thời, chủ động làm việc với đơn vị bảo hiểm hàng hải mở rộng điều khoản rủi ro chiến tranh và tắc nghẽn cảng. Cập nhật ETA chính xác từng mốc cho Consignee tại Hà Lan với thái độ bình tĩnh, chuyên nghiệp.
+            </p>
+</div>
+</div>
+<div class="pt-5 mt-4 flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-on-primary-container transition py-1.5" type="button">
+<span class="material-symbols-outlined text-base">forum</span>
+            Xem bản ghi chat WhatsApp mô phỏng
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<span class="text-[11px] text-outline">Tiếng Anh thương mại 100%</span>
+</div>
+</div>
+<!-- 3. Gmail Channel Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group border border-outline-variant/40">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-[#ea4335]/10 flex items-center justify-center text-[#ea4335] shrink-0 font-bold font-headline text-base">
+                M
+              </div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-bold font-headline text-on-surface">Kênh Gmail - Nghiệp vụ Soạn Thảo &amp; Xác Nhận Booking Hãng Tàu</h3>
+</div>
+<p class="text-xs text-outline">Xử lý Booking Confirmation hãng tàu Maersk / Hapag-Lloyd</p>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xl font-bold font-headline text-primary">96<span class="text-xs font-normal text-outline">/100</span></div>
+<span class="text-[10px] font-semibold text-primary uppercase">Chuẩn Xác 100%</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-4 text-[11px]">
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">mark_email_read</span>
+              Soạn thảo 3 Email chính thức
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">attach_file</span>
+              Checklist SI &amp; VGM hoàn thiện
+            </span>
+</div>
+<div class="mt-4 bg-surface-container-low rounded-xl p-3.5 space-y-2 text-xs">
+<div class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+              Đánh giá chuyên môn của AI &amp; Chuyên gia:
+            </div>
+<p class="text-on-surface-variant leading-relaxed">
+              Soạn thảo thư thương mại đạt chuẩn văn phong hàng hải quốc tế. Rà soát phát hiện trùng mã seal và sửa đổi hạn closing time trước cut-off CY 4 tiếng. Kiểm tra mã cảng POD Antwerp vs Hamburg không có bất kỳ sai sót kỹ thuật nào.
+            </p>
+</div>
+</div>
+<div class="pt-5 mt-4 flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-on-primary-container transition py-1.5" type="button">
+<span class="material-symbols-outlined text-base">mail</span>
+            Xem chuỗi Email nghiệp vụ mẫu
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<span class="text-[11px] text-outline">Đính kèm 4 file PDF mô phỏng</span>
+</div>
+</div>
+<!-- 4. VNACCS & Incoterms / FIATA Exam Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group border border-outline-variant/40">
+<div class="w-1.5 absolute left-0 top-0 bottom-0 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0 font-bold font-headline text-base">
+<span class="material-symbols-outlined text-xl">fact_check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="text-sm font-bold font-headline text-on-surface">Kiểm Tra Lý Thuyết Incoterms 2020 &amp; FIATA Multimodal Transport</h3>
+</div>
+<p class="text-xs text-outline">Trắc nghiệm phân loại tình huống &amp; Khai báo thử nghiệm VNACCS</p>
+</div>
+</div>
+<div class="text-right">
+<div class="text-xl font-bold font-headline text-primary">100<span class="text-xs font-normal text-outline">/100</span></div>
+<span class="text-[10px] font-semibold text-primary uppercase">Tuyệt Đối</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-4 text-[11px]">
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-primary">task_alt</span>
+              Đạt 5/5 câu hỏi trắc nghiệm Incoterms (100%)
+            </span>
+<span class="px-2.5 py-1 rounded bg-surface-container flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-sm text-outline">timer</span>
+              Thời gian: 8 phút 10 giây
+            </span>
+</div>
+<div class="mt-4 bg-surface-container-low rounded-xl p-3.5 space-y-2 text-xs">
+<div class="font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+              Đánh giá chuyên môn của AI &amp; Chuyên gia:
+            </div>
+<p class="text-on-surface-variant leading-relaxed">
+              Giải quyết xuất sắc bài toán phân định rủi ro và chi phí giữa DPU và DAP trong tình huống giao hàng nội địa tại cảng Hamburg. Phân loại chuẩn xác mã HS Code nhóm hàng nông sản xuất khẩu và truyền tờ khai VNACCS thử nghiệm thành công không bị báo lỗi EDI.
+            </p>
+</div>
+</div>
+<div class="pt-5 mt-4 flex items-center justify-between">
+<button class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-on-primary-container transition py-1.5" type="button">
+<span class="material-symbols-outlined text-base">quiz</span>
+            Xem chi tiết câu hỏi và bài tự luận
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<span class="text-[11px] text-primary font-semibold">Tự luận: Đạt A+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Split: Evaluator Assessment & Action Box -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+<!-- Expert & AI Summary Assessment -->
+<div class="xl:col-span-7 bg-surface-container-lowest rounded-xl p-6 shadow-sm space-y-6 border border-outline-variant/40">
+<div class="flex items-center justify-between">
+<h2 class="text-base font-bold font-headline text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">psychology</span>
+          Bản Tổng Kết Nhận Xét Của Chuyên Gia &amp; AI Evaluator
+        </h2>
+<span class="text-xs px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-medium">
+          Đối soát chéo tự động &amp; thẩm định
+        </span>
+</div>
+<!-- Instructor Quote -->
+<div class="flex gap-4 p-4 rounded-xl bg-surface-container-low relative border border-outline-variant/30">
+<img class="w-14 h-14 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of senior maritime captain and logistics professor Nguyen Van A with glasses and maritime epaulets in warm professional academic study" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSDDFJT1bzl5I4yHijpzGDuiTGDEstWKihE0mmWjl9qzMJr1O9Rpsr8LE_N-djiDHpBiZ8hUIiKb9f_LOYzRbqvsRZs2NqHweRq6I7klEoBGo86-0pLWlIRNgh5Yp2WLeZn2VyTsNj-12ZTT4TWtJ4_GTNgkvqcRagFCRrLxaJhf_K_EMQQn8C0gDmnNlmGr4K4f2GXBwZLLSVxA6hjDRt95KHwPz8q2W5LYndkiOE_sMhCjScpKa5"/>
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<div>
+<div class="text-sm font-bold font-headline text-on-surface">Master Mariner Capt. Nguyễn Văn A</div>
+<div class="text-xs text-on-surface-variant">Trưởng hội đồng Cố vấn Chuyên môn Hàng hải NetStudy Academy</div>
+</div>
+<span class="text-[11px] text-outline">14:20 Hôm qua</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">
+            "Alex Johnson thể hiện tư duy vận tải đường biển và quản trị chuỗi cung ứng vượt trội hơn hẳn so với mức thâm niên 2 năm. Thao tác xử lý chứng từ cẩn mật, khả năng làm việc với hãng tàu và trấn an khách hàng trong khủng hoảng kênh Suez rất đáng nể. Ứng viên này có thể tiếp nhận vị trí chính thức mà không cần thời gian đào tạo cơ bản."
+          </p>
+</div>
+</div>
+<!-- Recommendation Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+<div class="p-3.5 rounded-xl bg-surface-container/60 space-y-1 border border-outline-variant/30">
+<div class="text-xs font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">recommend</span>
+            Khuyến nghị Vị Trí Tuyển Dụng
+          </div>
+<p class="text-xs text-on-surface leading-relaxed font-semibold">
+            Rất phù hợp cho: Logistics Coordinator, Ocean Freight Pricing Specialist, hoặc Customer Service Lead.
+          </p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container/60 space-y-1 border border-outline-variant/30">
+<div class="text-xs font-bold text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">lightbulb</span>
+            Điểm Lưu Ý Cần Phát Triển
+          </div>
+<p class="text-xs text-on-surface leading-relaxed">
+            Có thể bổ sung thêm nghiệp vụ hàng nguy hiểm (IMDG Code) để sẵn sàng phụ trách các tuyến tàu hóa chất phức tạp.
+          </p>
+</div>
+</div>
+</div>
+<!-- Recruiter Internal Decision & Action Panel -->
+<div class="xl:col-span-5 bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between space-y-6 border border-outline-variant/40">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-base font-bold font-headline text-on-surface">
+            Ghi Chú &amp; Tác Vụ Tuyển Dụng
+          </h2>
+<span class="text-xs text-outline">Đồng bộ với VIMC ATS</span>
+</div>
+<!-- Rating Stars -->
+<div class="space-y-2">
+<label class="text-xs font-semibold text-on-surface block">Đánh giá nhanh nội bộ của HR VIMC:</label>
+<div class="flex items-center gap-2">
+<div class="flex items-center text-primary-container cursor-pointer">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs font-bold text-on-surface ml-2">5.0 / 5.0 (Ưu tiên cao)</span>
+</div>
+</div>
+<!-- Note Input -->
+<div class="mt-4 space-y-1.5">
+<label class="text-xs font-semibold text-on-surface flex items-center justify-between">
+<span class="">Ghi chú phỏng vấn vòng chuyên môn:</span>
+<span class="text-[10px] text-outline font-normal">Chỉ hiển thị cho HR Team</span>
+</label>
+<textarea class="w-full text-xs p-3 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:bg-surface-container transition resize-none border border-outline-variant/30" placeholder="Nhập câu hỏi dự kiến hoặc ghi chú cho Trưởng bộ phận Khai thác tàu..." rows="3"></textarea>
+</div>
+</div>
+<!-- Action Buttons Grid -->
+<div class="space-y-2.5 pt-2">
+<button class="w-full py-3 px-4 rounded-xl bg-primary text-on-primary font-headline font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm hover:opacity-95 transition" type="button">
+<span class="material-symbols-outlined text-base">send</span>
+          Mời Phỏng Vấn Trực Tiếp
+        </button>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="py-2.5 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-headline font-semibold text-xs flex items-center justify-center gap-1.5 transition" type="button">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+            Tải Báo Cáo PDF
+          </button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-headline font-semibold text-xs flex items-center justify-center gap-1.5 transition" type="button">
+<span class="material-symbols-outlined text-base">share</span>
+            Chia Sẻ Hồ Sơ
+          </button>
+</div>
+</div>
+</div>
+</div>
+</div></div></main>
+</div>
+</body></html>
